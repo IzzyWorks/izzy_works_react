@@ -4,16 +4,15 @@ function NavBar(props) {
   return (
     <div>
       <ul>
-        {console.log(props.navBar)}
         {props.navBar
-          // .filter((desktop) => (props.navBar.desktop == false) !== props.navBar)
+          .filter((navBar) => navBar.desktop == false)
           .map((navBar) => (
             <li key={navBar.id}>
               <h3 className={navBar.text}>{navBar.title}</h3>
             </li>
           ))}
       </ul>
-      <button onClick={props.buttonData.handleClickInThechild}>
+      <button onClick={props.buttonData.handleClickInTheNav}>
         {props.buttonData.label}
       </button>
     </div>

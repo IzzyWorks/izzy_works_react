@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import HomePageComp from './components/home/HomePageComp';
 import NavBar from './components/nav/NavBar';
@@ -49,7 +50,7 @@ function App() {
     },
   ];
 
-  const [hamburger, setHamburger] = setState([false]);
+  const [hamburger, setHamburger] = useState(false);
   const toggleHamburger = () => {
     setHamburger(!hamburger);
   };

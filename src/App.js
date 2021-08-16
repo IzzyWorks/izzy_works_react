@@ -49,10 +49,27 @@ function App() {
     },
   ];
 
-  const [navmobile, setNavmobile] = setState([false]);
+  const [hamburger, setHamburger] = setState([false]);
+  const toggleHamburger = () => {
+    setHamburger(!hamburger);
+  };
+
+  const [showHide, setShowHide] = useState(true);
+  const handleClickInTheNav = () => {
+    console.log('Button click');
+    setShowHide(!showHide);
+  };
+
   return (
     <div className='App'>
-      <NavBar navBar={navbar} navState={navmobile} />
+      <NavBar
+        navBar={navbar}
+        navState={toggleHamburger}
+        buttonData={{
+          handleClickInTheNav,
+          label: showHide == true ? 'Hide' : 'Show',
+        }}
+      />
       <HomePageComp />
     </div>
   );

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   //Where files should be sent once they are bundled
@@ -31,7 +32,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/templates/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './src/templates/index.html',
+    }),
     new MiniCssExtractPlugin(),
+    new FaviconsWebpackPlugin('./src/favicon.png'),
   ],
 };

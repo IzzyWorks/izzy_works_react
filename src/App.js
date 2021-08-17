@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import './App.css';
+import './scss/main.css';
 import HomePageComp from './components/home/HomePageComp';
 import NavBar from './components/nav/NavBar';
 
@@ -51,24 +51,21 @@ function App() {
   ];
 
   const [hamburger, setHamburger] = useState(false);
-  const toggleHamburger = () => {
-    setHamburger(!hamburger);
-  };
-
   const [showHide, setShowHide] = useState(true);
-  const handleClickInTheNav = () => {
+  const handleClickEvent = () => {
     console.log('Button click');
     setShowHide(!showHide);
+    setHamburger(!hamburger);
   };
 
   return (
     <div className='App'>
       <NavBar
         navBar={navbar}
-        navState={toggleHamburger}
         buttonData={{
-          handleClickInTheNav,
+          handleClickEvent,
           label: showHide == true ? 'Hide' : 'Show',
+          hamburger,
         }}
       />
       <HomePageComp />

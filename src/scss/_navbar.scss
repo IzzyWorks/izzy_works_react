@@ -1,0 +1,129 @@
+.navbar--wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  margin-top: 1.5rem;
+  flex-direction: row;
+  color: transparent;
+}
+
+.left-container {
+  display: flex;
+  min-width: 10.5rem;
+  margin-left: 3rem;
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  width: 4.5rem;
+}
+
+.logo-name {
+  display: flex;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  justify-content: flex-start;
+  transition: all 1.2s ease;
+  color: #000;
+  font-weight: 500;
+  margin-left: -0.35rem;
+}
+
+.fade-away {
+  opacity: 0;
+}
+.right-container {
+  width: 50%;
+  margin-right: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  // align-items: baseline;
+}
+
+nav .right-container {
+  position: relative;
+}
+
+nav .right-container a {
+  width: 100%;
+  flex-flow: column;
+}
+.hamburger-wrapper {
+  position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // z-index: 999;
+  margin: auto;
+  // width: 2rem;
+  // height: 1.5rem;
+  cursor: pointer;
+}
+
+.dark {
+  color: $black !important;
+}
+.hamburger-wrapper {
+  position: fixed;
+  top: 2.35rem;
+  // right: 10rem;
+  // visibility: hidden;
+  // overflow: hidden;
+  display: flex;
+  // flex-flow: row;
+  justify-content: flex-end;
+  // align-items: flex-end;
+  // margin-top: 0.275rem;
+  transition: opacity 0.4s ease 0.4s;
+  // background-color: aqua;
+}
+
+.hamburger-wrapper ul {
+  // position: absolute;
+  display: flex;
+  padding-right: 3rem;
+  // right: 0rem;
+  // flex-flow: row;
+  // justify-content: flex-end;
+  // position: relative;
+  // flex-flow: row;
+}
+
+.hamburger-wrapper li {
+  position: relative;
+  display: flex;
+  // flex-flow: row;
+  // width: 100%;
+  // padding: 0 2rem 0 2rem;
+  // text-transform: uppercase;
+}
+
+.hamburger-wrapper a {
+  display: flex;
+  align-items: flex-end;
+  // font-family: inherit;
+  // line-height: normal;
+  font-size: 0.65rem;
+  // width: 100%;
+  padding: 0 1.5rem;
+  // margin-right: 5rem;
+  text-transform: uppercase;
+}
+
+.navlink--shift {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.65rem;
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+}

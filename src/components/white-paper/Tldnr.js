@@ -15,9 +15,9 @@ function Tldnr() {
     <article key={articleData.id} className='article--wrapper slide-in'>
       <Title articleTitle={articleData} />
       <Details
-      // articleDate={articleData.publication.date}
-      // articleDuration={articleData.publication.length}
-      // articleTools={articleData.publication.tools}
+        articleDetails={articleData}
+        // articleDuration={articleData.publication.length}
+        // articleTools={articleData.publication.tools}
       />
       <Hero articleHero={articleData} />
       <Summary articleSummary={articleData} />

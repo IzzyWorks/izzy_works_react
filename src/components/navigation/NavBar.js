@@ -2,12 +2,12 @@ import React from 'react';
 
 function NavBar(props) {
   return (
-    <div className='navbar--wrapper'>
+    <nav className='navbar--wrapper'>
       <div className='left-container'>
         <div className='logo-name'>Logo</div>
       </div>
       <div className='right-container'>
-        <ul>
+        <ul className='navbar--list'>
           {console.log(props.buttonData)}
           {props.navBar
             .filter(
@@ -16,7 +16,7 @@ function NavBar(props) {
                 !props.buttonData.hamburger
             )
             .map((navBar) => (
-              <li key={navBar.id}>
+              <li key={navBar.id} className={'navbar--links'}>
                 <h3 className={navBar.text}>{navBar.title}</h3>
               </li>
             ))}
@@ -25,7 +25,7 @@ function NavBar(props) {
           {props.buttonData.label}
         </button>
       </div>
-    </div>
+    </nav>
   );
 }
 

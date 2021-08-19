@@ -3,8 +3,7 @@
   font-size: 16pt;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  overflow: hidden;
-  border: dashed 1px gray;
+  // border: dashed 1px gray;
 }
 
 body {
@@ -60,17 +59,23 @@ ul {
   padding-inline: 0rem;
 }
 
-.content-wrapper {
+.main--wrapper {
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  padding: 5rem 3rem 0rem 3rem;
+  height: 100vh;
+  justify-content: center;
+}
+
+.article--wrapper {
+  z-index: 98;
+  background-color: greenyellow;
+  position: absolute;
+  padding: 5rem 3rem 0rem 3rem;
+  top: 0;
+  overflow-y: scroll !important;
   display: flex;
   flex-flow: column;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
 }
-
-// .placeholder-text {
-//   display: flex;
-//   justify-content: center;
-//   color: #fff;
-//   align-items: center;
-// }

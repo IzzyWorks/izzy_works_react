@@ -2,9 +2,10 @@ const articleData = [
   {
     id: 'article01',
     title: 'tldnr',
-    synopsis: 'tldnr synopsis',
+    synopsis: 'tldnr synopsis here',
     publication: {
       date: 'January 1 2021',
+      length: '3 weeks',
       tools: [
         { name: 'Photoshop', img: 'photoshop__icon.svg' },
         { name: 'Illustrator', img: 'illustrator__icon.svg' },
@@ -27,14 +28,19 @@ const articleData = [
       {
         id: 'tldnr__hero-img',
         caption: null,
-        src: { lowres: 'tlndr__hero-1x', highres: 'tlndr__hero-2x' },
+        src: { lowres: 'tlndr__hero-1x', highres: 'tlndr__hero-2x', svg: null },
       },
       {
         id: 'tldnr__problem-space-img',
         caption: 'this is the problem space',
-        src: { lowres: 'tlndr__problem-1x', highres: 'tlndr__problem-2x' },
+        src: {
+          lowres: 'tlndr__problem-1x',
+          highres: 'tlndr__problem-2x',
+          svg: null,
+        },
       },
     ],
+    // how to inject bold + italic?
     contentblocks: [
       {
         type: 'Title',

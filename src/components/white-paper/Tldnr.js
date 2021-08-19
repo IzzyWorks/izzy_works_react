@@ -1,8 +1,27 @@
 import React from 'react';
 
+//components
+import Image from '../article/Image';
+import Summary from '../article/Summary';
+import Title from '../article/Title';
+import Details from '../article/Details';
+import Hero from '../article/Hero';
+
+//data
+import articleData from '../data/articleData';
+
 function Tldnr() {
   return (
-    <article className='article--wrapper slide-in'>
+    <article key={articleData.id} className='article--wrapper slide-in'>
+      <Title articleTitle={articleData} />
+      <Details
+      // articleDate={articleData.publication.date}
+      // articleDuration={articleData.publication.length}
+      // articleTools={articleData.publication.tools}
+      />
+      <Hero articleHero={articleData} />
+      <Summary articleSummary={articleData} />
+      <Image articleImage={articleData} />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Fringilla ut morbi

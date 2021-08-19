@@ -1,7 +1,7 @@
 import React from 'react';
 
 function TwoColumn() {
-  return <H2>TwoColumn</H2>;
+  return <h2>TwoColumn</h2>;
 }
 
 export default TwoColumn;

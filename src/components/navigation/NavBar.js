@@ -15,9 +15,10 @@ function NavBar(props) {
                 navBar.desktop == props.buttonData.hamburger ||
                 !props.buttonData.hamburger
             )
+            // if (pageNo => 3) then set className='black' otherwise ='white'
             .map((navBar) => (
-              <li key={navBar.id} className={'navbar--links'}>
-                <h3 className={navBar.text}>{navBar.title}</h3>
+              <li key={navBar.id} className='navbar--links'>
+                <h3 className={'black'}>{navBar.title}</h3>
               </li>
             ))}
         </ul>

@@ -1,7 +1,15 @@
 import React from 'react';
 
-function Summary() {
-  return <H2>Summary</H2>;
+function Summary(props) {
+  return (
+    <React.Fragment>
+      {props.articleSummary.map((articleSummary) => (
+        <p key={articleSummary.id} className='summary'>
+          {articleSummary.synopsis}
+        </p>
+      ))}
+    </React.Fragment>
+  );
 }
 
 export default Summary;

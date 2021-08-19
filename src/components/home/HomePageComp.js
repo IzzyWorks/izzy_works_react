@@ -1,10 +1,13 @@
 import React from 'react';
-import TldnrWP from '../white-paper/Tldnr';
+import Tldnr from '../white-paper/Tldnr';
 
-function HomePageComp() {
+//data
+// import articleDate from './components/data/articleData';
+
+function HomePageComp(props) {
   return (
     <main className='main--wrapper'>
-      <TldnrWP />
+      <Tldnr />
       <h1>Hello from landing page</h1>
     </main>
   );

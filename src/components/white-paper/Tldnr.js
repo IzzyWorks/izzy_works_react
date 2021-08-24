@@ -1,11 +1,11 @@
 import React from 'react';
 
 //components
-import Image from '../article/Image';
-import Summary from '../article/Summary';
-import Title from '../article/Title';
-import Details from '../article/Details';
-import Hero from '../article/Hero';
+import Image from '../global/Image';
+import Summary from '../global/Summary';
+import Title from '../global/Title';
+import Details from '../global/Details';
+import Hero from '../global/Hero';
 
 //data
 import articleData from '../data/articleData';
@@ -14,11 +14,7 @@ function Tldnr() {
   return (
     <article key={articleData.id} className='article--wrapper slide-in'>
       <Title articleTitle={articleData} />
-      <Details
-        articleDetails={articleData}
-        // articleDuration={articleData.publication.length}
-        // articleTools={articleData.publication.tools}
-      />
+      <Details articleDetails={articleData[0].publication} />
       <Hero articleHero={articleData} />
       <Summary articleSummary={articleData} />
       <Image articleImage={articleData} />

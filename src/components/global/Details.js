@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Details(props) {
-  // console.log(props.articleDetails.authors[0]);
   return (
     <div className='details-card'>
       <React.Fragment>
@@ -20,6 +19,14 @@ function Details(props) {
           <div className='sources-wrapping'>
             <div className='sources-title'>{sources.title}</div>
             <div className='sources-link'>{sources.src}</div>
+          </div>
+        ))}
+      </React.Fragment>
+      <React.Fragment>
+        {props.articleDetails.sources.map((tools) => (
+          <div className='sources-wrapping'>
+            <div className='sources-title'>{tools.name}</div>
+            <div className='sources-link'>{tools.img}</div>
           </div>
         ))}
       </React.Fragment>

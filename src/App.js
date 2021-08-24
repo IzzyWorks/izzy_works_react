@@ -1,10 +1,11 @@
 import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { useState } from 'react';
 import './scss/main.css';
 
 //components
-import HomePageComp from './components/home/HomePageComp';
-import NavBar from './components/navigation/NavBar';
+import HomePage from './components/HomePage';
+import NavBar from './components/NavBar';
 
 // data
 import navData from './components/data/navData';
@@ -12,17 +13,11 @@ import navData from './components/data/navData';
 function App() {
   const [hamburger, setHamburger] = useState(false);
   const [showHide, setShowHide] = useState(true);
-  // const [pageCount, setPage] = useState([0]);
   const handleClickEvent = () => {
     console.log('Button click');
     setShowHide(!showHide);
     setHamburger(!hamburger);
   };
-  // const updatePageCount = () => {
-  //   pageUp(pageCount + 1);
-  //   pageDown(pageCount - 1);
-  //   pageHome(pageCount == 0);
-  // };
   return (
     <div className='App'>
       <NavBar
@@ -33,7 +28,10 @@ function App() {
           hamburger,
         }}
       />
-      <HomePageComp />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route render={() => <Redirect to='/home' />} />
+      </Switch>
     </div>
   );
 }

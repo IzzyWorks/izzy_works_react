@@ -1,4 +1,4 @@
-.navbar--wrapper {
+.navbar__wrapper {
   width: 100%;
   position: fixed;
   top: 0;
@@ -9,14 +9,14 @@
   color: transparent;
 }
 
-.left-container {
+.navbar__left-container {
   display: flex;
   min-width: 10.5rem;
   margin-left: 3rem;
   width: 30%;
   justify-content: flex-start;
 }
-.right-container {
+.navbar__right-container {
   width: 70%;
   margin-right: 3rem;
   display: flex;
@@ -24,14 +24,10 @@
   // align-items: baseline;
 }
 
-.logo-wrapper {
+.navbar__logo-wrapper {
   display: flex;
   align-items: center;
-}
-
-.logo {
-  display: flex;
-  width: 4.5rem;
+  width: 5rem;
 }
 
 .logo-name {
@@ -49,7 +45,7 @@
   opacity: 0;
 }
 
-.navbar--list {
+.navbar__list {
   // position: absolute;
   display: flex;
   // padding-right: 3rem;

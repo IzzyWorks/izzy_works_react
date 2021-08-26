@@ -34,7 +34,7 @@ function NavBar(props) {
         scroll={(el) =>
           el.scrollIntoView({ behavior: props.dataNav.navBar.effect })
         }
-        to={'/page#section-' + props.dataNav.index}
+        to={'/home#section-' + props.dataNav.index}
       >
         {props.dataNav.navBar.title}
       </HashLink>
@@ -47,9 +47,11 @@ function NavBar(props) {
         <div className='navbar__logo-wrapper'>
           <Logo
             animationData={lottieLogo}
-            // dataAnimation={{
-            //   newData: navState,
-            // }}
+            dataAnimation={
+              {
+                // newData: navState,
+              }
+            }
             frameStart={0}
             frameEnd={11}
           />

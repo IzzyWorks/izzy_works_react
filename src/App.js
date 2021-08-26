@@ -29,8 +29,11 @@ function App() {
         }}
       />
       <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route render={() => <Redirect to='/home' />} />
+        <Route path='/' exact>
+          <Redirect to='/home' />
+        </Route>
+        <Route path='/home' component={HomePage} />
+        <Route path='/*' component={HomePage} />
       </Switch>
     </div>
   );

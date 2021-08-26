@@ -10,11 +10,11 @@ function WhitePaper(props) {
   return (
     <article
       key={uuid()}
-      className={`article__wrapper ${props.whitePaperData.style}`}
+      className={`article__wrapper ${props.whitePaper.style}`}
     >
       {/* {console.log('white paper', props)} */}
-      <Title articleTitle={props.whitePaperData.id} />
-      <Synopsis articleSynopsis={props.whitePaperData.synopsis} />
+      <Title articleTitle={props.whitePaper.id} />
+      <Synopsis articleSynopsis={props.whitePaper.synopsis} />
       {/* <Details articleDetails={props.whitePaperData.details} /> */}
     </article>
   );

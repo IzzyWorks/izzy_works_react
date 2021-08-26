@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './scss/main.css';
 
 //components
-import HomePage from './components/HomePage';
+import HomePage from './components/home/HomePage';
 import NavBar from './components/NavBar';
 
 // data

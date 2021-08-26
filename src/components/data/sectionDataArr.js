@@ -1,4 +1,4 @@
-const articleDataArr = [
+const sectionDataArr = [
   {
     id: 'OBIC',
     style: 'obic',
@@ -251,4 +251,4 @@ const articleDataArr = [
   },
 ];
 
-export default articleDataArr;
+export default sectionDataArr;

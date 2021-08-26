@@ -1,24 +1,32 @@
 .section__wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   overflow: hidden;
+  scroll-snap-align: start;
+  border-bottom: 1px solid black;
 }
 
-.section__wrapper.home-page {
-  background-color: white;
+.section__content {
+  margin: 0 3rem 0 3rem;
 }
-.section__wrapper.obic-page {
+
+.section__wrapper.home {
+  background-color: gray;
+}
+.section__wrapper.obic {
   background-color: blue;
 }
-.section__wrapper.tldnr-page {
+.section__wrapper.tldnr {
   background-color: green;
 }
-.section__wrapper.hapmap-page {
+.section__wrapper.hapmap {
   background-color: red;
 }
-.section__wrapper.about-page {
-  background-color: white;
-}
-.section__wrapper.doc-page {
-  background-color: white;
-}
+// .section__wrapper.about-page {
+//   background-color: white;
+// }
+// .section__wrapper.doc-page {
+//   background-color: white;
+// }

@@ -341,8 +341,8 @@ ul {
 
 .article--wrapper {
   z-index: 98;
-  -webkit-transform: translateX(30vh);
-          transform: translateX(30vh);
+  -webkit-transform: translateX(20vh);
+          transform: translateX(20vh);
   background-color: white;
   position: absolute;
   padding: 5rem 3rem 0rem 3rem;

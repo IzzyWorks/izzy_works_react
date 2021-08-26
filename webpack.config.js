@@ -14,6 +14,7 @@ module.exports = {
     port: 5000,
     writeToDisk: true,
     contentBase: './dist',
+    historyApiFallback: true,
   },
   //Rules of how webpack will take our files, complie & bundle them for the browser
   module: {

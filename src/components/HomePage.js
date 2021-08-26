@@ -13,11 +13,7 @@ const HomePage = () => {
   return (
     <div className='home__wrapper'>
       {sectionData.map((sectionData) => (
-        <Section
-          key={uuid()}
-          sectionItem={sectionData}
-          id={sectionData.title}
-        />
+        <Section key={uuid()} sections={sectionData} id={sectionData.title} />
       ))}
     </div>
   );

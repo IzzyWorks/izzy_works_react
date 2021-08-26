@@ -53,7 +53,7 @@ function NavBar(props) {
       </div>
       <div className='navbar__right-container'>
         <ul className='navbar__list'>
-          {console.log('props ==> navbar list', props.navBarData)}
+          {/* {console.log('props ==> navbar list', props.navBarData)} */}
           {props.navBarData
             .filter(
               (navBarData) =>

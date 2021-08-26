@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'react-uuid';
 
 //components
 import Title from './global/Title';
@@ -7,10 +8,14 @@ import Details from './global/Details';
 
 function WhitePaper(props) {
   return (
-    <article key={props.obicData.id} className='article--wrapper slide-in'>
-      <Title articleTitle={props.obicData.id} />
-      <Synopsis articleSynopsis={props.obicData.synopsis} />
-      <Details articleDetails={props.obicData.details} />
+    <article
+      key={uuid()}
+      className={`article__wrapper ${props.whitePaperData.style}`}
+    >
+      {/* {console.log('white paper', props)} */}
+      <Title articleTitle={props.whitePaperData.id} />
+      <Synopsis articleSynopsis={props.whitePaperData.synopsis} />
+      {/* <Details articleDetails={props.whitePaperData.details} /> */}
     </article>
   );
 }

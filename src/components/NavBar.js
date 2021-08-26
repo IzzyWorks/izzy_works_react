@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
+import uuid from 'react-uuid';
 
 //components
 import Logo from './Logo';
@@ -8,35 +9,27 @@ import Logo from './Logo';
 import lottieLogo from './data/logo.json';
 
 function NavBar(props) {
-  console.log('navbar ====>', props);
-  /*
-    {
-      navState: {
-          frames: [0,10],
-          title: "",
-          speed : "",
-          direction : ""
-      }
-    }
-  */
+  // const [pageIndex, setPage] = useState(0);
+  // const [lastPage, setLastPage] = useState(true);
+  // const [fontColor, setColor] = useState('black');
+  // const [pageDirection, setDirection] = useState('down');
 
   const handleClick = (e) => {
-    console.log('Click on Has Link ==>', e.target.dataset.title);
-    //setState - change the state
+    // setPage((pageIndex = props.navItem.page));
+    // setColor((fontColor = props.NavItem.fontColor));
+    // pageDirection((pageDirection = 'down' ? setDirection = 'down' : 'up'));
   };
 
   const HashNavWrapper = (props) => {
-    console.log('props ==>', props);
+    // console.log('HashNavWraper props ==>', props);
     return (
       <HashLink
-        data-title={props.dataNav.navBar.title}
+        data-title={props.navItem.title}
         onClick={handleClick}
-        scroll={(el) =>
-          el.scrollIntoView({ behavior: props.dataNav.navBar.effect })
-        }
-        to={'/home#section-' + props.dataNav.index}
+        scroll={(el) => el.scrollIntoView({ behavior: props.navItem.effect })}
+        to={'/#' + props.navItem.title}
       >
-        {props.dataNav.navBar.title}
+        {props.navItem.title}
       </HashLink>
     );
   };
@@ -60,28 +53,26 @@ function NavBar(props) {
       </div>
       <div className='navbar__right-container'>
         <ul className='navbar__list'>
-          {console.log(props.buttonData)}
-          {props.navBar
+          {/* {console.log('props ==> navbar list', props.hamburgerSwitch)} */}
+          {props.navBarData
             .filter(
-              (navBar) =>
-                navBar.desktop == props.buttonData.hamburger ||
-                !props.buttonData.hamburger
+              (navBarData) =>
+                navBarData.desktop == props.hamburgerSwitch.hamburger ||
+                !props.hamburgerSwitch.hamburger
             )
-            .map((navBar, index) => (
-              <li key={navBar.id} className='navbar__links'>
+            .map((navBarData) => (
+              <li key={uuid()} className='navbar__links'>
                 <h3 className={'black'}>
-                  {navBar.effect == 'smooth' ? (
-                    <HashNavWrapper dataNav={{ navBar, index }} />
-                  ) : null}
-                  {navBar.effect == 'smooth1' ? (
-                    <HashNavWrapper dataNav={{ navBar, index }} />
-                  ) : null}
+                  <HashNavWrapper navItem={navBarData} />
+                  {/* {navBarData.effect == 'smooth' ? (
+                    <HashNavWrapper navItem={navBarData} />
+                  ) : null} */}
                 </h3>
               </li>
             ))}
         </ul>
-        <button onClick={props.buttonData.handleClickEvent}>
-          {props.buttonData.label}
+        <button onClick={props.hamburgerSwitch.handleClickEvent}>
+          {props.hamburgerSwitch.label}
         </button>
       </div>
     </nav>

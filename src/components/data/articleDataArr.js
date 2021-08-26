@@ -1,6 +1,7 @@
 const articleDataArr = [
   {
     id: 'OBIC',
+    style: 'obic',
     details: {
       authors: [
         {
@@ -82,6 +83,7 @@ const articleDataArr = [
   },
   {
     id: 'tldnr',
+    style: 'tldnr',
     authors: [
       {
         name: 'Izzy Aspler',
@@ -138,6 +140,84 @@ const articleDataArr = [
         header: 'A ‘short’ summary of a deep dive into manuals for boardgames',
         text: 'Game time is too short to be reading manuals',
         img: ['tldnr__hero-img'],
+      },
+    ],
+    copy: [
+      {
+        header: "A bit about bob's life",
+        text: 'ipson lorem',
+        img: ['tldnr__hero-img', 'tldnr__problem-space-img'],
+      },
+    ],
+    images: [
+      {
+        id: 'tldnr__hero-img',
+        caption: null,
+        src: {
+          lowres: 'tlndr__hero-1x',
+          highres: 'tlndr__hero-2x',
+          svg: null,
+        },
+      },
+      {
+        id: 'tldnr__problem-space-img',
+        caption: 'this is the problem space',
+        src: {
+          lowres: 'tlndr__problem-1x',
+          highres: 'tlndr__problem-2x',
+          svg: null,
+        },
+      },
+    ],
+    tags: ['UX research', 'UX design', 'UI design', 'Fintech'],
+  },
+  {
+    id: 'HapMap',
+    style: 'hapmap',
+    details: {
+      authors: [
+        {
+          name: 'Izzy Aspler',
+          roll: 'UX/UI Design, Behavioral Economics Research',
+          contact: 'izzy.aspler@gmail.com',
+        },
+        {
+          name: 'Ehsan',
+          roll: 'Founder, Partner, web-development',
+          contact: 'izzy.aspler@gmail.com',
+        },
+      ],
+      date: 'April 6th, 2017',
+      length: '9 months, January 12th till March 27th, 2020',
+      tools: [
+        { name: 'InVison', img: 'invision__icon.svg' },
+        { name: 'AxureRP', img: 'axure__icon.svg' },
+        { name: 'Illustrator', img: 'illustrator__icon.svg' },
+      ],
+      sources: [
+        {
+          title: 'Open Banking Research Paper',
+          src: 'point to url',
+        },
+      ],
+    },
+    // how to inject bold + italic?
+    chapters: ['Problem Space', 'Meet Bob', 'Contstraints', 'How might We...'],
+    synopsis: {
+      header: 'A story about Bob',
+      text: 'tldnr synopsis here',
+      img: null,
+    },
+    title: {
+      header: 'Problem Space',
+      text: 'ipson lorem',
+      img: null,
+    },
+    gallery: [
+      {
+        header: 'Findings',
+        text: 'ipson lorem',
+        img: ['tldnr__hero-img', 'tldnr__problem-space-img'],
       },
     ],
     copy: [

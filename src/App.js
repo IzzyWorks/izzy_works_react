@@ -8,7 +8,7 @@ import HomePage from './components/HomePage';
 import NavBar from './components/NavBar';
 
 // data
-import navData from './components/data/navData';
+import navBarData from './components/data/navData';
 
 function App() {
   const [hamburger, setHamburger] = useState(false);
@@ -21,19 +21,18 @@ function App() {
   return (
     <div className='App'>
       <NavBar
-        navBar={navData}
-        buttonData={{
+        navBarData={navBarData}
+        hamburgerSwitch={{
           handleClickEvent,
           label: showHide == true ? 'Hide' : 'Show',
           hamburger,
         }}
       />
       <Switch>
-        <Route path='/' exact>
-          <Redirect to='/home' />
+        <Route path='/home' component={HomePage} exact />
+        <Route path='/*'>
+          <Redirect to='/home' component={HomePage} />
         </Route>
-        <Route path='/home' component={HomePage} />
-        <Route path='/*' component={HomePage} />
       </Switch>
     </div>
   );

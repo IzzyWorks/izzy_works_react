@@ -41,7 +41,7 @@ const LottiePlayer = memo((props) => {
     return loopTimes;
   }
 
-  console.log('In Lottie ===> Logo', props.frames);
+  // console.log('In Lottie ===> Logo', props.frames);
 
   return (
     <Lottie

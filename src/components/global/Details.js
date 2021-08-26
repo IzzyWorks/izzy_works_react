@@ -23,7 +23,7 @@ function Details(props) {
         ))}
       </React.Fragment>
       <React.Fragment>
-        {props.articleDetails.sources.map((tools) => (
+        {props.articleDetails.tools.map((tools) => (
           <div className='sources-wrapping'>
             <div className='sources-title'>{tools.name}</div>
             <div className='sources-link'>{tools.img}</div>

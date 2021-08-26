@@ -27,7 +27,7 @@ function NavBar(props) {
         data-title={props.navItem.title}
         onClick={handleClick}
         scroll={(el) => el.scrollIntoView({ behavior: props.navItem.effect })}
-        to={'/#' + props.navItem.title}
+        to={'/home#' + props.navItem.title}
       >
         {props.navItem.title}
       </HashLink>
@@ -53,7 +53,7 @@ function NavBar(props) {
       </div>
       <div className='navbar__right-container'>
         <ul className='navbar__list'>
-          {/* {console.log('props ==> navbar list', props.hamburgerSwitch)} */}
+          {console.log('props ==> navbar list', props.navBarData)}
           {props.navBarData
             .filter(
               (navBarData) =>

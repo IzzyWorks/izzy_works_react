@@ -3,19 +3,21 @@ import * as React from 'react';
 import uuid from 'react-uuid';
 
 //components
-import WhitePaper from './WhitePaper';
+import Section from './Sections';
 
-//data
-import articleDateArr from './data/articleDataArr';
+// data
+import sectionData from './data/navData';
 
 const HomePage = () => {
   // console.log('home page props ===>', articleDateArr);
   return (
     <div className='home__wrapper'>
-      {articleDateArr.map((articleData) => (
-        <section key={uuid()} className='section__wrapper' id={articleData.id}>
-          <WhitePaper whitePaperData={articleData} />
-        </section>
+      {sectionData.map((sectionData) => (
+        <Section
+          key={uuid()}
+          sectionItem={sectionData}
+          id={sectionData.title}
+        />
       ))}
     </div>
   );

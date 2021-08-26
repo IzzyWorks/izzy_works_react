@@ -10,6 +10,7 @@ function WhitePaper(props) {
   return (
     <article
       key={uuid()}
+      id={props.whitePaperData.id}
       className={`article__wrapper ${props.whitePaperData.style}`}
     >
       {/* {console.log('white paper', props)} */}

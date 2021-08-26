@@ -11,6 +11,7 @@ function Section(props) {
   return (
     <section
       key={uuid()}
+      id={props.sections.title}
       className={`section__wrapper ${props.sections.style}`}
     >
       {articleDateArr.map((articleData) =>

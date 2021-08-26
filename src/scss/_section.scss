@@ -1,0 +1,24 @@
+.section__wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section__wrapper.home-page {
+  background-color: white;
+}
+.section__wrapper.obic-page {
+  background-color: blue;
+}
+.section__wrapper.tldnr-page {
+  background-color: green;
+}
+.section__wrapper.hapmap-page {
+  background-color: red;
+}
+.section__wrapper.about-page {
+  background-color: white;
+}
+.section__wrapper.doc-page {
+  background-color: white;
+}

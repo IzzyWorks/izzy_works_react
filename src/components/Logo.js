@@ -7,7 +7,7 @@ function Logo(props) {
     <div>
       <Lottie
         animationData={props.animationData}
-        frames={{ frameStart: props.frameStart, frameEnd: props.frameEnd }}
+        frames={{ startFrame: props.startFrame, setFrames: props.setFrames }}
       />
     </div>
   );

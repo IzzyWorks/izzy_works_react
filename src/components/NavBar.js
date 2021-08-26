@@ -66,7 +66,7 @@ function NavBar(props) {
                 !props.buttonData.hamburger
             )
             .map((navBar, index) => (
-              <li key={navBar.id} className='navbar--links'>
+              <li key={navBar.id} className='navbar__links'>
                 <h3 className={'black'}>
                   {navBar.effect == 'smooth' ? (
                     <HashNavWrapper dataNav={{ navBar, index }} />

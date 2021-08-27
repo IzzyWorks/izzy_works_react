@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import uuid from 'react-uuid';
 
@@ -9,21 +9,19 @@ import Logo from './Logo';
 import lottieLogo from './data/logo.json';
 
 function NavBar(props) {
-  // const [pageIndex, setPage] = useState(0);
-  // const [lastPage, setLastPage] = useState(true);
-  // const [fontColor, setColor] = useState('black');
-  // const [pageDirection, setDirection] = useState('down');
+  const [frames, setFrames] = useState([0, 0]);
 
   const handleClick = (e) => {
-    // setPage((pageIndex = props.navItem.page));
-    // setColor((fontColor = props.NavItem.fontColor));
-    // pageDirection((pageDirection = 'down' ? setDirection = 'down' : 'up'));
+    let currentObj = e.target.dataset.navobj.keyframe;
+    console.log('inside eventhandler ===>', currentObj);
+    setFrames(currentObj);
   };
 
   const HashNavWrapper = (props) => {
-    // console.log('HashNavWraper props ==>', props);
+    console.log('HashNavWraper props ==>', props);
     return (
       <HashLink
+        data-navobj={props.navItem}
         data-title={props.navItem.title}
         onClick={handleClick}
         scroll={(el) => el.scrollIntoView({ behavior: props.navItem.effect })}
@@ -39,14 +37,15 @@ function NavBar(props) {
       <div className='navbar__left-container'>
         <div className='navbar__logo-wrapper'>
           <Logo
-            animationData={lottieLogo}
-            dataAnimation={
-              {
-                // newData: navState,
-              }
-            }
-            frameStart={0}
-            frameEnd={11}
+            animation={lottieLogo} //shapes JSON data
+            animationData={{
+              //dynamic data
+              segments: [0, 0],
+              direction: 1,
+              speed: 1,
+              play: true,
+              loop: false,
+            }}
           />
           <h3 className='logo-name'>izzy</h3>
         </div>

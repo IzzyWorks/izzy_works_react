@@ -1,13 +1,13 @@
 import React from 'react';
-import Lottie from './LottiePlayer/Lottie';
+import LottieWrapper from './LottiePlayer/LottieWrapper';
 
 function Logo(props) {
-  // console.log('props===>In logo===>', props);
+  console.log('props===>In logo===>', props);
   return (
     <div>
-      <Lottie
+      <LottieWrapper
+        animation={props.animation}
         animationData={props.animationData}
-        frames={{ startFrame: props.startFrame, setFrames: props.setFrames }}
       />
     </div>
   );

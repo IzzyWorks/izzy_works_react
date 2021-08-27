@@ -12,9 +12,9 @@ function Details(props) {
   const AuthorsArr = props.articleDetails.authors;
   return (
     <React.Fragment>
-      {AuthorsArr.map((authors) => (
+      {/* {AuthorsArr.map((authors) => (
         <Authors key={uuid()} author={authors} />
-      ))}
+      ))} */}
       {/* <div className='details-date'>{props.articleDetails.date}</div>
       <div className='details-length'>{props.articleDetails.length}</div>
       {props.articleDetails.sources.map((sources) => (

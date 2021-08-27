@@ -84,31 +84,33 @@ const sectionDataArr = [
   {
     id: 'tldnr',
     style: 'tldnr',
-    authors: [
-      {
-        name: 'Izzy Aspler',
-        roll: 'Case Study, UX/UI Design, Prototyping',
-        contact: 'izzy.aspler@gmail.com',
-      },
-    ],
-    date: 'September 3rd, 2021',
-    length: 'Twleve Weeks - January 3rd till March 27th 2020',
-    tools: [
-      { name: 'Sketch', img: 'sketch.svg' },
-      { name: 'Figma', img: 'figma__icon.svg' },
-      { name: 'Adobe XD', img: 'xd__icon.svg' },
-      { name: 'Illustrator', img: 'illustrator__icon.svg' },
-    ],
-    sources: [
-      {
-        title: 'PDF - Prototyping research + testing (12.5 MB)',
-        src: 'point to url',
-      },
-      {
-        title: 'PDF - Interview transcripts (1.5 MB)',
-        src: 'point to url',
-      },
-    ],
+    details: {
+      authors: [
+        {
+          name: 'Izzy Aspler',
+          roll: 'Case Study, UX/UI Design, Prototyping',
+          contact: 'izzy.aspler@gmail.com',
+        },
+      ],
+      date: 'September 3rd, 2021',
+      length: 'Twleve Weeks - January 3rd till March 27th 2020',
+      tools: [
+        { name: 'Sketch', img: 'sketch.svg' },
+        { name: 'Figma', img: 'figma__icon.svg' },
+        { name: 'Adobe XD', img: 'xd__icon.svg' },
+        { name: 'Illustrator', img: 'illustrator__icon.svg' },
+      ],
+      sources: [
+        {
+          title: 'PDF - Prototyping research + testing (12.5 MB)',
+          src: 'point to url',
+        },
+        {
+          title: 'PDF - Interview transcripts (1.5 MB)',
+          src: 'point to url',
+        },
+      ],
+    },
     chapters: [
       'A ‘short’ summary of a deep dive into manuals for boardgames',
       'A story about board games.',

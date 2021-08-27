@@ -5,14 +5,14 @@ import uuid from 'react-uuid';
 import WhitePaper from './WhitePaper';
 
 function Section(props) {
-  console.log(props);
+  console.log('inside section ====>', props);
   return (
     <section
       key={uuid()}
-      id={props.article.id}
-      className={`section__wrapper ${props.article.style}`}
+      id={props.section.id}
+      className={`section__wrapper ${props.section.style}`}
     >
-      <WhitePaper key={uuid()} whitePaper={props.article} />
+      <WhitePaper key={uuid()} whitePaper={props.section} />
     </section>
   );
 }

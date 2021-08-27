@@ -9,7 +9,7 @@ import About from '../About';
 import Documents from '../Documents';
 
 //data
-import sectionDataArr from '../data/sectionDataArr';
+import contentData from '../data/sectionDataArr';
 
 const HomePage = () => {
   return (
@@ -17,8 +17,8 @@ const HomePage = () => {
       <section id='home'>
         <LandingHero />
       </section>
-      {sectionDataArr.map((articleData) => (
-        <Section key={uuid()} article={articleData} />
+      {contentData.map((articleData) => (
+        <Section key={uuid()} section={articleData} />
       ))}
       <section id='About' className='section__wrapper about'>
         <About />

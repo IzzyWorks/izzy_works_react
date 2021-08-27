@@ -11,10 +11,9 @@ import lottieLogo from './data/logo.json';
 function NavBar(props) {
   const [frames, setFrames] = useState([0, 0]);
 
-  const handleClick = (e) => {
-    let currentObj = e.target.dataset.navobj.keyframe;
-    console.log('inside eventhandler ===>', currentObj);
-    setFrames(currentObj);
+  const handleClick = (props,e) => {
+    console.log('inside eventhandler ===>', props.navItem.keyframe);
+    setFrames(props.navItem.keyframe);
   };
 
   const HashNavWrapper = (props) => {
@@ -23,7 +22,10 @@ function NavBar(props) {
       <HashLink
         data-navobj={props.navItem}
         data-title={props.navItem.title}
-        onClick={handleClick}
+        //onClick={handleClick}
+        onClick={(e)=>{
+          handleClick(props,e);
+        }}
         scroll={(el) => el.scrollIntoView({ behavior: props.navItem.effect })}
         to={'/home#' + props.navItem.title}
       >
@@ -40,7 +42,7 @@ function NavBar(props) {
             animation={lottieLogo} //shapes JSON data
             animationData={{
               //dynamic data
-              segments: [0, 0],
+              segments: [frames[0], frames[1]],
               direction: 1,
               speed: 1,
               play: true,

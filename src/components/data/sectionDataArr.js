@@ -6,16 +6,19 @@ const sectionDataArr = [
       authors: [
         {
           name: 'Izzy Aspler',
+          id: "001Au",
           roll: 'UX/UI Design, Behavioral Economics Research',
           contact: 'izzy.aspler@gmail.com',
         },
         {
           name: 'Bhupindar Duku',
+          id: "002Au",
           roll: 'Project Manager - Banking Analysis',
           contact: 'bhupinder.dulku@gmail.com',
         },
         {
           name: 'Lorraine Masinde',
+          id: "002Au",
           roll: 'Legal / Regulatory Law - Global Research',
           contact: 'bhupinder.dulku@gmail.com',
         },

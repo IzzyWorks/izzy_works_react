@@ -7,6 +7,10 @@ import './scss/main.css';
 import HomePage from './components/home/HomePage';
 import NavBar from './components/nav/NavBar';
 
+
+//FullPage Demo TEST
+import FullPageDemo from './components/FullPageDemo/FullPageDemo'
+
 // data
 import navBarData from './components/data/NavData';
 
@@ -30,6 +34,7 @@ function App() {
       />
       <Switch>
         <Route path='/home' component={HomePage} exact />
+        <Route path='/fullPageDemo' component={FullPageDemo} exact />
         <Route path='/*'>
           <Redirect to='/home' component={HomePage} />
         </Route>

@@ -1,16 +1,6 @@
 import Lottie from 'react-lottie-player';
 import React, { useState, memo, useRef, useEffect } from 'react';
 
-// const boxStyle = {
-//   width: 200,
-//   maxWidth: '100%',
-//   margin: 30,
-//   padding: 30,
-//   borderRadius: 7,
-//   display: 'flex',
-//   flexDirection: 'column',
-// };
-
 const LottieWrapper = memo((props) => {
   const [log, setLog] = useState([]);
   const addLog = (v) => setLog((l) => [v, ...l]);

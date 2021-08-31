@@ -4,10 +4,10 @@ import uuid from 'react-uuid';
 //components
 import Title from './global/Title';
 import Synopsis from './global/Synopsis';
-import Details from './global/details card/Details';
+import Details from './global/DetailsCard';
 
 function WhitePaper(props) {
-  console.log('whitepaper ===>', props);
+  // console.log('whitepaper ===>', props);
   return (
     <article
       key={uuid()}

@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import { HashLink, NavHashLink } from 'react-router-hash-link';
 import uuid from 'react-uuid';
 
 //components
@@ -9,7 +8,7 @@ import About from '../About';
 import Documents from '../Documents';
 
 //data
-import contentData from '../data/sectionDataArr';
+import contentData from '../data/ContentData';
 
 const HomePage = () => {
   return (

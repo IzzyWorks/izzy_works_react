@@ -5,7 +5,7 @@ import uuid from 'react-uuid';
 import WhitePaper from './WhitePaper';
 
 function Section(props) {
-  console.log('inside section ====>', props);
+  // console.log('inside section ====>', props);
   return (
     <section
       key={uuid()}

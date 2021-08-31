@@ -1,8 +1,8 @@
 import React from 'react';
-import LottieWrapper from './LottiePlayer/LottieWrapper';
+import LottieWrapper from './lottie/LottieWrapper';
 
 function Logo(props) {
-  console.log('props===>In logo===>', props);
+  // console.log('props===>In logo===>', props);
   return (
     <div>
       <LottieWrapper

@@ -5,28 +5,28 @@ import './scss/main.css';
 
 //components
 import HomePage from './components/home/HomePage';
-import NavBar from './components/NavBar';
+import NavBar from './components/nav/NavBar';
 
 // data
-import navBarData from './components/data/navData';
+import navBarData from './components/data/NavData';
 
 function App() {
-  const [hamburger, setHamburger] = useState(false);
-  const [showHide, setShowHide] = useState(true);
-  const handleClickEvent = () => {
-    console.log('Button click');
-    setShowHide(!showHide);
-    setHamburger(!hamburger);
-  };
+  // const [hamburger, setHamburger] = useState(false);
+  // const [showHide, setShowHide] = useState(true);
+  // const handleClickEvent = () => {
+  //   console.log('Button click');
+  //   setShowHide(!showHide);
+  //   setHamburger(!hamburger);
+  // };
   return (
     <div className='App'>
       <NavBar
         navBarData={navBarData}
-        hamburgerSwitch={{
-          handleClickEvent,
-          label: showHide == true ? 'Hide' : 'Show',
-          hamburger,
-        }}
+        // hamburgerSwitch={{
+        //   handleClickEvent,
+        //   label: showHide == true ? 'Hide' : 'Show',
+        //   hamburger,
+        // }}
       />
       <Switch>
         <Route path='/home' component={HomePage} exact />

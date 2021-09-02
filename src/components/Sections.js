@@ -1,8 +1,7 @@
 import React from 'react';
 import uuid from 'react-uuid';
 
-//lottie Background POC animation Data
-import lottieAnimationAE from './data/poc-background-animation.json';
+
 
 import LottieWrapper from './lottie/LottieWrapper';
 
@@ -13,7 +12,7 @@ function Section(props) {
   // console.log('inside section ====>', props);
 
   const lottiedata = {
-    animation : lottieAnimationAE,
+    animation : props.lottieAnimation,
     controlles : {
       //dynamic data
       segments: [frames[0], frames[1]],

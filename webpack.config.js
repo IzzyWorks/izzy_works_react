@@ -13,6 +13,7 @@ module.exports = {
   devServer: {
     port: 5000,
     writeToDisk: true,
+    hot: true,
     contentBase: './dist',
     historyApiFallback: true,
   },
@@ -27,8 +28,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        test: /\.(s(a|c)ss)$/,
+        use: [MiniCssExtractPlugin.loader,'css-loader', 'sass-loader']
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

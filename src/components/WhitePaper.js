@@ -11,7 +11,7 @@ function WhitePaper(props) {
   return (
     <article
       key={uuid()}
-      className={`article__wrapper ${props.whitePaper.style}`}
+      className={`article__wrapper ${props.whitePaper.style}  disAppear`}
     >
       <Title articleTitle={props.whitePaper.id} />
       <Synopsis articleSynopsis={props.whitePaper.synopsis} />

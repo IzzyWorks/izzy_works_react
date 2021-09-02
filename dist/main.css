@@ -254,10 +254,7 @@ ul {
 }
 
 .section__wrapper {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
   border-bottom: 1px solid black;

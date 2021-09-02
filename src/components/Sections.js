@@ -2,7 +2,7 @@ import React from 'react';
 import uuid from 'react-uuid';
 
 //lottie Background POC animation Data
-import lottieAnimationAE from './data/9878-background-full-screen.json';
+import lottieAnimationAE from './data/poc-background-animation.json';
 
 import LottieWrapper from './lottie/LottieWrapper';
 
@@ -20,7 +20,7 @@ function Section(props) {
       direction: 1,
       speed: 1,
       play: true,
-      loop: false,
+      loop: true,
     }
   };
 

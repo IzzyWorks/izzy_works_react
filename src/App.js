@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useState } from 'react';
-import './scss/main.css';
+import './scss/main.scss';
 
 //components
 import HomePage from './components/home/HomePage';

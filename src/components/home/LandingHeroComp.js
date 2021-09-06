@@ -1,6 +1,8 @@
 import React from 'react';
 import LottieWrapper from '../lottie/LottieWrapper';
 
+// import landingAnimationData from '../data/LandingAnimationData';
+
 function LandingHero(props) {
   const lottiedataObic = {
     animation: props.lottieAnimation,
@@ -38,13 +40,18 @@ function LandingHero(props) {
       loop: true,
     },
   };
+
+  // const handleClick = (props, e) => {
+  //   // console.log('inside eventhandler ===>', props);
+  //   setSpeed(landingAnimationData.speed),
+  //     setOnHover(landingAnimationData.onHover),
+  //     setOnClick(landingAnimationData.onClick);
+  // };
+
   return (
     <div className='landing'>
       <div className={'landing__wrapper'}>
         <LottieWrapper
-          // onClick={(e) => {
-          //   handleClick(props, e);
-          // }}
           animation={lottiedataObic.obicAnim}
           animationData={lottiedataObic.controlles}
         />
@@ -114,3 +121,8 @@ function LandingHero(props) {
 }
 
 export default LandingHero;
+
+// const [frames, setFrames] = useState([0, 1]);
+// const [speed, setSpeed] = useState([0]);
+// const [onHover, setOnHover] = useState([0, 1]);
+// const [onClick, setOnClick] = useState([0, 1]);

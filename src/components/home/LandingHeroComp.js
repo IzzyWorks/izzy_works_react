@@ -2,7 +2,19 @@ import React from 'react';
 import LottieWrapper from '../lottie/LottieWrapper';
 
 function LandingHero(props) {
-  const lottiedata = {
+  const lottiedataObic = {
+    animation: props.lottieAnimation,
+    obicAnim: props.obicHomeAnimation,
+    controlles: {
+      //dynamic data
+      segments: [frames[0], frames[1]],
+      direction: 1,
+      speed: 1,
+      play: true,
+      loop: true,
+    },
+  };
+  const lottiedataTldnr = {
     animation: props.lottieAnimation,
     obicAnim: props.obicHomeAnimation,
     controlles: {
@@ -10,22 +22,44 @@ function LandingHero(props) {
       segments: [frames[0], frames[1]],
       direction: 1,
       speed: 0.5,
-      play: true,
+      play: false,
       loop: true,
-      className: 'landing__wrapper',
+    },
+  };
+  const lottiedataHapMap = {
+    animation: props.lottieAnimation,
+    obicAnim: props.obicHomeAnimation,
+    controlles: {
+      //dynamic data
+      segments: [frames[0], frames[1]],
+      direction: 1,
+      speed: 0.5,
+      play: false,
+      loop: true,
     },
   };
   return (
     <div className='landing'>
       <div className={'landing__wrapper'}>
         <LottieWrapper
-          animation={lottiedata.obicAnim}
-          animationData={lottiedata.controlles}
+          // onClick={(e) => {
+          //   handleClick(props, e);
+          // }}
+          animation={lottiedataObic.obicAnim}
+          animationData={lottiedataObic.controlles}
+        />
+        <LottieWrapper
+          animation={lottiedataTldnr.obicAnim}
+          animationData={lottiedataTldnr.controlles}
+        />
+        <LottieWrapper
+          animation={lottiedataHapMap.obicAnim}
+          animationData={lottiedataHapMap.controlles}
         />
       </div>
       <ul className='circle--list'>
         <li className='circle--segment'>
-          <ul className='circle--catagory'>
+          <ul className='circle--catagory hide'>
             <li>
               <div className='circle one'></div>
               <h3 className='circle--subtitle'>understand</h3>

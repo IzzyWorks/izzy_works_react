@@ -36,7 +36,10 @@ const LottieWrapper = memo((props) => {
       onEnterFrame={() => {
         /* addLog('enterFrame') */
       }}
-      style={{ width: '100%', height: '100%', alignSelf: 'center' }}
+      style={{
+        width: '100%',
+        alignSelf: 'center',
+      }}
       onSegmentStart={() => addLog('segmentStart')}
       onLoad={() => addLog('load')}
     />

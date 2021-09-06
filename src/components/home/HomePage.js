@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 
 //components
 import LandingHero from './LandingHeroComp';
-import Section from '../Sections';
+import Section from './Sections';
 import About from '../About';
 import Documents from '../Documents';
 
@@ -12,16 +12,22 @@ import contentData from '../data/ContentData';
 
 //lottie Background POC animation Data
 import lottieAnimationAE from '../data/poc-background-animation.json';
+import obicLottieAnimation from '../data/obic-home-transition.json';
 
 const HomePage = () => {
-  console.log("Re-rendering Hoime Page =====>");
+  console.log('Re-rendering Hoime Page =====>');
   return (
     <div className='home__wrapper'>
       <section id='home'>
-        <LandingHero />
+        <LandingHero obicHomeAnimation={obicLottieAnimation} />
       </section>
       {contentData.map((articleData) => (
-        <Section key={uuid()} lottieAnimation={lottieAnimationAE} section={articleData} />
+        <Section
+          key={uuid()}
+          lottieAnimation={lottieAnimationAE}
+          obicAnimation={obicLottieAnimation}
+          section={articleData}
+        />
       ))}
       <section id='About' className='section__wrapper about'>
         <About />

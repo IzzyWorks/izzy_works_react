@@ -7,9 +7,8 @@ import './scss/main.scss';
 import HomePage from './components/home/HomePage';
 import NavBar from './components/nav/NavBar';
 
-
 //FullPage Demo TEST
-import FullPageDemo from './components/FullPageDemo/FullPageDemo'
+import FullPageDemo from './components/FullPageDemo/FullPageDemo';
 
 // data
 import navBarData from './components/data/NavData';

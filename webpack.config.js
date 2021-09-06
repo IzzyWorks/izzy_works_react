@@ -11,6 +11,7 @@ module.exports = {
   },
   //webpack 5 comes with devServer which loads in development mode
   devServer: {
+    host: '0.0.0.0',
     port: 5000,
     writeToDisk: true,
     hot: true,
@@ -29,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.(s(a|c)ss)$/,
-        use: [MiniCssExtractPlugin.loader,'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

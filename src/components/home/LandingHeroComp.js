@@ -1,8 +1,28 @@
 import React from 'react';
+import LottieWrapper from '../lottie/LottieWrapper';
 
-function LandingHero() {
+function LandingHero(props) {
+  const lottiedata = {
+    animation: props.lottieAnimation,
+    obicAnim: props.obicHomeAnimation,
+    controlles: {
+      //dynamic data
+      segments: [frames[0], frames[1]],
+      direction: 1,
+      speed: 0.5,
+      play: true,
+      loop: true,
+      className: 'landing__wrapper',
+    },
+  };
   return (
     <div className='landing'>
+      <div className={'landing__wrapper'}>
+        <LottieWrapper
+          animation={lottiedata.obicAnim}
+          animationData={lottiedata.controlles}
+        />
+      </div>
       <ul className='circle--list'>
         <li className='circle--segment'>
           <ul className='circle--catagory'>

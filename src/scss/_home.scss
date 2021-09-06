@@ -8,8 +8,18 @@
 // graphical element made with css
 // ------------------------
 // ------------------------
+.landing__wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 1080px;
+  z-index: 99;
+}
 
 .circle--list {
+  position: relative;
+  top: 0rem;
   display: flex;
   height: 100vh;
   flex-flow: column;

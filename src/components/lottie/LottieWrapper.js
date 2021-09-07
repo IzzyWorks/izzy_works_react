@@ -21,7 +21,7 @@ const LottieWrapper = memo((props) => {
     return loopTimes;
   }
 
-  console.log('In Lottie ===>', props);
+  // console.log('In Lottie ===>', props);
 
   return (
     <Lottie

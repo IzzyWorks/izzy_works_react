@@ -9,7 +9,7 @@ import Logo from '../Logo';
 import lottieLogo from '../data/logo.json';
 
 function NavBar(props) {
-  console.log('Data into NavBar ===>', props);
+  // console.log('Data into NavBar ===>', props);
   const [frames, setFrames] = useState([0, 1]);
   const [speed, setSpeed] = useState([0]);
   const [previousPage, setPreviousPage] = useState([0]);

@@ -9,17 +9,21 @@ import Documents from '../Documents';
 
 //data
 import contentData from '../data/ContentData';
+// import landingAnimationData from '../data/LandingAnimationData';
 
 //lottie Background POC animation Data
 import lottieAnimationAE from '../data/poc-background-animation.json';
 import obicLottieAnimation from '../data/obic-home-transition.json';
 
-const HomePage = () => {
-  console.log('Re-rendering Hoime Page =====>');
+const HomePage = (props) => {
+  // console.log('Re-rendering Home Page =====>');
   return (
     <div className='home__wrapper'>
       <section id='home'>
-        <LandingHero obicHomeAnimation={obicLottieAnimation} />
+        <LandingHero
+        // obicHomeAnimation={obicLottieAnimation}
+        // landingAnimationData={landingAnimationData}
+        />
       </section>
       {contentData.map((articleData) => (
         <Section

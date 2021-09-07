@@ -1,45 +1,49 @@
 import React from 'react';
-import LottieWrapper from '../lottie/LottieWrapper';
 
-// import landingAnimationData from '../data/LandingAnimationData';
+// components
+import Circles from './Circles';
+
+//data
+// import circleObicAnim from '../data/obic-home-transition.json';
+import landingAnimationData from '../data/LandingAnimationData';
 
 function LandingHero(props) {
-  const lottiedataObic = {
-    animation: props.lottieAnimation,
-    obicAnim: props.obicHomeAnimation,
-    controlles: {
-      //dynamic data
-      segments: [frames[0], frames[1]],
-      direction: 1,
-      speed: 1,
-      play: true,
-      loop: true,
-    },
-  };
-  const lottiedataTldnr = {
-    animation: props.lottieAnimation,
-    obicAnim: props.obicHomeAnimation,
-    controlles: {
-      //dynamic data
-      segments: [frames[0], frames[1]],
-      direction: 1,
-      speed: 0.5,
-      play: false,
-      loop: true,
-    },
-  };
-  const lottiedataHapMap = {
-    animation: props.lottieAnimation,
-    obicAnim: props.obicHomeAnimation,
-    controlles: {
-      //dynamic data
-      segments: [frames[0], frames[1]],
-      direction: 1,
-      speed: 0.5,
-      play: false,
-      loop: true,
-    },
-  };
+  // const lottiedataObic = {
+  //   animation: props.lottieAnimation,
+  //   obicAnim: props.obicHomeAnimation,
+  //   controlles: {
+  //     //dynamic data
+  //     segments: [frames[0], frames[1]],
+  //     direction: 1,
+  //     speed: 1,
+  //     play: true,
+  //     loop: true,
+  //   },
+  // };
+  // const lottiedataTldnr = {
+  //   animation: props.lottieAnimation,
+  //   obicAnim: props.obicHomeAnimation,
+  //   controlles: {
+  //     //dynamic data
+  //     segments: [frames[0], frames[1]],
+  //     direction: 1,
+  //     speed: 0.5,
+  //     play: false,
+  //     loop: true,
+  //   },
+  // };
+  // const lottiedataHapMap = {
+  //   animation: props.lottieAnimation,
+  //   obicAnim: props.obicHomeAnimation,
+  //   controlles: {
+  //     //dynamic data
+  //     segments: [frames[0], frames[1]],
+  //     direction: 1,
+  //     speed: 0.5,
+  //     play: false,
+  //     loop: true,
+  //   },
+  // };
 
   // const handleClick = (props, e) => {
   //   // console.log('inside eventhandler ===>', props);
@@ -48,21 +52,17 @@ function LandingHero(props) {
   //     setOnClick(landingAnimationData.onClick);
   // };
 
+  console.log('props inside landging page', props);
   return (
     <div className='landing'>
       <div className={'landing__wrapper'}>
-        <LottieWrapper
-          animation={lottiedataObic.obicAnim}
-          animationData={lottiedataObic.controlles}
-        />
-        <LottieWrapper
-          animation={lottiedataTldnr.obicAnim}
-          animationData={lottiedataTldnr.controlles}
-        />
-        <LottieWrapper
-          animation={lottiedataHapMap.obicAnim}
-          animationData={lottiedataHapMap.controlles}
-        />
+        {landingAnimationData.map((loadingAnimations) => (
+          <Circles
+            key={loadingAnimations.key}
+            // lottieAnimation={circleObicAnim}
+            animationData={loadingAnimations}
+          />
+        ))}
       </div>
       <ul className='circle--list'>
         <li className='circle--segment'>

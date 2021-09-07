@@ -2,7 +2,7 @@ import React from 'react';
 import uuid from 'react-uuid';
 
 function Authors(props) {
-  console.log('Props +++==>', props);
+  // console.log('Props +++==>', props);
   return (
     <div className='authors-section'>
       {props.authors.map((author) => (

@@ -111,7 +111,6 @@
   font-size: 16pt;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  border: dashed 1px gray;
 }
 
 body {
@@ -183,6 +182,16 @@ svg {
 .slide-in {
   will-change: transform;
   transform: translateY(0vh);
+}
+
+.baseAnimation {
+  position: relative;
+  left: 1200px;
+  transition: left 2s ease-in;
+}
+
+.targetAnimation {
+  left: 100px;
 }
 
 .navbar__wrapper {
@@ -299,7 +308,6 @@ svg {
 .article__wrapper {
   z-index: 98;
   transform: translateX(20vh);
-  position: absolute;
   padding: 5rem 3rem 0rem 3rem;
   display: flex;
   flex-flow: column;

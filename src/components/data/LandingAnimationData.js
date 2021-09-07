@@ -2,7 +2,7 @@ const landingAnimationData = [
   {
     key: '0landingAnim',
     loop: false,
-    speed: [1],
+    speed: 0.25,
     play: true,
     direction: 1,
     segments: {
@@ -13,7 +13,7 @@ const landingAnimationData = [
   {
     key: '1landingAnim',
     loop: false,
-    speed: [1],
+    speed: 0.25,
     play: true,
     direction: 1,
     segments: {
@@ -24,7 +24,7 @@ const landingAnimationData = [
   {
     key: '2landingAnim',
     loop: false,
-    speed: [1],
+    speed: 0.25,
     play: true,
     direction: 1,
     segments: {

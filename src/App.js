@@ -31,6 +31,7 @@ function App() {
         //   hamburger,
         // }}
       />
+      <div style={{clear:"both",display:"block"}}></div>
       <Switch>
         <Route path='/home' component={HomePage} exact />
         <Route path='/fullPageDemo' component={FullPageDemo} exact />

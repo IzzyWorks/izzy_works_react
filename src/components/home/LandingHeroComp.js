@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 // components
 import Circles from './Circles';
@@ -45,28 +45,42 @@ function LandingHero(props) {
   //   },
   // };
 
-  // const handleClick = (props, e) => {
-  //   // console.log('inside eventhandler ===>', props);
-  //   setSpeed(landingAnimationData.speed),
-  //     setOnHover(landingAnimationData.onHover),
-  //     setOnClick(landingAnimationData.onClick);
-  // };
+  const [animationDataDynamic,setAnimationDataDynamic] = useState([{
+    key: '0landingAnim',
+    loop: true,
+    speed: 0.25,
+    play: true,
+    direction: 1,
+    segments: [1,35],
+    width: '100%',
+    height: '100vh'
+  }]);
+
+  const handleClick = (e) => {
+    console.log("the element clicked!",e.target);
+  };
+
+  const mouEnterHandler = (e) => {
+    console.log("hello form mouse enter!",e.target);
+  }
 
   console.log('props inside landging page', props);
   return (
-    <div className='landing'>
-      <div className={'landing__wrapper'}>
-        {landingAnimationData.map((loadingAnimations) => (
+    <div>
+      {/* <div className={'testLottie'}> 
+        {animationDataDynamic.map((loadingAnimations) => (
           <Circles
+            clickHandler = {handleClick}
+            mouseEnter = {mouEnterHandler}
             key={loadingAnimations.key}
             // lottieAnimation={circleObicAnim}
             animationData={loadingAnimations}
           />
         ))}
-      </div>
+      </div> */}
       <ul className='circle--list'>
         <li className='circle--segment'>
-          <ul className='circle--catagory hide'>
+          <ul className='circle--catagory'>
             <li>
               <div className='circle one'></div>
               <h3 className='circle--subtitle'>understand</h3>

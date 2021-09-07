@@ -11,7 +11,6 @@ function Section(props) {
 
   const lottiedata = {
     animation: props.lottieAnimation,
-    obicAnim: props.obicAnimation,
     controlles: {
       //dynamic data
       segments: [frames[0], frames[1]],

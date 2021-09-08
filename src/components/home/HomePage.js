@@ -12,8 +12,8 @@ import contentData from '../data/ContentData';
 // import landingAnimationData from '../data/LandingAnimationData';
 
 //lottie Background POC animation Data
-import lottieAnimationAE from '../data/poc-background-animation.json';
-import obicLottieAnimation from '../data/obic-home-transition.json';
+import obicAnimation from '../data/obic-transition.json';
+// import obicLottieAnimation from '../data/';
 
 const HomePage = (props) => {
   // console.log('Re-rendering Home Page =====>');
@@ -28,8 +28,7 @@ const HomePage = (props) => {
       {contentData.map((articleData) => (
         <Section
           key={uuid()}
-          lottieAnimation={lottieAnimationAE}
-          obicAnimation={obicLottieAnimation}
+          lottieAnimation={obicAnimation}
           section={articleData}
         />
       ))}

@@ -2,3 +2,13 @@
   will-change: transform;
   transform: translateY(0vh);
 }
+
+.baseAnimation{
+  position: relative;
+  left:1200px;
+  transition: left 2s ease-in;
+}
+
+.targetAnimation{
+  left:100px;
+}

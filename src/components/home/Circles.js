@@ -10,8 +10,8 @@ function Circles(props) {
   console.log('inside section ====>', props);
 
   return (
-    <div>
-      <LottieWrapper animation={circleObicAnim} animationData={animationData} />
+    <div onClick={props.clickHandler} onMouseEnter={props.mouseEnter}>
+      <LottieWrapper type={'circle'} animation={circleObicAnim} animationData={props.animationData} />
     </div>
   );
 }

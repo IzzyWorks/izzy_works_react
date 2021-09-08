@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
-// import uuid from 'react-uuid';
 
 //components
-import Logo from '../Logo';
+import Logo from './Logo';
 
 //data
 import lottieLogo from '../data/logo.json';
 
 function NavBar(props) {
-  // console.log('Data into NavBar ===>', props);
+  // 🔥🔥🔥 Logo Lottie Behavior 🔥🔥🔥
+
+  //console.log('Props passed into NavBar ===>', props);
   const [frames, setFrames] = useState([0, 1]);
   const [speed, setSpeed] = useState([0]);
   const [previousPage, setPreviousPage] = useState([0]);
@@ -18,7 +19,7 @@ function NavBar(props) {
   const [fontColor, setFontColor] = useState('black');
 
   const handleClick = (props, e) => {
-    // console.log('inside eventhandler ===>', props);
+    // console.log('inside navbar eventhandler ===>', props);
     setCurrentPage(props.navItem.page),
       setSpeed(props.navItem.speed),
       setDirection(currentPage > previousPage ? 1 : -1),
@@ -31,8 +32,10 @@ function NavBar(props) {
       );
   };
 
+  // 🔥🔥🔥 Hash-Link 🔥🔥🔥
+
   const HashNavWrapper = (props) => {
-    // console.log('HashNavWraper props ==>', props);
+    // console.log('inside HashNavWraper  ===>', props);
     return (
       <HashLink
         data-navobj={props.navItem}
@@ -47,6 +50,9 @@ function NavBar(props) {
       </HashLink>
     );
   };
+
+  // 🔥🔥🔥 Navbar 🔥🔥🔥
+
   return (
     <nav className='navbar__wrapper'>
       <div className='navbar__left-container'>
@@ -66,7 +72,7 @@ function NavBar(props) {
       </div>
       <div className='navbar__right-container'>
         <ul className='navbar__list'>
-          {/* {console.log('props ==> navbar list', props.navBarData)} */}
+          {/* {console.log('rendering navbar list ===>', props.navBarData)} */}
           {props.navBarData
             // .filter(
             //   (navBarData) =>
@@ -81,9 +87,6 @@ function NavBar(props) {
               </li>
             ))}
         </ul>
-        {/* <button onClick={props.hamburgerSwitch.handleClickEvent}>
-          {props.hamburgerSwitch.label}
-        </button> */}
       </div>
     </nav>
   );

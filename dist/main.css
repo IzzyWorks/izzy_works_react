@@ -1,6 +1,6 @@
-/*!*************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
-  \*************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/scss/main.scss ***!
+  \************************************************************************************************************************/
 @font-face {
   font-family: "IBM Plex Sans";
   src: url(fonts/IBMPlexSans-BoldItalic.woff2) format("woff2"), url(fonts/IBMPlexSans-BoldItalic.woff) format("woff");

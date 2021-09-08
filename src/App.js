@@ -1,19 +1,16 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { useState } from 'react';
-import './scss/main.scss';
+import './components/scss/main.scss';
 
 //components
-import HomePage from './components/home/HomePage';
+import HomePage from './components/homePage/HomePage';
 import NavBar from './components/nav/NavBar';
-
-//FullPage Demo TEST
-import FullPageDemo from './components/FullPageDemo/FullPageDemo';
 
 // data
 import navBarData from './components/data/NavData';
 
 function App() {
+  // 🔥🔥🔥 Hamburger Behavior 🔥🔥🔥
   // const [hamburger, setHamburger] = useState(false);
   // const [showHide, setShowHide] = useState(true);
   // const handleClickEvent = () => {
@@ -31,10 +28,9 @@ function App() {
         //   hamburger,
         // }}
       />
-      <div style={{clear:"both",display:"block"}}></div>
+      <div></div>
       <Switch>
         <Route path='/home' component={HomePage} exact />
-        <Route path='/fullPageDemo' component={FullPageDemo} exact />
         <Route path='/*'>
           <Redirect to='/home' component={HomePage} />
         </Route>

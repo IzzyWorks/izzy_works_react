@@ -9,6 +9,8 @@ import Documents from './Documents';
 //data
 import contentData from '../data/ContentData';
 
+import TransgroupPoc from '../TransitionGroupPOC/index';
+
 // 🔥🔥🔥 POC 🔥🔥🔥
 //lottie Background POC animation Data
 import obicAnimation from '../data/obic-transition.json';
@@ -17,6 +19,7 @@ const HomePage = () => {
   // console.log('Re-rendering Home Page =====>');
   return (
     <div className='home__wrapper'>
+      <TransgroupPoc/>
       <section id='home'>
         <LandingPage id='Landing' className='section__wrapper landing' />
       </section>

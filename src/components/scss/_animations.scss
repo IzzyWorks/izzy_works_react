@@ -12,3 +12,12 @@
 .targetAnimation{
   left:100px;
 }
+
+.myTitle-enter{
+  opacity: 0;
+}
+
+.myTitle-enter-active{
+  opacity: .5;
+  transition: opacity 1000ms;
+}

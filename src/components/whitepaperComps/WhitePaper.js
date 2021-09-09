@@ -8,8 +8,6 @@ import Synopsis from './Synopsis';
 import Details from './detailsComps/DetailsCard';
 
 function WhitePaper(props) {
-  // console.log('inside whitepaper ===>', props);
-  const [animateClass, setAnimateClass] = useState('');
 
   const [pageNo, setPageNo] = useState(1);
 
@@ -20,18 +18,16 @@ function WhitePaper(props) {
     4: 'HapMap',
   };
 
-  const history = useHistory();
-
   useEffect(() => {
     // setTimeout(()=>{
     //   let animationclasses = animateClass.concat(' targetAnimation');
     //   console.log("In Use effect after 3 Seconds ====>")
     //   setAnimateClass(animationclasses);
     // },5000);
-    console.log('In Use effect! =====>', pagePositionNScroll[pageNo]);
+    //console.log('In Use effect! =====>', pagePositionNScroll[pageNo]);
     //history.push(pagePositionNScroll[pageNo]);
     document.addEventListener('scroll', onScrollHandler);
-  }, [pageNo]);
+  },[pageNo]);
 
   const onScrollHandler = (e) => {
     let el = window;
@@ -39,7 +35,7 @@ function WhitePaper(props) {
       x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
       y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,
     };
-    //console.log("widthNHeightObj ===>",widthNHeightObj);
+    //console.log("widthNHeightObj ===>",widthNHeightObj,document.body.clientHeight);
 
     let whichPageIamIn = Math.ceil(
       widthNHeightObj.y / document.body.clientHeight
@@ -47,17 +43,16 @@ function WhitePaper(props) {
 
     //console.log("786 ===>",whichPageIamIn);
     pageNo != whichPageIamIn
-      ? (setPageNo(whichPageIamIn), setAnimateClass('targetAnimation'))
+      ? (setPageNo(whichPageIamIn))
       : '';
   };
 
   return (
     <article
-      onScroll={onScrollHandler}
       key={uuid()}
       className={`article__wrapper ${props.whitePaper.style}`}
     >
-      <Title classes={animateClass} articleTitle={props.whitePaper.id} />
+      <Title articleTitle={props.whitePaper.id} />
       <Synopsis articleSynopsis={props.whitePaper.synopsis} />
       <Details articleDetails={props.whitePaper.details} />
     </article>

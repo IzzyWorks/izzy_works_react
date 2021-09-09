@@ -1,31 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import animationStyles from '../../animationStylesModel';
 
 function Title(props) {
   let classes = props.classes;
 
   const [cssTransition, setCssTransition] = useState();
 
-  /* This CSS style is applied when the drawer is opened */
-  const openedStyle = {
-    left: '1200px' /* max-with is 100% when the drawer is opened */,
-    /* Upon transitioning to Open,
-     animate `max-width' for 0.5s*/
-    transition: 'max-width 0.5s',
-  };
-
-  /* This CSS style is applied when the drawer is closed */
-  const closedStyle = {
-    left: '0px' /* max-width is 0 in the closed drawer */,
-    /* Upon transitioning to Closed,
-     animate `max-width' for 0.5s */
-    transition: 'left 2s ease-in',
-  };
+  //let myChange = props.MyArray.Somevalue == 'red' ? true : false;
 
   useEffect(() => {
+    console.log("Mounting====>");
     setTimeout(() => {
-      setCssTransition(closedStyle);
+      setCssTransition(animationStyles["1"].title.onMount);
     }, 0);
-  }, []);
+  }, [props.myArray]);
+
+  // useEffect(()=>{ //Somevalue
+
+  // },[myChange]);
 
   return (
     <React.Fragment>

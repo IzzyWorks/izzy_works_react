@@ -8,7 +8,7 @@ import Synopsis from './Synopsis';
 import Details from './detailsComps/DetailsCard';
 
 function WhitePaper(props) {
-  console.log('whitepaper ===>', props);
+  // console.log('inside whitepaper ===>', props);
   const [animateClass, setAnimateClass] = useState('');
 
   const [pageNo, setPageNo] = useState(1);

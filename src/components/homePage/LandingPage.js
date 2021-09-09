@@ -25,52 +25,49 @@ function LandingPage() {
       <ul className='circle--list'>
         <li className='circle--segment'>
           <ul className='circle--catagory'>
-            <li>
-              <div className='circle one'></div>
-              <h3 className='circle--subtitle'>understand</h3>
-            </li>
-            <li>
-              <div className='circle two'></div>
-              <h3 className='circle--subtitle'>observe</h3>
-            </li>
-            <li>
-              <div className='circle three'></div>
-              <h3 className='circle--subtitle'>POV</h3>
-            </li>
+            <article className='zoom-out-siblings'>
+              <button className='circle one'>
+                <h3 className='circle--subtitle'>understand</h3>
+              </button>
+              <button className='circle two'>
+                <h3 className='circle--subtitle'>observe</h3>
+              </button>
+              <button className='circle three'>
+                <h3 className='circle--subtitle'>POV</h3>
+              </button>
+            </article>
           </ul>
         </li>
 
         <li className='circle--segment'>
           <ul className='circle--catagory'>
-            <li>
-              <div className='circle four'></div>
-              <h3 className='circle--subtitle'>ideate</h3>
-            </li>
-            <li>
-              <div className='circle five'></div>
-              <h3 className='circle--subtitle'>prototype</h3>
-            </li>
-            <li>
-              <div className='circle six'></div>
-              <h3 className='circle--subtitle'>test</h3>
-            </li>
+            <article className='zoom-out-siblings'>
+              <button className='circle four'>
+                <h3 className='circle--subtitle'>ideate</h3>
+              </button>
+              <button className='circle five'>
+                <h3 className='circle--subtitle'>prototype</h3>
+              </button>
+              <button className='circle six'>
+                <h3 className='circle--subtitle'>test</h3>
+              </button>
+            </article>
           </ul>
         </li>
 
         <li className='circle--segment'>
           <ul className='circle--catagory'>
-            <li>
-              <div className='circle seven'></div>
-              <h3 className='circle--subtitle'>story telling</h3>
-            </li>
-            <li>
-              <div className='circle eight'></div>
-              <h3 className='circle--subtitle'>piolt</h3>
-            </li>
-            <li>
-              <div className='circle nine'></div>
-              <h3 className='circle--subtitle'>busines model</h3>
-            </li>
+            <article className='zoom-out-siblings'>
+              <button className='circle seven'>
+                <h3 className='circle--subtitle'>story telling</h3>
+              </button>
+              <button className='circle eight'>
+                <h3 className='circle--subtitle'>piolt</h3>
+              </button>
+              <button className='circle nine'>
+                <h3 className='circle--subtitle overflow'>busines model</h3>
+              </button>
+            </article>
           </ul>
         </li>
       </ul>

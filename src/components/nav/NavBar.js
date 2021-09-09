@@ -10,26 +10,31 @@ import lottieLogo from '../data/logo.json';
 function NavBar(props) {
   // 🔥🔥🔥 Logo Lottie Behavior 🔥🔥🔥
 
-  //console.log('Props passed into NavBar ===>', props);
-  const [frames, setFrames] = useState([0, 1]);
-  const [speed, setSpeed] = useState([0]);
-  const [previousPage, setPreviousPage] = useState([0]);
-  const [currentPage, setCurrentPage] = useState([0]);
+  // console.log('Props passed into NavBar ===>', props);
+  const [currentFrame, setCurrentFrame] = useState(1);
+  const [previousLastFrame, setPreviousLastFrame] = useState(1);
+  const [frames, setFrames] = useState([1, 1]);
+  const [speed, setSpeed] = useState(0);
+  const [previousPage, setPreviousPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [direction, setDirection] = useState(1);
   const [fontColor, setFontColor] = useState('black');
+  console.log('frame useStates  ===>', currentFrame, previousLastFrame);
+  console.log('page useStates  ===>', currentPage, previousPage);
+  console.log('direction useStates  ===>', direction);
+  console.log('speed useStates  ===>', speed);
 
   const handleClick = (props, e) => {
     // console.log('inside navbar eventhandler ===>', props);
-    setCurrentPage(props.navItem.page),
-      setSpeed(props.navItem.speed),
-      setDirection(currentPage > previousPage ? 1 : -1),
-      setPreviousPage(previousPage == currentPage),
-      setFontColor(props.navItem.fontColor),
-      setFrames(
-        direction == 1
-          ? props.navItem.frameForward
-          : props.navItem.frameBackward
-      );
+    currentPage >= previousPage ? setDirection(1) : setDirection(-1);
+    setCurrentPage(props.navItem.page);
+    setPreviousLastFrame(props.navItem.lastFrame);
+    setCurrentFrame(props.navItem.firstFrame);
+    setFrames([currentFrame, previousLastFrame]);
+    setSpeed(props.navItem.speed);
+    setPreviousPage(currentPage);
+
+    // setFontColor(props.navItem.fontColor);
   };
 
   // 🔥🔥🔥 Hash-Link 🔥🔥🔥
@@ -60,9 +65,9 @@ function NavBar(props) {
           <Logo
             animation={lottieLogo} //shapes JSON data
             animationData={{
-              segments: [frames[0], frames[1]],
+              segments: [frames[1], frames[1]],
               direction: direction,
-              speed: speed[0],
+              speed: speed,
               play: true,
               loop: false,
             }}
@@ -72,7 +77,7 @@ function NavBar(props) {
       </div>
       <div className='navbar__right-container'>
         <ul className='navbar__list'>
-          {/* {console.log('rendering navbar list ===>', props.navBarData)} */}
+          {/* {console.log('rendering navbar list', props.navBarData)} */}
           {props.navBarData
             // .filter(
             //   (navBarData) =>

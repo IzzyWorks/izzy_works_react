@@ -21,7 +21,7 @@ const LottieWrapper = memo((props) => {
     return loopTimes;
   }
 
-   console.log('In Lottie ===>', props);
+  // console.log('Inside Lottie Player ===>', props);
 
   return (
     <Lottie
@@ -38,7 +38,9 @@ const LottieWrapper = memo((props) => {
       }}
       style={{
         width: props.animationData.width ? props.animationData.width : '100%',
-        height: props.animationData.height ? props.animationData.height : 'auto'
+        height: props.animationData.height
+          ? props.animationData.height
+          : 'auto',
       }}
       onSegmentStart={() => addLog('segmentStart')}
       onLoad={() => addLog('load')}

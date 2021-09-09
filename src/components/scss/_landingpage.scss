@@ -1,0 +1,134 @@
+.circle--list {
+  position: relative;
+  top: 0rem;
+  display: flex;
+  height: 100vh;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    //   padding: 0rem 1.25rem 0rem 1.25rem;
+  }
+  @include tablet-hd {
+    align-items: unset;
+    padding-top: 45vh;
+    // padding: 6rem 3rem 0 3rem;
+    flex-flow: row;
+  }
+  @include desktop {
+    // padding: 0rem 3rem 0 3rem;
+  }
+}
+
+.one {
+  background-image: radial-gradient(circle at top right, #ff7200, #ffd500 80%);
+  //   filter: blur(0.125rem);
+}
+.two {
+  margin: 0 1rem;
+  background-image: radial-gradient(
+    circle at bottom right,
+    #ff0000,
+    #ff9100 70%
+  );
+  //   filter: blur(0.125rem);
+}
+.three {
+  background-image: radial-gradient(circle at top left, #e08995, #ff0000 45%);
+  //   filter: blur(0.125rem);
+}
+.four {
+  background-image: radial-gradient(
+    circle at bottom center,
+    #ff0084,
+    #a100e6 80%
+  );
+  //   filter: blur(0.125rem);
+}
+.five {
+  margin: 0 1rem;
+  background-image: radial-gradient(circle at top center, #3b0753, #8900ff 90%);
+  //   filter: blur(0.125rem);
+}
+.six {
+  background-image: radial-gradient(
+    circle at bottom right,
+    #290883,
+    #0e00fd 70%
+  );
+  //   filter: blur(0.125rem);
+}
+.seven {
+  background-image: radial-gradient(circle at top right, #001654, #0095ff 80%);
+  //   filter: blur(0.125rem);
+}
+.eight {
+  margin: 0 1rem;
+  background-image: radial-gradient(
+    circle at bottom right,
+    #00ff62,
+    #007bff 70%
+  );
+  //   filter: blur(0.125rem);
+}
+.nine {
+  background-image: radial-gradient(
+    circle at bottom right,
+    #03520b,
+    #5ad900 90%
+  );
+  //   filter: blur(0.125rem);
+}
+
+.circle {
+  justify-content: flex-start;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 4.5rem;
+  border: none;
+  margin: 0.45rem 0.25rem;
+}
+
+.zoom-out-siblings {
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.zoom-out-siblings > * {
+  cursor: pointer;
+  pointer-events: auto;
+  transition: 300ms top, 300ms height;
+}
+
+.zoom-out-siblings:hover > * {
+  height: 5.25rem;
+}
+
+.zoom-out-siblings:hover > *:hover {
+  height: 6rem;
+}
+
+.circle--segment {
+  padding: 0 0 3rem 0;
+  @include tablet {
+    // padding: 0 0.5rem 0rem 0.5rem;
+  }
+}
+
+.circle--catagory {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+}
+
+.circle--subtitle {
+  position: relative;
+  display: flex;
+  top: 4rem;
+  justify-content: center;
+  font-size: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

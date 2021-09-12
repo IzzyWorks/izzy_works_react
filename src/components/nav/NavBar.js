@@ -19,10 +19,10 @@ function NavBar(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [direction, setDirection] = useState(1);
   const [fontColor, setFontColor] = useState('black');
-  console.log('frame useStates  ===>', currentFrame, previousLastFrame);
-  console.log('page useStates  ===>', currentPage, previousPage);
-  console.log('direction useStates  ===>', direction);
-  console.log('speed useStates  ===>', speed);
+  // console.log('frame useStates  ===>', currentFrame, previousLastFrame);
+  // console.log('page useStates  ===>', currentPage, previousPage);
+  // console.log('direction useStates  ===>', direction);
+  // console.log('speed useStates  ===>', speed);
 
   const handleClick = (props, e) => {
     // console.log('inside navbar eventhandler ===>', props);

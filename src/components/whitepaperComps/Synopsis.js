@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Synopsis(props) {
+  console.log('in synopsis', props);
   return (
     <React.Fragment>
       <div className='synopsis-wrapping'>

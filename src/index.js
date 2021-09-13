@@ -7,11 +7,13 @@ import {
   NavLink,
 } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 
 //components
-import NavBar from '../src/components/nav/NavBar';
-import LandingPage from '../src/components/whitepaperComps/WhitePaper';
-import AboutPage from '../src/components/homePage/About';
+// import NavBar from '../src/components/nav/NavBar';
+import LandingPage from './components/pages/LandingPage';
+import WhitePaper from './components/pages/WhitePaperPage';
+import AboutPage from './components/pages/AboutPage';
 import './components/scss/main.scss';
 
 //data
@@ -20,21 +22,36 @@ import ContentData from './components/data/ContentData';
 const routes = [
   { path: '/', name: 'Home', Component: LandingPage },
   {
-    path: ContentData.path,
-    name: ContentData.id,
-    Component: ContentData,
+    path: '/obic',
+    name: 'OBIC',
+    Component: WhitePaper,
+    PageContent: ContentData,
   },
-  // { path: '/tldnr', name: 'tldnr', Component: Home },
-  // { path: '/hapmap', name: 'HapMap', Component: About },
-  { path: '/about', name: 'About', Component: AboutPage },
+  {
+    path: '/tldnr',
+    name: 'tldnr',
+    Component: WhitePaper,
+    PageContent: ContentData,
+  },
+  {
+    path: '/hapmap',
+    name: 'HapMap',
+    Component: WhitePaper,
+    PageContent: ContentData,
+  },
+  {
+    path: '/about',
+    name: 'About',
+    Component: AboutPage,
+  },
 ];
 
 function Example() {
   return (
     <Router>
       <>
-        <NavBar bg='light'>
-          <NavBar className='mx-auto'>
+        <Navbar bg='light'>
+          <Nav className='mx-auto'>
             {routes.map((route) => (
               <Nav.Link
                 key={route.path}
@@ -46,26 +63,28 @@ function Example() {
                 {route.name}
               </Nav.Link>
             ))}
-          </NavBar>
-        </NavBar>
-        <Container className='index-container'>
-          {routes.map(({ path, Component }) => (
+          </Nav>
+        </Navbar>
+        <div className='index-container'>
+          {routes.map(({ path, Component, PageContent }) => (
             <Route key={path} exact path={path}>
               {({ match }) => (
                 <CSSTransition
                   in={match != null}
                   timeout={300}
                   classNames='page'
+                  // onEnter={(whitePaper) => (props, whitePaper)}
+                  // }}
                   unmountOnExit
                 >
                   <div className='page'>
-                    <Component />
+                    <Component whitePaper={PageContent} />
                   </div>
                 </CSSTransition>
               )}
             </Route>
           ))}
-        </Container>
+        </div>
       </>
     </Router>
   );

@@ -3,7 +3,7 @@ import * as React from 'react';
 //components
 import LandingPage from './LandingPage';
 import Section from './Sections';
-import About from './About';
+import About from './AboutPage';
 import Documents from './Documents';
 
 //data
@@ -19,7 +19,7 @@ const HomePage = () => {
   // console.log('Re-rendering Home Page =====>');
   return (
     <div className='home__wrapper'>
-      <TransgroupPoc/>
+      <TransgroupPoc />
       <section id='home'>
         <LandingPage id='Landing' className='section__wrapper landing' />
       </section>

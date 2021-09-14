@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  NavLink,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { Container, Navbar, Nav } from 'react-bootstrap';
 
 //components
-// import NavBar from '../src/components/nav/NavBar';
 import LandingPage from './components/pages/LandingPage';
 import WhitePaper from './components/pages/WhitePaperPage';
 import AboutPage from './components/pages/AboutPage';
+import NavBar from './components/nav/NavBar';
 import './components/scss/main.scss';
 
 //data
 import ContentData from './components/data/ContentData';
+import NavBarData from './components/data/NavBarData';
 
 const routes = [
   { path: '/', name: 'Home', Component: LandingPage },
@@ -49,43 +44,25 @@ const routes = [
 function Example() {
   return (
     <Router>
-      <>
-        <Navbar bg='light'>
-          <Nav className='mx-auto'>
-            {routes.map((route) => (
-              <Nav.Link
-                key={route.path}
-                as={NavLink}
-                to={route.path}
-                activeClassName='active'
-                exact
+      <NavBar NavBarData={NavBarData} />
+      <div className='index-container'>
+        {routes.map(({ path, Component, PageContent }) => (
+          <Route key={path} exact path={path}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={300}
+                classNames='page'
+                unmountOnExit
               >
-                {route.name}
-              </Nav.Link>
-            ))}
-          </Nav>
-        </Navbar>
-        <div className='index-container'>
-          {routes.map(({ path, Component, PageContent }) => (
-            <Route key={path} exact path={path}>
-              {({ match }) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout={300}
-                  classNames='page'
-                  // onEnter={(whitePaper) => (props, whitePaper)}
-                  // }}
-                  unmountOnExit
-                >
-                  <div className='page'>
-                    <Component whitePaper={PageContent} />
-                  </div>
-                </CSSTransition>
-              )}
-            </Route>
-          ))}
-        </div>
-      </>
+                <div className='page'>
+                  <Component whitePaper={PageContent} />
+                </div>
+              </CSSTransition>
+            )}
+          </Route>
+        ))}
+      </div>
     </Router>
   );
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 //components
-import LandingPage from './LandingPage';
+import LandingPage from '../pages/LandingPage';
 import Section from './Sections';
-import About from './AboutPage';
-import Documents from './Documents';
+import About from '../pages/AboutPage';
+import Documents from '../pages/Documents';
 
 //data
 import contentData from '../data/ContentData';
@@ -21,7 +21,7 @@ const HomePage = () => {
     <div className='home__wrapper'>
       <TransgroupPoc />
       <section id='home'>
-        <LandingPage id='Landing' className='section__wrapper landing' />
+        {/* <LandingPage id='Landing' className='section__wrapper landing' /> */}
       </section>
       {contentData.map((articleData) => (
         <Section

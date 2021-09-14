@@ -1,5 +1,4 @@
 import React from 'react';
-// import Lottie from './LottiePlayer/Lottie';
 
 function AboutPage() {
   return (

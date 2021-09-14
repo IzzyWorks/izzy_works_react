@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import animationStyles from '../../animationStylesModel';
+import animationStyles from '../../../animationStylesModel';
 
 function Title(props) {
   let classes = props.classes;
@@ -9,9 +9,9 @@ function Title(props) {
   //let myChange = props.MyArray.Somevalue == 'red' ? true : false;
 
   useEffect(() => {
-    console.log("Mounting====>");
+    console.log('Mounting====>');
     setTimeout(() => {
-      setCssTransition(animationStyles["1"].title.onMount);
+      setCssTransition(animationStyles['1'].title.onMount);
     }, 0);
   }, [props.myArray]);
 

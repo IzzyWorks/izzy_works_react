@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^12.8.3",
     "fullpage.js": "^3.1.0",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.6.3",
     "react-dom": "^17.0.2",
     "react-lottie-player": "^1.4.0",
     "react-router-dom": "^5.2.1",

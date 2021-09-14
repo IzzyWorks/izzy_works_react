@@ -1,4 +1,4 @@
-const sectionDataArr = [
+const contentData = [
   {
     id: 'OBIC',
     path: '/obic',
@@ -278,4 +278,4 @@ const sectionDataArr = [
   },
 ];
 
-export default sectionDataArr;
+export default contentData;

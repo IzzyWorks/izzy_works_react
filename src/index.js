@@ -4,10 +4,15 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 //components
-import LandingPage from './components/pages/LandingPage';
-import WhitePaper from './components/pages/WhitePaperPage';
-import AboutPage from './components/pages/AboutPage';
 import NavBar from './components/nav/NavBar';
+import LandingPage from './components/pages/LandingPage';
+// import WhitePaper from './components/pages/WhitePaperPage';
+import OBICPage from './components/pages/OBICPage';
+import TldnrPage from './components/pages/TldnrPage';
+import HapMapPage from './components/pages/HapMapPage';
+import AboutPage from './components/pages/AboutPage';
+
+//css
 import './components/scss/main.scss';
 
 //data
@@ -19,20 +24,23 @@ const routes = [
   {
     path: '/obic',
     name: 'OBIC',
-    Component: WhitePaper,
-    PageContent: ContentData,
+    // Component: WhitePaper,
+    Component: OBICPage,
+    //PageContent: ContentData,
   },
   {
     path: '/tldnr',
     name: 'tldnr',
-    Component: WhitePaper,
-    PageContent: ContentData,
+    // Component: WhitePaper,
+    Component: TldnrPage,
+    //PageContent: ContentData,
   },
   {
     path: '/hapmap',
     name: 'HapMap',
-    Component: WhitePaper,
-    PageContent: ContentData,
+    // Component: WhitePaper,
+    Component: HapMapPage,
+    //PageContent: ContentData,
   },
   {
     path: '/about',
@@ -46,7 +54,7 @@ function Example() {
     <Router>
       <NavBar NavBarData={NavBarData} />
       <div className='index-container'>
-        {routes.map(({ path, Component, PageContent }) => (
+        {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
@@ -56,7 +64,7 @@ function Example() {
                 unmountOnExit
               >
                 <div className='page'>
-                  <Component whitePaper={PageContent} />
+                  <Component />
                 </div>
               </CSSTransition>
             )}

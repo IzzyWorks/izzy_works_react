@@ -34,7 +34,6 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 // };
 
 const NavWrapper = (props) => {
-  console.log('inside HashNavWraper  ===>', props);
   return (
     <NavLink
       key={props.NavBarData.key}

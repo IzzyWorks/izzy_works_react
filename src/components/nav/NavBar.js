@@ -11,7 +11,6 @@ import lottieLogo from '../data/logo.json';
 function NavBar(props) {
   // 🔥🔥🔥 Logo Lottie Behavior 🔥🔥🔥
 
-  console.log('Props passed into NavBar ===>', props);
   // const [currentFrame, setCurrentFrame] = useState(1);
   // const [previousLastFrame, setPreviousLastFrame] = useState(1);
   // const [frames, setFrames] = useState([1, 1]);
@@ -59,20 +58,13 @@ function NavBar(props) {
       </div>
       <div className='navbar__right-container'>
         <ul className='navbar__list'>
-          {/* {console.log('rendering navbar list', props.navBarData)} */}
-          {props.NavBarData
-            // .filter(
-            //   (navBarData) =>
-            //     navBarData.desktop == props.hamburgerSwitch.hamburger ||
-            //     !props.hamburgerSwitch.hamburger
-            // )
-            .map((NavBarData) => (
-              <li key={NavBarData.key} className='navbar__links'>
-                <h3 className={'black'}>
-                  <NavWrapper NavBarData={NavBarData} />
-                </h3>
-              </li>
-            ))}
+          {props.NavBarData.map((NavBarData) => (
+            <li key={NavBarData.key} className='navbar__links'>
+              <h3 className={'black'}>
+                <NavWrapper NavBarData={NavBarData} />
+              </h3>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
@@ -80,24 +72,3 @@ function NavBar(props) {
 }
 
 export default NavBar;
-
-// 🔥🔥🔥 Hash-Link 🔥🔥🔥
-
-// const NavWrapper = (props) => {
-//   console.log('inside HashNavWraper  ===>', props);
-//   return (
-//     <HashLink
-//       data-navobj={props.NavBarData}
-//       data-title={props.NavBarData.title}
-//       onClick={(e) => {
-//         handleClick(props, e);
-//       }}
-//       scroll={(el) =>
-//         el.scrollIntoView({ behavior: props.NavBarData.effect })
-//       }
-//       to={'/home#' + props.NavBarData.title}
-//     >
-//       {props.NavBarData.title}
-//     </HashLink>
-//   );
-// };

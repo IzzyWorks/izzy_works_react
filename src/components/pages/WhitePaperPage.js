@@ -6,6 +6,7 @@ import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
 function WhitePaperPage(props) {
+  console.log('white', props);
   return (
     <div>
       {props.whitePaper.map((whitePaper) => (

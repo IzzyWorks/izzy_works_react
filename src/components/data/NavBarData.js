@@ -13,6 +13,8 @@ const navBarData = [
     desktop: false,
     fontColor: 'black',
     whitePaper: false,
+    Component: 'LandingPage',
+    PageContent: null,
   },
   {
     key: '1nav',
@@ -28,6 +30,8 @@ const navBarData = [
     desktop: false,
     fontColor: 'white',
     whitePaper: true,
+    Component: 'OBICPage',
+    PageContent: 'ContentData',
   },
   {
     key: '2nav',
@@ -43,6 +47,8 @@ const navBarData = [
     desktop: false,
     fontColor: 'white',
     whitePaper: true,
+    Component: 'TldnrPage',
+    PageContent: 'ContentData',
   },
   {
     key: '3nav',
@@ -58,6 +64,8 @@ const navBarData = [
     desktop: false,
     fontColor: 'white',
     whitePaper: true,
+    Component: 'HapMapPage',
+    PageContent: 'ContentData',
   },
   {
     key: '4nav',
@@ -73,6 +81,8 @@ const navBarData = [
     desktop: true,
     fontColor: 'black',
     whitePaper: false,
+    Component: 'AboutPage',
+    PageContent: null,
   },
 ];
 

@@ -1,6 +1,7 @@
 const sectionDataArr = [
   {
     id: 'OBIC',
+    path: '/obic',
     style: 'obic',
     details: {
       authors: [
@@ -91,6 +92,7 @@ const sectionDataArr = [
   },
   {
     id: 'tldnr',
+    path: '/tldnr',
     style: 'tldnr',
     details: {
       authors: [
@@ -190,6 +192,7 @@ const sectionDataArr = [
   },
   {
     id: 'HapMap',
+    path: '/hapmap',
     style: 'hapmap',
     details: {
       authors: [

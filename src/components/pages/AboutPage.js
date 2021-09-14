@@ -1,7 +1,6 @@
 import React from 'react';
-// import Lottie from './LottiePlayer/Lottie';
 
-function About() {
+function AboutPage() {
   return (
     <div className='about__wrapper'>
       <h1>about</h1>
@@ -9,4 +8,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;

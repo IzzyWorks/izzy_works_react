@@ -5,12 +5,8 @@ import Title from './whitePaper/Title';
 import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
-//data
-import ContentData from '../data/ContentData';
-
-const whitePaper = ContentData[1];
-
-function TldrnPage() {
+function TldrnPage(props) {
+  const whitePaper = props.whitePaper;
   return (
     <div>
       <article

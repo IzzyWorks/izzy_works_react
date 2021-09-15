@@ -9,7 +9,7 @@ function Title(props) {
   //let myChange = props.MyArray.Somevalue == 'red' ? true : false;
 
   useEffect(() => {
-    console.log('Mounting====>');
+    // console.log('Mounting====>');
     setTimeout(() => {
       setCssTransition(animationStyles['1'].title.onMount);
     }, 0);

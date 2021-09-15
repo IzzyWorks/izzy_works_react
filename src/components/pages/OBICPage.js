@@ -5,14 +5,8 @@ import Title from './whitePaper/Title';
 import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
-//data
-import ContentData from '../data/ContentData';
-
-const whitePaper = ContentData[0];
-
-function OBICPage() {
-  console.log('whitepaper ===>', ContentData[0]);
-
+function OBICPage(props) {
+  const whitePaper = props.whitePaper;
   return (
     <article
       key={whitePaper.id}

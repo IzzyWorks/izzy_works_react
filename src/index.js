@@ -6,7 +6,6 @@ import { CSSTransition } from 'react-transition-group';
 //components
 import NavBar from './components/nav/NavBar';
 import LandingPage from './components/pages/LandingPage';
-// import WhitePaper from './components/pages/WhitePaperPage';
 import OBICPage from './components/pages/OBICPage';
 import TldnrPage from './components/pages/TldnrPage';
 import HapMapPage from './components/pages/HapMapPage';
@@ -23,24 +22,20 @@ const routes = [
   { path: '/', name: 'Home', Component: LandingPage },
   {
     path: '/obic',
-    name: 'OBIC',
-    // Component: WhitePaper,
     Component: OBICPage,
-    //PageContent: ContentData,
+    PageContent: ContentData[0],
   },
   {
     path: '/tldnr',
     name: 'tldnr',
-    // Component: WhitePaper,
     Component: TldnrPage,
-    //PageContent: ContentData,
+    PageContent: ContentData[1],
   },
   {
     path: '/hapmap',
     name: 'HapMap',
-    // Component: WhitePaper,
     Component: HapMapPage,
-    //PageContent: ContentData,
+    PageContent: ContentData[2],
   },
   {
     path: '/about',
@@ -53,24 +48,24 @@ function Example() {
   return (
     <Router>
       <NavBar NavBarData={NavBarData} />
-      <div className='index-container'>
-        {routes.map(({ path, Component }) => (
+      <section className='section__wrapper'>
+        {routes.map(({ path, Component, PageContent }) => (
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames='page'
+                in={match}
+                timeout={1000}
+                classNames='scroll-down'
                 unmountOnExit
               >
-                <div className='page'>
-                  <Component />
+                <div>
+                  <Component whitePaper={PageContent} />
                 </div>
               </CSSTransition>
             )}
           </Route>
         ))}
-      </div>
+      </section>
     </Router>
   );
 }

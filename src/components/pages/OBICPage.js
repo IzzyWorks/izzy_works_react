@@ -6,6 +6,7 @@ import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
 function OBICPage(props) {
+  console.log('Rendering OBIC Page...');
   const whitePaper = props.whitePaper;
   return (
     <article

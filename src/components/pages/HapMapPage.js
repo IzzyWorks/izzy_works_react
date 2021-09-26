@@ -6,6 +6,7 @@ import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
 function HapMapPage(props) {
+  console.log('Rendering HapMap Page...');
   const whitePaper = props.whitePaper;
   return (
     <div>

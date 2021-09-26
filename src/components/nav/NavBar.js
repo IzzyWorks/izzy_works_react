@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
 
 //components
 import Logo from './Logo';
@@ -8,36 +7,15 @@ import NavWrapper from './NavWrapper';
 //data
 import lottieLogo from '../data/logo.json';
 
+//props
+//NavBarData from index.js;
+
 function NavBar(props) {
-  // 🔥🔥🔥 Logo Lottie Behavior 🔥🔥🔥
-
-  // const [currentFrame, setCurrentFrame] = useState(1);
-  // const [previousLastFrame, setPreviousLastFrame] = useState(1);
-  // const [frames, setFrames] = useState([1, 1]);
-  // const [speed, setSpeed] = useState(0);
-  // const [previousPage, setPreviousPage] = useState(0);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [direction, setDirection] = useState(1);
-  // const [fontColor, setFontColor] = useState('black');
-  // console.log('frame useStates  ===>', currentFrame, previousLastFrame);
-  // console.log('page useStates  ===>', currentPage, previousPage);
-  // console.log('direction useStates  ===>', direction);
-  // console.log('speed useStates  ===>', speed);
-
-  // const handleClick = (props, e) => {
-  //   // console.log('inside navbar eventhandler ===>', props);
-  //   currentPage >= previousPage ? setDirection(1) : setDirection(-1);
-  //   setCurrentPage(props.NavBarData.page);
-  //   setPreviousLastFrame(props.NavBarData.lastFrame);
-  //   setCurrentFrame(props.NavBarData.firstFrame);
-  //   setFrames([currentFrame, previousLastFrame]);
-  //   setSpeed(props.NavBarData.speed);
-  //   setPreviousPage(currentPage);
-
-  //   // setFontColor(props.NavBarData.fontColor);
-  // };
-
   // 🔥🔥🔥 Navbar 🔥🔥🔥
+
+  const previousFrame = window.localStorage.getItem('lastLottieFrame');
+  const nextFrame = props.NavBarData.startFrame;
+  console.log('Rendering NavBar', props, previousFrame);
 
   return (
     <nav className='navbar__wrapper'>
@@ -46,11 +24,12 @@ function NavBar(props) {
           <Logo
             animation={lottieLogo} //shapes JSON data
             animationData={{
-              segments: [frames[1], frames[1]],
+              // segments: [previousFrame, nextFrame],
               direction: 1,
               speed: 1,
               play: true,
               loop: false,
+              // logo not re-rendering on
             }}
           />
           <h3 className='logo-name'>izzy</h3>

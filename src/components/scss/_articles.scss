@@ -8,7 +8,6 @@
 
 .article__wrapper {
   overflow: hidden;
-  z-index: 98;
   padding: 5rem 3rem 0rem 3rem;
   overflow-y: scroll !important;
   display: flex;
@@ -19,7 +18,6 @@
 }
 
 .article__wrapper.obic {
-  z-index: 4;
   background-image: radial-gradient(
     circle at center center,
     #0e00fd,
@@ -28,7 +26,6 @@
 }
 
 .article__wrapper.tldnr {
-  z-index: 3;
   background-image: radial-gradient(
     circle at center center,
     #5ad900,
@@ -37,7 +34,6 @@
 }
 
 .article__wrapper.hapmap {
-  z-index: 2;
   background-image: radial-gradient(
     circle at center center,
     #ff0000,

@@ -19,7 +19,7 @@ function LandingPage() {
   // const mouEnterHandler = (e) => {
   //   console.log("hello form mouse enter!",e.target);
   // }
-
+  console.log('Rendering Landing Page...');
   return (
     <div>
       <ul className='circle--list'>

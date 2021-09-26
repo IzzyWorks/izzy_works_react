@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 //components
@@ -44,7 +44,7 @@ const routes = [
   },
 ];
 
-function Example() {
+function IzzyWorks() {
   return (
     <Router>
       <NavBar NavBarData={NavBarData} />
@@ -53,8 +53,8 @@ function Example() {
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
-                in={match}
-                timeout={1000}
+                in={match != null}
+                timeout={2000}
                 classNames='scroll-down'
                 unmountOnExit
               >
@@ -71,4 +71,4 @@ function Example() {
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<Example />, rootElement);
+ReactDOM.render(<IzzyWorks />, rootElement);

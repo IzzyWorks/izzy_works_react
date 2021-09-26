@@ -20,15 +20,7 @@ function App() {
   // };
   return (
     <div className='App'>
-      <NavBar
-        navBarData={navBarData}
-        // hamburgerSwitch={{
-        //   handleClickEvent,
-        //   label: showHide == true ? 'Hide' : 'Show',
-        //   hamburger,
-        // }}
-      />
-      <div></div>
+      <NavBar navBarData={navBarData} />
       <Switch>
         <Route path='/home' component={HomePage} exact />
         <Route path='/*'>

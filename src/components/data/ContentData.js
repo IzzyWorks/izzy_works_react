@@ -1,6 +1,12 @@
 const contentData = [
   {
+    id: 'landing',
+    page: 0,
+    path: '/',
+  },
+  {
     id: 'OBIC',
+    page: 1,
     path: '/obic',
     style: 'obic',
     details: {
@@ -92,6 +98,7 @@ const contentData = [
   },
   {
     id: 'tldnr',
+    page: 2,
     path: '/tldnr',
     style: 'tldnr',
     details: {
@@ -192,6 +199,7 @@ const contentData = [
   },
   {
     id: 'HapMap',
+    page: 3,
     path: '/hapmap',
     style: 'hapmap',
     details: {
@@ -275,6 +283,11 @@ const contentData = [
       },
     ],
     tags: ['UX research', 'UX design', 'UI design', 'Fintech'],
+  },
+  {
+    id: 'about',
+    page: 4,
+    path: '/about',
   },
 ];
 

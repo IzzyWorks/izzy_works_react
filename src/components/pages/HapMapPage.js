@@ -1,5 +1,8 @@
 import React from 'react';
 
+//hooks
+import useLocalStorage from '../hooks/useLocalStorage';
+
 //components
 import Title from './whitePaper/Title';
 import Synopsis from './whitePaper/Synopsis';
@@ -7,6 +10,7 @@ import Details from './whitePaper/details/DetailsCard';
 
 function HapMapPage(props) {
   console.log('Rendering HapMap Page...');
+  renderHapMapPage;
   const whitePaper = props.whitePaper;
   return (
     <div>
@@ -22,5 +26,10 @@ function HapMapPage(props) {
     </div>
   );
 }
+
+const renderHapMapPage = () => {
+  const [priviousPage, setPriviousPage] = useLocalStorage('previousPage', 0);
+  setPriviousPage(props.whitePaper.page);
+};
 
 export default HapMapPage;

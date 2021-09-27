@@ -4,13 +4,10 @@ import './components/scss/main.scss';
 
 // components
 import HomePage from './components/homePage/HomePage';
-import NavBar from './components/nav/NavBar';
+import NavBar from '../nav/NavBar';
 
 // data
 import navBarData from './components/data/NavData';
-
-// helper
-// import { PageCountContext } from './components/context/PageCountContext';
 
 function App() {
   return (

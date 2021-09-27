@@ -1,22 +1,19 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-
-// helper
 import { PageCountContext } from '../context/PageCountContext';
 
-//props from ====>
-//NavBarData from NavBar.js;
+// props from NavBarData from NavBar.js;
 
 const NavWrapper = (props) => {
-  const { setPageNo, setNextFrame } = useContext(PageCountContext);
   // console.log('NavWrapper Rendering ==>', props);
+  const { setPageNo, setNextFrame } = useContext(PageCountContext);
   return (
     <NavLink
       key={props.NavBarData.key}
       to={props.NavBarData.path}
       activeClassName='active'
       onClick={(e) =>
-        console.log('eventHandler Rendering ==>', props) +
+        // console.log('eventHandler Rendering ==>', props) +
         setPageNo(props.NavBarData.page) +
         setNextFrame(props.NavBarData.endFrame)
       }

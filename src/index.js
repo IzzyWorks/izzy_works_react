@@ -10,8 +10,6 @@ import OBICPage from './components/pages/OBICPage';
 import TldnrPage from './components/pages/TldnrPage';
 import HapMapPage from './components/pages/HapMapPage';
 import AboutPage from './components/pages/AboutPage';
-
-//css
 import './components/scss/main.scss';
 
 //data
@@ -19,28 +17,34 @@ import ContentData from './components/data/ContentData';
 import NavBarData from './components/data/NavBarData';
 
 const routes = [
-  { path: '/', name: 'Home', Component: LandingPage },
+  {
+    path: '/',
+    name: 'Home',
+    Component: LandingPage,
+    PageContent: ContentData[0],
+  },
   {
     path: '/obic',
     Component: OBICPage,
-    PageContent: ContentData[0],
+    PageContent: ContentData[1],
   },
   {
     path: '/tldnr',
     name: 'tldnr',
     Component: TldnrPage,
-    PageContent: ContentData[1],
+    PageContent: ContentData[2],
   },
   {
     path: '/hapmap',
     name: 'HapMap',
     Component: HapMapPage,
-    PageContent: ContentData[2],
+    PageContent: ContentData[3],
   },
   {
     path: '/about',
     name: 'About',
     Component: AboutPage,
+    PageContent: ContentData[4],
   },
 ];
 

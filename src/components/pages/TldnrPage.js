@@ -5,8 +5,12 @@ import Title from './whitePaper/Title';
 import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
+//hooks
+import useLocalStorage from '../hooks/useLocalStorage';
+
 function TldrnPage(props) {
   console.log('Rendering tldnr Page...');
+  renderTldnrPage;
   const whitePaper = props.whitePaper;
   return (
     <div>
@@ -22,5 +26,10 @@ function TldrnPage(props) {
     </div>
   );
 }
+
+const renderTldnrPage = () => {
+  const [priviousPage, setPriviousPage] = useLocalStorage('previousPage', 0);
+  setPriviousPage(props.whitePaper.page);
+};
 
 export default TldrnPage;

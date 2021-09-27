@@ -10,14 +10,6 @@ import NavBar from './components/nav/NavBar';
 import navBarData from './components/data/NavData';
 
 function App() {
-  // 🔥🔥🔥 Hamburger Behavior 🔥🔥🔥
-  // const [hamburger, setHamburger] = useState(false);
-  // const [showHide, setShowHide] = useState(true);
-  // const handleClickEvent = () => {
-  //   console.log('Button click');
-  //   setShowHide(!showHide);
-  //   setHamburger(!hamburger);
-  // };
   return (
     <div className='App'>
       <NavBar navBarData={navBarData} />
@@ -32,3 +24,12 @@ function App() {
 }
 
 export default App;
+
+// 🔥🔥🔥 Hamburger Behavior 🔥🔥🔥
+// const [hamburger, setHamburger] = useState(false);
+// const [showHide, setShowHide] = useState(true);
+// const handleClickEvent = () => {
+//   console.log('Button click');
+//   setShowHide(!showHide);
+//   setHamburger(!hamburger);
+// };

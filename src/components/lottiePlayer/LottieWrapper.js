@@ -23,7 +23,7 @@ const LottieWrapper = memo((props) => {
   //props from ====>
   //<Logo animationData={...} /> from NavBar.js;
 
-  console.log('Inside Lottie Player ===>', props);
+  // console.log('Inside Lottie Player ===>', props);
 
   return (
     <Lottie

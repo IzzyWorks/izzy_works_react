@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 //components
 import Logo from './Logo';
@@ -6,57 +6,57 @@ import NavWrapper from './NavWrapper';
 
 //data
 import lottieLogo from '../data/logo.json';
+
+// helper
 import { PageCountContext } from '../context/PageCountContext';
 
 //props
 //NavBarData from index.js;
 
 function NavBar(props) {
-  const [pageNo, setPageNo] = useLocalStorage('pageNo', 0);
-  const [previosFrame, setPreviosFrame] = useLocalStorage('previousFrame', 1);
   const [nextFrame, setNextFrame] = useLocalStorage('nextFrame', 1);
+  const [pageNo, setPageNo] = useLocalStorage('pageNo', 0);
+  const [currentPageToHistory, setPageHistory] = useState(0);
 
   // 🔥🔥🔥 Navbar 🔥🔥🔥
+  const currentPage = window.localStorage.getItem('pageNo');
+  const nextLottieFrame = window.localStorage.getItem('nextFrame');
 
-  const previousFrame = window.localStorage.getItem('previousFrame');
-  const nextFrame = window.localStorage.getItem('nextFrame');
-
-  console.log('Rendering NavBar', props, previousFrame, nextFrame);
+  console.log('Rendering NavBar', props);
 
   return (
     <nav className='navbar__wrapper'>
-      <PageCountContext.Provider
-        value={{ pageNo, setPageNo, setPreviosFrame, setNextFrame }}
-      >
-        <div className='navbar__left-container'>
-          <div className='navbar__logo-wrapper'>
-            <Logo
-              animation={lottieLogo} //shapes JSON data
-              animationData={{
-                segments: [previousFrame, nextFrame],
-                direction: 1,
-                // direction: {nextFrame > },
-                speed: 1,
-                play: true,
-                loop: false,
-                // logo not re-rendering on
-              }}
-            />
-            <h3 className='logo-name'>izzy</h3>
-          </div>
+      <div className='navbar__left-container'>
+        <div className='navbar__logo-wrapper'>
+          <Logo
+            animation={lottieLogo} //shapes JSON data
+            animationData={{
+              segments: [1, nextLottieFrame],
+              direction: 1,
+              speed: 1,
+              play: true,
+              loop: false,
+              // logo not re-rendering on
+            }}
+          />
+          <h3 className='logo-name'>izzy</h3>
         </div>
-        <div className='navbar__right-container'>
-          <ul className='navbar__list'>
-            {props.NavBarData.map((NavBarData) => (
-              <li key={NavBarData.key} className='navbar__links'>
-                <h3 className={'black'}>
+      </div>
+      <div className='navbar__right-container'>
+        <ul className='navbar__list'>
+          {props.NavBarData.map((NavBarData) => (
+            <li key={NavBarData.key} className='navbar__links'>
+              <h3 className={'black'}>
+                <PageCountContext.Provider
+                  value={{ pageNo, setPageNo, nextFrame, setNextFrame }}
+                >
                   <NavWrapper NavBarData={NavBarData} />
-                </h3>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </PageCountContext.Provider>
+                </PageCountContext.Provider>
+              </h3>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }
@@ -72,7 +72,6 @@ function useLocalStorage(key, initialValue) {
       // Parse stored json or if none return initialValue
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      // If error also return initialValue
       console.log(error);
       return initialValue;
     }
@@ -89,7 +88,6 @@ function useLocalStorage(key, initialValue) {
       // Save to local storage
       window.localStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (error) {
-      // A more advanced implementation would handle the error case
       console.log(error);
     }
   };

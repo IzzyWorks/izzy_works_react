@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './components/scss/main.scss';
 
-//components
+// components
 import HomePage from './components/homePage/HomePage';
 import NavBar from './components/nav/NavBar';
 
 // data
 import navBarData from './components/data/NavData';
 
+// helper
+// import { PageCountContext } from './components/context/PageCountContext';
+
 function App() {
   return (
     <div className='App'>
       <NavBar navBarData={navBarData} />
+
       <Switch>
         <Route path='/home' component={HomePage} exact />
         <Route path='/*'>

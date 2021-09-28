@@ -23,7 +23,9 @@ const LottieWrapper = memo((props) => {
   //props from ====>
   //<Logo animationData={...} /> from NavBar.js;
 
-  // console.log('Inside Lottie Player ===>', props);
+  console.log('%cRunning Lottie Player ===>', 'color: red; font-size: 16px');
+  console.log('Lottie Player segments ===>', props.animationData.segments);
+  console.log('Lottie Player direction ===>', props.animationData.direction);
 
   return (
     <Lottie
@@ -31,8 +33,8 @@ const LottieWrapper = memo((props) => {
       speed={props.animationData.speed}
       play={props.animationData.play}
       animationData={props.animation}
-      direction={props.animationData.direction}
       segments={props.animationData.segments}
+      direction={props.animationData.direction}
       onComplete={() => addLog('complete')}
       onLoopComplete={() => addLog('loopComplete')}
       onEnterFrame={() => {

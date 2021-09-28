@@ -6,16 +6,31 @@ import { PageCountContext } from '../context/PageCountContext';
 
 const NavWrapper = (props) => {
   // console.log('NavWrapper Rendering ==>', props);
-  const { setPageNo, setNextFrame } = useContext(PageCountContext);
+  const { setPageNo, setLastFrame, setFirstFrame } =
+    useContext(PageCountContext);
   return (
     <NavLink
       key={props.NavBarData.key}
       to={props.NavBarData.path}
       activeClassName='active'
       onClick={(e) =>
-        // console.log('eventHandler Rendering ==>', props) +
         setPageNo(props.NavBarData.page) +
-        setNextFrame(props.NavBarData.endFrame)
+        setLastFrame(props.NavBarData.lastFrame) +
+        setFirstFrame(props.NavBarData.firstFrame) +
+        console.log(
+          '%cOnClick EventHandler',
+          'color: blue; font-size: 16px',
+          props.NavBarData.name
+        ) +
+        console.log('setLocalStorage CurrentPage ===>', props.NavBarData.page) +
+        console.log(
+          'setLocalStorage FirstFrame ===>',
+          props.NavBarData.firstFrame
+        ) +
+        console.log(
+          'setLocalStorage LastFrame ===>',
+          props.NavBarData.lastFrame
+        )
       }
     >
       {props.NavBarData.name}

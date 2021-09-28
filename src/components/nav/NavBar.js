@@ -12,13 +12,20 @@ import lottieLogo from '../data/logo.json';
 //props comes from index.js NavBarData;
 
 function NavBar(props) {
-  const [nextFrame, setNextFrame] = useLocalStorage('nextFrame', 1);
+  //hooks
   const [pageNo, setPageNo] = useLocalStorage('pageNo', 0);
-
+  const [lastFrame, setLastFrame] = useLocalStorage('lastFrame', 1);
+  const [firstFrame, setFirstFrame] = useLocalStorage('firstFrame', 1);
+  //access LocalStorage
   const currentPage = window.localStorage.getItem('pageNo');
-  const nextLottieFrame = window.localStorage.getItem('nextFrame');
+  // const firstLottieFrame = props.NavBarData.firstFrame;
+  const firstLottieFrame = parseInt(window.localStorage.getItem('firstFrame'));
+  const lastLottieFrame = parseInt(window.localStorage.getItem('lastFrame'));
 
-  console.log('Rendering NavBar', props);
+  console.log('%cRendering NavBar ===>', 'color: green; font-size: 16px');
+  console.log('read localStorage Current Page ===>', currentPage);
+  console.log('read localStorage first frame  ===>', firstLottieFrame);
+  console.log('read localStorage last frame ===>', lastLottieFrame);
 
   return (
     <nav className='navbar__wrapper'>
@@ -27,8 +34,10 @@ function NavBar(props) {
           <Logo
             animation={lottieLogo} //shapes JSON data
             animationData={{
-              segments: [1, nextLottieFrame],
-              direction: 1,
+              segments: [firstLottieFrame, lastLottieFrame],
+              // segments: [firstLottieFrame, lastLottieFrame],
+              direction: lastLottieFrame === firstLottieFrame ? -1 : 1,
+              // direction: 1,
               speed: 1,
               play: true,
               loop: false,
@@ -43,7 +52,9 @@ function NavBar(props) {
           {props.NavBarData.map((NavBarData) => (
             <li key={NavBarData.key} className='navbar__links'>
               <h3 className={'black'}>
-                <PageCountContext.Provider value={{ setPageNo, setNextFrame }}>
+                <PageCountContext.Provider
+                  value={{ setPageNo, setLastFrame, setFirstFrame }}
+                >
                   <NavWrapper NavBarData={NavBarData} />
                 </PageCountContext.Provider>
               </h3>

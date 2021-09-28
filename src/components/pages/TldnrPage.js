@@ -6,11 +6,11 @@ import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
 //hooks
-import useLocalStorage from '../hooks/useLocalStorage';
+// import useLocalStorage from '../hooks/useLocalStorage';
 
 function TldrnPage(props) {
-  console.log('Rendering tldnr Page...');
-  renderTldnrPage;
+  console.log('%cRendering TLDNR Page', 'color: orange; font-size: 16px');
+  // renderTldnrPage;
   const whitePaper = props.whitePaper;
   return (
     <div>
@@ -27,9 +27,9 @@ function TldrnPage(props) {
   );
 }
 
-const renderTldnrPage = () => {
-  const [priviousPage, setPriviousPage] = useLocalStorage('previousPage', 0);
-  setPriviousPage(props.whitePaper.page);
-};
+// const renderTldnrPage = () => {
+//   const [priviousPage, setPriviousPage] = useLocalStorage('previousPage', 0);
+//   setPriviousPage(props.whitePaper.page);
+// };
 
 export default TldrnPage;

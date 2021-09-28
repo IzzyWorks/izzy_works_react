@@ -1,5 +1,5 @@
 import React from 'react';
-import LottieWrapper from '../lottiePlayer/LottieWrapper';
+import LottieWrapper from '../helper/LottieWrapper';
 
 function Logo(props) {
   // console.log('inside Logo ===>', props);

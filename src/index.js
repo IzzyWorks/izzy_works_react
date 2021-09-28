@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 //components
@@ -25,6 +25,7 @@ const routes = [
   },
   {
     path: '/obic',
+    name: 'OBIC',
     Component: OBICPage,
     PageContent: ContentData[1],
   },

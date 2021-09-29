@@ -59,7 +59,7 @@ const navBarData = [
     speed: 1,
     play: true,
     loop: false,
-    firstFrame: 23,
+    firstFrame: 22,
     lastFrame: 33,
     desktop: false,
     fontColor: 'white',

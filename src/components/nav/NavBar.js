@@ -29,8 +29,8 @@ function NavBar(props) {
       speed: 1,
       play: true,
       loop: false,
-    }
-    // []
+    },
+    []
   );
 
   const updateLocalStorage = (newLottieObj) => {

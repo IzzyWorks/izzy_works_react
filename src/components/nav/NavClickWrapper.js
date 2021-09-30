@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 // props from NavBarData from NavBar.js;
 
-const NavWrapper = ({ NavBarData, lottieObj, passObj }) => {
+const NavWrapper = ({ NavObj, lottieObj, passObj }) => {
   const handleClick = (e) => {
     let newLottieObj = {
       pageNo: lottieObj.pageNo || 0,
@@ -11,10 +11,11 @@ const NavWrapper = ({ NavBarData, lottieObj, passObj }) => {
       lastFrame: lottieObj.lastFrame || 1,
       firstFrame: lottieObj.firstFrame || 1,
     };
-    newLottieObj.pageNo = NavBarData.page;
-    newLottieObj.playDirection = lottieObj.pageNo <= NavBarData.page ? 1 : -1;
-    newLottieObj.firstFrame = NavBarData.firstFrame;
-    newLottieObj.lastFrame = NavBarData.lastFrame;
+    newLottieObj.pageNo = NavObj.page;
+    newLottieObj.playDirection = lottieObj.pageNo <= NavObj.page ? 1 : -1;
+    // newLottieObj.playDirection = 1 ?
+    newLottieObj.firstFrame = NavObj.firstFrame;
+    newLottieObj.lastFrame = NavObj.lastFrame;
     passObj(newLottieObj);
 
     // setPageNo(props.NavBarData.page);
@@ -22,12 +23,12 @@ const NavWrapper = ({ NavBarData, lottieObj, passObj }) => {
 
   return (
     <NavLink
-      key={NavBarData.key}
-      to={NavBarData.path}
+      key={NavObj.key}
+      to={NavObj.path}
       activeClassName='active'
       onClick={handleClick}
     >
-      {NavBarData.name}
+      {NavObj.name}
     </NavLink>
   );
 };

@@ -1,4 +1,4 @@
-const navBarData = [
+const NavObj = [
   {
     key: '0nav',
     name: 'Home',
@@ -86,4 +86,4 @@ const navBarData = [
   },
 ];
 
-export default navBarData;
+export default NavObj;

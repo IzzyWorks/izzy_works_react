@@ -14,7 +14,7 @@ import './components/scss/main.scss';
 
 //data
 import ContentData from './components/data/ContentData';
-import NavBarData from './components/data/NavBarData';
+import NavObj from './components/data/NavObj';
 
 const routes = [
   {
@@ -52,7 +52,7 @@ const routes = [
 function IzzyWorks() {
   return (
     <Router>
-      <NavBar NavBarData={NavBarData} />
+      <NavBar NavObj={NavObj} />
       <section className='section__wrapper'>
         {routes.map(({ path, Component, PageContent }) => (
           <Route key={path} exact path={path}>

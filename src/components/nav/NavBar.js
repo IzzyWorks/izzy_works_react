@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
 //components
@@ -9,6 +9,8 @@ import lottieLogo from '../data/logo.json';
 //props comes from index.js NavBarData;
 
 function NavBar(props) {
+  console.log('What am I passing???', props);
+
   //hooks
   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
     pageNo: 0,
@@ -17,11 +19,26 @@ function NavBar(props) {
     firstFrame: 1,
   });
 
-  // console.log('%cRendering NavBar ===>', 'color: orange; font-size: 16px');
-  // console.log('%c----------------------', 'color: orange; font-size: 16px');
+  const [animationObj, setAnimationObj] = useState(
+    {
+      // segments: [
+      //   parseInt(props.NavObj.firstFrame),
+      //   parseInt(props.NavObj.lastFrame),
+      // ],
+      direction: props.NavObj.playDirection,
+      speed: 1,
+      play: true,
+      loop: false,
+    }
+    // []
+  );
 
   const updateLocalStorage = (newLottieObj) => {
     setLottieObj(newLottieObj);
+  };
+
+  const updateUseEffect = (newAnimationObj) => {
+    setAnimationObj(newAnimationObj);
   };
 
   return (
@@ -29,28 +46,20 @@ function NavBar(props) {
       <div className='navbar__left-container'>
         <div className='navbar__logo-wrapper'>
           <Logo
-            animation={lottieLogo} //shapes JSON data
-            animationData={{
-              segments: [
-                parseInt(lottieObj.firstFrame),
-                parseInt(lottieObj.lastFrame),
-              ],
-              direction: lottieObj.playDirection,
-              speed: 1,
-              play: true,
-              loop: false,
-            }}
+            animation={lottieLogo}
+            animationObj={animationObj}
+            passObj={updateUseEffect}
           />
           <h3 className='logo-name'>izzy</h3>
         </div>
       </div>
       <div className='navbar__right-container'>
         <ul className='navbar__list'>
-          {props.NavBarData.map((NavBarData) => (
-            <li key={NavBarData.key} className='navbar__links'>
+          {props.NavObj.map((NavObj) => (
+            <li key={NavObj.key} className='navbar__links'>
               <h3 className={'black'}>
                 <NavClickWrapper
-                  NavBarData={NavBarData}
+                  NavObj={NavObj}
                   lottieObj={lottieObj}
                   passObj={updateLocalStorage}
                 />
@@ -64,3 +73,6 @@ function NavBar(props) {
 }
 
 export default NavBar;
+
+// console.log('%cRendering NavBar ===>', 'color: orange; font-size: 16px');
+// console.log('%c----------------------', 'color: orange; font-size: 16px');

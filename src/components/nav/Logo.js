@@ -6,7 +6,14 @@ function Logo({ animation, animationObj, passObj }) {
 
   let newAnimationObj = {
     animation,
-    animationObj,
+    segments: [
+      parseInt(animationObj.firstFrame),
+      parseInt(animationObj.lastFrame),
+    ],
+    direction: animationObj.playDirection,
+    speed: 1,
+    play: true,
+    loop: false,
   };
   passObj(newAnimationObj);
 

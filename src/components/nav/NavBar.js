@@ -19,19 +19,14 @@ function NavBar(props) {
     firstFrame: 1,
   });
 
-  const [animationObj, setAnimationObj] = useState(
-    {
-      // segments: [
-      //   parseInt(props.NavObj.firstFrame),
-      //   parseInt(props.NavObj.lastFrame),
-      // ],
-      direction: props.NavObj.playDirection,
-      speed: 1,
-      play: true,
-      loop: false,
-    },
-    []
-  );
+  const [animationObj, setAnimationObj] = useEffect({
+    animation: { lottieLogo },
+    segments: [1, 1],
+    direction: 1,
+    speed: 1,
+    play: true,
+    loop: false,
+  });
 
   const updateLocalStorage = (newLottieObj) => {
     setLottieObj(newLottieObj);
@@ -46,6 +41,7 @@ function NavBar(props) {
       <div className='navbar__left-container'>
         <div className='navbar__logo-wrapper'>
           <Logo
+            NavObj={NavObj}
             animation={lottieLogo}
             animationObj={animationObj}
             passObj={updateUseEffect}

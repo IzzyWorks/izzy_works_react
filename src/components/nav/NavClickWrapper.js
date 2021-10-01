@@ -5,6 +5,11 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 const NavWrapper = ({ NavObj, lottieObj, passObj }) => {
   const handleClick = (e) => {
+    console.log('%cDATA IN CLICK EVENT ===>', 'color: orange; font-size: 16px');
+    console.log('Page Number', lottieObj.pageNo);
+    console.log('Start segment', lottieObj.firstFrame);
+    console.log('End segment', lottieObj.lastFrame);
+    console.log('Direction', lottieObj.playDirection);
     let newLottieObj = {
       pageNo: lottieObj.pageNo || 0,
       playDirection: lottieObj.playDirection || 1,
@@ -13,10 +18,21 @@ const NavWrapper = ({ NavObj, lottieObj, passObj }) => {
     };
     newLottieObj.pageNo = NavObj.page;
     newLottieObj.playDirection = lottieObj.pageNo <= NavObj.page ? 1 : -1;
-    // newLottieObj.playDirection = 1 ?
-    newLottieObj.firstFrame = NavObj.firstFrame;
-    newLottieObj.lastFrame = NavObj.lastFrame;
+    if (newLottieObj.playDirection == 1) {
+      newLottieObj.lastFrame = NavObj.lastFrame;
+    } else {
+      newLottieObj.firstFrame = NavObj.firstFrame;
+    }
+
     passObj(newLottieObj);
+    // console.log(
+    //   '%cDATA OUT CLICK EVENT ===>',
+    //   'color: orange; font-size: 16px'
+    // );
+    // console.log('Page Number', newLottieObj.pageNo);
+    // console.log('Start segment', newLottieObj.firstFrame);
+    // console.log('End segment', newLottieObj.lastFrame);
+    // console.log('Direction', newLottieObj.playDirection);
 
     // setPageNo(props.NavBarData.page);
   };

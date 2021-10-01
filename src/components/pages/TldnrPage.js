@@ -9,7 +9,7 @@ import Details from './whitePaper/details/DetailsCard';
 // import useLocalStorage from '../hooks/useLocalStorage';
 
 function TldrnPage(props) {
-  console.log('%cRendering TLDNR Page', 'color: orange; font-size: 16px');
+  // console.log('%cRendering TLDNR Page', 'color: orange; font-size: 16px');
   // renderTldnrPage;
   const whitePaper = props.whitePaper;
   return (

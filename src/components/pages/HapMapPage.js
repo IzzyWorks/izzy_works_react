@@ -9,7 +9,7 @@ import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
 function HapMapPage(props) {
-  console.log('%cRendering HAPMAP Page', 'color: gray; font-size: 16px');
+  // console.log('%cRendering HAPMAP Page', 'color: gray; font-size: 16px');
   // renderHapMapPage;
   const whitePaper = props.whitePaper;
   return (

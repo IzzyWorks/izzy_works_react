@@ -6,7 +6,7 @@ import React from 'react';
 //props from whitepaper from index.js;
 
 function AboutPage() {
-  console.log('%cRendering About Page', 'color: darkred; font-size: 16px');
+  // console.log('%cRendering About Page', 'color: darkred; font-size: 16px');
   return (
     <div className='about__wrapper'>
       <h1>about</h1>

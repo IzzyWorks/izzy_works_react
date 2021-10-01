@@ -1,25 +1,25 @@
 import React from 'react';
 import LottieWrapper from '../helper/LottieWrapper';
 
-function Logo({ animation, animationObj, passObj }) {
-  console.log('Logo is Fiering!!!!', animation, animationObj, passObj);
+function Logo({ animation, animationObj }) {
+  console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');
+  console.log('Page Number', animationObj.pageNo);
+  console.log('Start segment', animationObj.firstFrame);
+  console.log('End segment', animationObj.lastFrame);
+  console.log('Direction', animationObj.playDirection);
 
   let newAnimationObj = {
-    animation,
-    segments: [
-      parseInt(animationObj.firstFrame),
-      parseInt(animationObj.lastFrame),
-    ],
-    direction: animationObj.playDirection,
+    loop: false,
     speed: 1,
     play: true,
-    loop: false,
+    animationData: animation,
+    direction: animationObj.playDirection,
+    segments: [animationObj.firstFrame, animationObj.lastFrame],
   };
-  passObj(newAnimationObj);
 
   return (
     <div>
-      <LottieWrapper animation={animation} animationData={animationObj} />
+      <LottieWrapper animationData={newAnimationObj} />
     </div>
   );
 }

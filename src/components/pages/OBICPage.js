@@ -9,7 +9,7 @@ import Synopsis from './whitePaper/Synopsis';
 import Details from './whitePaper/details/DetailsCard';
 
 function OBICPage(props) {
-  console.log('%cRendering OBIC Page', 'color: darkblue; font-size: 16px');
+  // console.log('%cRendering OBIC Page', 'color: darkblue; font-size: 16px');
   // renderOBICPage;
   const whitePaper = props.whitePaper;
   return (

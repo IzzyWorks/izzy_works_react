@@ -11,10 +11,12 @@ import TldnrPage from './components/pages/TldnrPage';
 import HapMapPage from './components/pages/HapMapPage';
 import AboutPage from './components/pages/AboutPage';
 import './components/scss/main.scss';
+import useLocalStorage from './components/hooks/useLocalStorage'; // key value pair
 
 //data
 import ContentData from './components/data/ContentData';
 import NavObj from './components/data/NavObj';
+// import { PageDirectionContext } from './components/context/PageDirectionContext';
 
 const routes = [
   {
@@ -50,17 +52,23 @@ const routes = [
 ];
 
 function IzzyWorks() {
+  const playDirectionObj = JSON.parse(
+    window.localStorage.getItem('lottieData')
+  );
+  const playDirection = Object.values(playDirectionObj);
   return (
     <Router>
       <NavBar NavObj={NavObj} />
       <section className='section__wrapper'>
         {routes.map(({ path, Component, PageContent }) => (
+          // <PageDirectionContext.Provider value={{ playDirection }}>
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
                 in={match != null}
                 timeout={2000}
-                classNames='scroll-down'
+                // classNames='scroll-down'
+                classNames={`scroll-${playDirection[1] == 1 ? 'down' : 'up'}`}
                 unmountOnExit
               >
                 <div>
@@ -69,6 +77,7 @@ function IzzyWorks() {
               </CSSTransition>
             )}
           </Route>
+          // </PageDirectionContext.Provider>
         ))}
       </section>
     </Router>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 // props from NavBarData from NavBar.js;
 
-const NavWrapper = ({ NavObj, lottieObj, passObj }) => {
+const NavWrapper = ({ NavObj, lottieObj, passObj, passTrigger }) => {
   const handleClick = (e) => {
     console.log('%cDATA IN CLICK EVENT ===>', 'color: orange; font-size: 16px');
     console.log('Page Number', lottieObj.pageNo);
@@ -23,8 +23,8 @@ const NavWrapper = ({ NavObj, lottieObj, passObj }) => {
     } else {
       newLottieObj.firstFrame = NavObj.firstFrame;
     }
-
     passObj(newLottieObj);
+    passTrigger(e);
     // console.log(
     //   '%cDATA OUT CLICK EVENT ===>',
     //   'color: orange; font-size: 16px'

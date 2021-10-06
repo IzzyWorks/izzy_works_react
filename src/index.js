@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
@@ -11,7 +11,8 @@ import TldnrPage from './components/pages/TldnrPage';
 import HapMapPage from './components/pages/HapMapPage';
 import AboutPage from './components/pages/AboutPage';
 import './components/scss/main.scss';
-import useLocalStorage from './components/hooks/useLocalStorage'; // key value pair
+// import usePageDirection from './components/hooks/usePageDirection';
+import NavClickWrapper from './components/nav/NavClickWrapper';
 
 //data
 import ContentData from './components/data/ContentData';
@@ -56,12 +57,13 @@ function IzzyWorks() {
     window.localStorage.getItem('lottieData')
   );
   const playDirection = Object.values(playDirectionObj);
+
+  const updateCSSTransition = (e) => {};
   return (
     <Router>
       <NavBar NavObj={NavObj} />
       <section className='section__wrapper'>
         {routes.map(({ path, Component, PageContent }) => (
-          // <PageDirectionContext.Provider value={{ playDirection }}>
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
@@ -72,14 +74,15 @@ function IzzyWorks() {
                 unmountOnExit
               >
                 <div>
+                  {' '}
                   <Component whitePaper={PageContent} />
                 </div>
               </CSSTransition>
             )}
           </Route>
-          // </PageDirectionContext.Provider>
         ))}
       </section>
+      <NavClickWrapper passTrigger={updateCSSTransition} />
     </Router>
   );
 }

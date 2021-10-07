@@ -1,11 +1,15 @@
 import React from 'react';
 
 //components
-import Title from './whitePaper/Title';
-import Synopsis from './whitePaper/Synopsis';
-import Details from './whitePaper/details/DetailsCard';
+import Title from '../pages/whitePaper/Title';
+import Synopsis from '../pages/whitePaper/Synopsis';
+import Details from '../pages/whitePaper/details/DetailsCard';
+
+/* props
+whitePaper={ContentData} from index.js */
 
 function WhitePaperPage(props) {
+  console.log('white', props);
   return (
     <div>
       {props.whitePaper.map((whitePaper) => (

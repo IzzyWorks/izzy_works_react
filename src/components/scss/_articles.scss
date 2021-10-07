@@ -1,0 +1,47 @@
+.title {
+  color: black;
+}
+
+.disAppear {
+  display: none !important;
+}
+
+.article__wrapper {
+  overflow: hidden;
+  padding: 5rem 3rem 0rem 3rem;
+  overflow-y: scroll !important;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.article__wrapper.obic {
+  background-image: radial-gradient(
+    circle at center center,
+    #0e00fd,
+    #110236 150%
+  );
+}
+
+.article__wrapper.tldnr {
+  background-image: radial-gradient(
+    circle at center center,
+    #5ad900,
+    #024108 150%
+  );
+}
+
+.article__wrapper.hapmap {
+  background-image: radial-gradient(
+    circle at center center,
+    #ff0000,
+    #b00019 50%
+  );
+}
+
+.page-placeholder {
+  display: flex;
+  align-items: center;
+}

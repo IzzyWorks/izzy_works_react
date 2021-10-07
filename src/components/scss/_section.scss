@@ -1,8 +1,6 @@
 .section__wrapper {
-  //display: flex; //POC Temp Code
-  //  center; //POC Temp Code
+  height: 100vh;
   align-items: center;
-  //height: 100vh; ////POC Temp Code
   overflow: hidden;
   scroll-snap-align: start;
   border-bottom: 1px solid black;
@@ -12,18 +10,18 @@
   margin: 0 3rem 0 3rem;
 }
 
-.section__wrapper.home {
-  background-color: gray;
-}
-.section__wrapper.obic {
-  background-color: blue;
-}
-.section__wrapper.tldnr {
-  background-color: green;
-}
-.section__wrapper.hapmap {
-  background-color: red;
-}
+// .section__wrapper.home {
+//   background-color: gray;
+// }
+// .section__wrapper.obic {
+//   background-color: blue;
+// }
+// .section__wrapper.tldnr {
+//   background-color: green;
+// }
+// .section__wrapper.hapmap {
+//   background-color: red;
+// }
 // .section__wrapper.about-page {
 //   background-color: white;
 // }

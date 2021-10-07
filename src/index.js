@@ -1,71 +1,91 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 //components
-import LandingPage from './components/pages/LandingPage';
-import WhitePaper from './components/pages/WhitePaperPage';
-import AboutPage from './components/pages/AboutPage';
 import NavBar from './components/nav/NavBar';
+import LandingPage from './components/pages/LandingPage';
+import OBICPage from './components/pages/OBICPage';
+import TldnrPage from './components/pages/TldnrPage';
+import HapMapPage from './components/pages/HapMapPage';
+import AboutPage from './components/pages/AboutPage';
 import './components/scss/main.scss';
+// import usePageDirection from './components/hooks/usePageDirection';
+import NavClickWrapper from './components/nav/NavClickWrapper';
 
 //data
 import ContentData from './components/data/ContentData';
-import NavBarData from './components/data/NavBarData';
+import NavObj from './components/data/NavObj';
+// import { PageDirectionContext } from './components/context/PageDirectionContext';
 
 const routes = [
-  { path: '/', name: 'Home', Component: LandingPage },
+  {
+    path: '/',
+    name: 'Home',
+    Component: LandingPage,
+    PageContent: ContentData[0],
+  },
   {
     path: '/obic',
     name: 'OBIC',
-    Component: WhitePaper,
-    PageContent: ContentData,
+    Component: OBICPage,
+    PageContent: ContentData[1],
   },
   {
     path: '/tldnr',
     name: 'tldnr',
-    Component: WhitePaper,
-    PageContent: ContentData,
+    Component: TldnrPage,
+    PageContent: ContentData[2],
   },
   {
     path: '/hapmap',
     name: 'HapMap',
-    Component: WhitePaper,
-    PageContent: ContentData,
+    Component: HapMapPage,
+    PageContent: ContentData[3],
   },
   {
     path: '/about',
     name: 'About',
     Component: AboutPage,
+    PageContent: ContentData[4],
   },
 ];
 
-function Example() {
+function IzzyWorks() {
+  const playDirectionObj = JSON.parse(
+    window.localStorage.getItem('lottieData')
+  );
+  const playDirection = Object.values(playDirectionObj);
+
+  const updateCSSTransition = (e) => {};
   return (
     <Router>
-      <NavBar NavBarData={NavBarData} />
-      <div className='index-container'>
+      <NavBar NavObj={NavObj} />
+      <section className='section__wrapper'>
         {routes.map(({ path, Component, PageContent }) => (
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
                 in={match != null}
-                timeout={300}
-                classNames='page'
+                timeout={2000}
+                // classNames='scroll-down'
+                classNames={`scroll-${playDirection[1] == 1 ? 'down' : 'up'}`}
                 unmountOnExit
               >
-                <div className='page'>
+                <div>
+                  {' '}
                   <Component whitePaper={PageContent} />
                 </div>
               </CSSTransition>
             )}
           </Route>
         ))}
-      </div>
+      </section>
+      <NavClickWrapper passTrigger={updateCSSTransition} />
     </Router>
   );
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<Example />, rootElement);
+ReactDOM.render(<IzzyWorks />, rootElement);

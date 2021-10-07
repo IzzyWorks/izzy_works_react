@@ -1,16 +1,18 @@
 import React from 'react';
 
-function LandingPage() {
-  // const [animationDataDynamic,setAnimationDataDynamic] = useState([{
-  //   key: '0landingAnim',
-  //   loop: true,
-  //   speed: 0.25,
-  //   play: true,
-  //   direction: 1,
-  //   segments: [1,35],
-  //   width: '100%',
-  //   height: '100vh'
-  // }]);
+//hooks
+// import useLocalStorage from '../hooks/useLocalStorage';
+
+//props from whitepaper from index.js;
+
+// const renderLandingPage = (props) => {
+//   console.log('trigger renderLandingPage ===>', props);
+//   const [priviousPage, setPriviousPage] = useLocalStorage('previousPage', 0);
+//   setPriviousPage(props.whitePaper.page);
+// };
+
+const LandingPage = () => {
+  // renderLandingPage;
 
   // const handleClick = (e) => {
   //   console.log("the element clicked!",e.target);
@@ -19,7 +21,7 @@ function LandingPage() {
   // const mouEnterHandler = (e) => {
   //   console.log("hello form mouse enter!",e.target);
   // }
-
+  // console.log('%cRendering Landing Page', 'color: purple; font-size: 16px');
   return (
     <div>
       <ul className='circle--list'>
@@ -73,6 +75,6 @@ function LandingPage() {
       </ul>
     </div>
   );
-}
+};
 
 export default LandingPage;

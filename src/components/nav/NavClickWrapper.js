@@ -24,7 +24,6 @@ const NavWrapper = ({ NavObj, lottieObj, passObj, passTrigger }) => {
       newLottieObj.firstFrame = NavObj.firstFrame;
     }
     passObj(newLottieObj);
-    passTrigger(e);
     // console.log(
     //   '%cDATA OUT CLICK EVENT ===>',
     //   'color: orange; font-size: 16px'

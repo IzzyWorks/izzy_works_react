@@ -1,8 +1,7 @@
 import { CSS_TRANSITIONS } from '../redux_actions/types';
 
 const initialState = {
-  items: [],
-  item: {},
+  classNames = 'scroll-down',
 };
 
 export default function (state = initialState, action) {
@@ -10,7 +9,7 @@ export default function (state = initialState, action) {
     case CSS_TRANSITIONS:
       return {
         ...state,
-        items: action.payload,
+        classNames: action.payload,
       };
     default:
       return state;

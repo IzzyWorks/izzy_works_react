@@ -11,7 +11,7 @@ import OBICPage from './components/pages/OBICPage';
 import TldnrPage from './components/pages/TldnrPage';
 import HapMapPage from './components/pages/HapMapPage';
 import AboutPage from './components/pages/AboutPage';
-import ReduxStore from './reduxStore';
+import ReduxStore from './store';
 import './components/scss/main.scss';
 
 //data

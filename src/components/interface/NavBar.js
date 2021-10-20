@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
 //components
-import Logo from './Logo';
-import NavClickWrapper from './NavClickWrapper';
-import lottieLogo from '../data/logo.json';
+import Logo from './DynamicLogo';
+import NavClickWrapper from './NavClickButton';
+import lottieLogo from '../data/Animations/logo.json';
 
 //props comes from index.js NavBarData;
 

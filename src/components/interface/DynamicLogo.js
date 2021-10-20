@@ -1,5 +1,5 @@
 import React from 'react';
-import LottieWrapper from '../helper/LottieWrapper';
+import LottieWrapper from '../helper/LottiePlayer';
 
 function Logo({ animation, animationObj }) {
   console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');

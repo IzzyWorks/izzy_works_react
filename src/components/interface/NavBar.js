@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
 //components
 import Logo from './DynamicLogo';
-import NavClickWrapper from './NavClickButton';
-import lottieLogo from '../data/Animations/logo.json';
+import NavMenu from './NavMenu';
+import lottieLogo from '../data/lottie/logo.json';
+
+//redux
 
 //props comes from index.js NavBarData;
 
-function NavBar(props) {
-  // console.log('%cRendering NavBar ===>', 'color: darkblue; font-size: 16px');
-
+function NavBar() {
   //hooks
   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
     pageNo: 0,
@@ -22,9 +22,9 @@ function NavBar(props) {
     loop: false,
   });
 
-  const updateLocalStorage = (newLottieObj) => {
-    setLottieObj(newLottieObj);
-  };
+  // const updateLocalStorage = (newLottieObj) => {
+  //   setLottieObj(newLottieObj);
+  // };
 
   return (
     <nav className='navbar__wrapper'>
@@ -35,25 +35,10 @@ function NavBar(props) {
         </div>
       </div>
       <div className='navbar__right-container'>
-        <ul className='navbar__list'>
-          {props.NavObj.map((NavObj) => (
-            <li key={NavObj.key} className='navbar__links'>
-              <h3 className={'black'}>
-                <NavClickWrapper
-                  NavObj={NavObj}
-                  lottieObj={lottieObj}
-                  passObj={updateLocalStorage}
-                />
-              </h3>
-            </li>
-          ))}
-        </ul>
+        <NavMenu />
       </div>
     </nav>
   );
 }
 
 export default NavBar;
-
-// console.log('%cRendering NavBar ===>', 'color: orange; font-size: 16px');
-// console.log('%c----------------------', 'color: orange; font-size: 16px');

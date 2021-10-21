@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -14,10 +15,10 @@
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.2.1",
     "react-router-hash-link": "^2.4.3",
-    "react-uuid": "^1.0.2",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "toolkit": "^1.5.4"
   },
   "scripts": {
     "start-webdev": "webpack serve --mode development"

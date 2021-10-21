@@ -1,9 +1,9 @@
 import React from 'react';
 
 //components
-import Title from './whitePaper/Title';
-import Synopsis from './whitePaper/Synopsis';
-import Details from './whitePaper/details/DetailsCard';
+import Title from '../interface/whitePaper/Title';
+import Synopsis from '../interface/whitePaper/Synopsis';
+import Details from '../interface/whitePaper/details/DetailsCard';
 
 //hooks
 // import useLocalStorage from '../hooks/useLocalStorage';

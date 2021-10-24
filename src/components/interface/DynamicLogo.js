@@ -5,7 +5,7 @@ import { onHover, onMouseLeave } from '../helper/lottieSlice';
 import LottiePlayer from '../helper/LottiePlayer';
 import logoAnimation from '../data/lottie/logo.json';
 
-function Logo({ animation }) {
+function Logo() {
   console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');
   console.log('Page Number', logoAnimation.pageNo);
   console.log('Start segment', logoAnimation.firstFrame);
@@ -19,7 +19,7 @@ function Logo({ animation }) {
     loop: false,
     speed: 1,
     play: true,
-    animationData: animation,
+    animationData: logoAnimation,
     direction: logoAnimation.playDirection,
     segments: [logoAnimation.firstFrame, logoAnimation.lastFrame],
   };

@@ -5,7 +5,7 @@ import lottieReducer from '../helper/lottieSlice';
 
 export default configureStore({
   reducer: {
-    ui: uiReducer,
+    // ui: uiReducer,
     lottie: lottieReducer,
   },
 });

@@ -1,16 +1,33 @@
 import React from 'react';
 import NavButton from './NavButton';
+import { useSelector } from 'react-redux';
+import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
 import NavObj from '../data/NavObj';
 
-export const NavMenu = ({ lottieObj }) => {
-  const buttonList = NavObj.map((NavObj) => {
+function NavMenu() {
+  //hooks
+  const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+    pageNo: 0,
+    playDirection: 1,
+    lastFrame: 1,
+    firstFrame: 1,
+    speed: 1,
+    play: true,
+    loop: false,
+  });
+
+  const uiComponent = useSelector((state) => state.ui);
+  console.log('uiSlice ====>', uiComponent);
+  console.log('lottieObj ====>', lottieObj);
+
+  const buttonList = uiComponent.map((ui) => {
     return (
-      <li key={NavObj.key} className='navbar__links'>
+      <li key={ui.id} className='navbar__links'>
         <h3 className={'black'}>
           <NavButton
-            NavObj={NavObj}
-            lottieObj={lottieObj}
+            uiComponent={ui}
+            // lottieObj={lottieObj}
             // passObj={updateLocalStorage}
           />
         </h3>
@@ -19,4 +36,6 @@ export const NavMenu = ({ lottieObj }) => {
   });
 
   return <ul className='navbar__list'>{buttonList}</ul>;
-};
+}
+
+export default NavMenu;

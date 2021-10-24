@@ -7,7 +7,9 @@ const initialState = [
     url: '/',
     pageNo: 1,
     textColor: 'white',
-    page: '<LandingPage whitePaper={ContentData} />',
+    page: 'LandingPage',
+    firstFrame: 1,
+    lastFrame: 1,
   },
   {
     id: 'obicId',
@@ -15,7 +17,9 @@ const initialState = [
     url: '/obic',
     pageNo: 2,
     textColor: 'white',
-    page: '<LandingPage whitePaper={OBICPage} />',
+    page: 'OBICPage',
+    firstFrame: 1,
+    lastFrame: 11,
   },
   {
     id: 'tldnrId',
@@ -23,7 +27,9 @@ const initialState = [
     url: '/tldnr',
     pageNo: 3,
     textColor: 'white',
-    page: '<LandingPage whitePaper={TldnrPage} />',
+    page: 'TldnrPage',
+    firstFrame: 12,
+    lastFrame: 21,
   },
   {
     id: 'hapmapId',
@@ -31,7 +37,9 @@ const initialState = [
     url: '/hapmap',
     pageNo: 4,
     textColor: 'black',
-    page: '<LandingPage whitePaper={HapMapPage} />',
+    page: 'HapMapPage',
+    firstFrame: 22,
+    lastFrame: 33,
   },
   {
     id: 'aboutId',
@@ -39,7 +47,9 @@ const initialState = [
     url: '/about',
     pageNo: 5,
     textColor: 'black',
-    page: '<LandingPage whitePaper={AboutPage} />',
+    page: 'AboutPage',
+    firstFrame: 33,
+    lastFrame: 33,
   },
 ];
 

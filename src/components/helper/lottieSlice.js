@@ -3,7 +3,7 @@ import { createSlice, nanoid } from '@reduxjs/toolkit';
 const initialState = {
   loop: false,
   speed: 1,
-  play: false,
+  play: true,
   direction: 1,
   segments: [1, 1],
 };
@@ -14,19 +14,19 @@ const lottieSlice = createSlice({
   reducers: {
     onHover: {
       reducer(state, action) {
-        const { play, direction, segments } = action.payload;
-        const playBack = action.payload.direction;
+        state = action.payload;
       },
-      prepare(playBack) {
-        if (playBack) {
-          play = true;
-          direction = 1;
-          playBack[0] = startFrame;
-          playBack[1] = 33;
-        }
-      },
+      //   prepare(play, direction, lottieFrame) {
+      //     return {
+      //       payload: {
+      //         play,
+      //         direction,
+      //         segments: lottieFrame,
+      //       },
+      //     };
+      //   },
     },
-    onMouseOff: {
+    onMouseLeave: {
       reducer(state, action) {
         const { direction } = action.payload;
         const playBack = action.payload.direction;
@@ -96,7 +96,7 @@ const lottieSlice = createSlice({
 
 export const {
   onHover,
-  onMouseOff,
+  onMouseLeave,
   onScrollDown,
   onScrollUp,
   pageClickForward,

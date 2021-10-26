@@ -1,9 +1,11 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  prevPageNo: 1,
+  pageNo: 1,
   loop: false,
   speed: 1,
-  play: false,
+  play: true,
   direction: 1,
   segments: [1, 1],
 };
@@ -12,95 +14,44 @@ const lottieSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    onHover: {
+    updateDirection: {
       reducer(state, action) {
-        const { play, direction, segments } = action.payload;
-        const playBack = action.payload.direction;
-      },
-      prepare(playBack) {
-        if (playBack) {
-          play = true;
-          direction = 1;
-          playBack[0] = startFrame;
-          playBack[1] = 33;
-        }
+        const { playDirection } = action.payload;
+        state.direction = playDirection;
       },
     },
-    onMouseOff: {
-      reducer(state, action) {
-        const { direction } = action.payload;
-        const playBack = action.payload.direction;
-      },
-      prepare(playBack) {
-        if (playBack) {
-          direction = -1;
-        }
-      },
-    },
-    onScrollDown: {
-      reducer(state, action) {
-        const { play, direction, segments } = action.payload;
-        const playBack = action.payload.direction;
-      },
-      prepare(playBack) {
-        if (playBack) {
-          play = true;
-          direction = 1;
-          playBack[1] = endFrame;
-        }
-      },
-    },
-    onScrollUp: {
-      reducer(state, action) {
-        const { play, direction, segments } = action.payload;
-        const playBack = action.payload.direction;
-      },
-      prepare(playBack) {
-        if (playBack) {
-          play = true;
-          direction = -1;
-          playBack[0] = startFrame;
-        }
-      },
-    },
-    pageClickForward: {
-      reducer(state, action) {
-        const { play, direction, segments } = action.payload;
-        const playBack = action.payload.direction;
-      },
-      prepare(playBack) {
-        if (playBack) {
-          play = true;
-          direction = 1;
-          playBack[0] = startFrame;
-          playBack[1] = endFrame;
-        }
-      },
-    },
-    pageClickBackward: {
-      reducer(state, action) {
-        const { play, direction, segments } = action.payload;
-        const playBack = action.payload.direction;
-      },
-      prepare(playBack) {
-        if (playBack) {
-          play = true;
-          direction = -1;
-          playBack[0] = startFrame;
-          playBack[1] = endFrame;
-        }
-      },
-    },
+    // updatePage: {
+    //   reducer(state, action) {
+    //     const { pageNo } = action.payload;
+    //     state.pageNo = pageNo;
+    //   },
+    // },
+    // updatePlaybackStart: {
+    //   reducer(state, action) {
+    //     const { startFrame } = action.payload;
+    //     state.segments[0] = startFrame;
+    //   },
+    // },
+    // updateRewindEnd: {
+    //   reducer(state, action) {
+    //     const { endFrame } = action.payload;
+    //     state.segments[1] = endFrame;
+    //   },
+    // },
+    // mapButtons: {
+    //   reducer(state, action) {
+    //     const { }
+    //   },
+    // },
   },
 });
 
 export const {
-  onHover,
-  onMouseOff,
-  onScrollDown,
-  onScrollUp,
-  pageClickForward,
-  pageClickBackward,
+  updateDirection,
+  updatePage,
+  updatePlaybackStart,
+  updateRewindEnd,
+  mapButtons,
 } = lottieSlice.actions;
 
 export default lottieSlice.reducer;

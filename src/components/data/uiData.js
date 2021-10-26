@@ -1,6 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = [
+const uiData = [
   {
     id: 'homeId',
     name: 'Home',
@@ -8,6 +6,7 @@ const initialState = [
     pageNo: 1,
     textColor: 'white',
     page: 'LandingPage',
+    direction: 1,
     firstFrame: 1,
     lastFrame: 1,
   },
@@ -18,6 +17,7 @@ const initialState = [
     pageNo: 2,
     textColor: 'white',
     page: 'OBICPage',
+    direction: 1,
     firstFrame: 1,
     lastFrame: 11,
   },
@@ -28,6 +28,7 @@ const initialState = [
     pageNo: 3,
     textColor: 'white',
     page: 'TldnrPage',
+    direction: 1,
     firstFrame: 12,
     lastFrame: 21,
   },
@@ -38,6 +39,7 @@ const initialState = [
     pageNo: 4,
     textColor: 'black',
     page: 'HapMapPage',
+    direction: 1,
     firstFrame: 22,
     lastFrame: 33,
   },
@@ -48,15 +50,10 @@ const initialState = [
     pageNo: 5,
     textColor: 'black',
     page: 'AboutPage',
+    direction: 1,
     firstFrame: 33,
     lastFrame: 33,
   },
 ];
 
-const uiSlice = createSlice({
-  name: 'ui',
-  initialState,
-  reducers: {},
-});
-
-export default uiSlice.reducer;
+export default uiData;

@@ -1,9 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import { useSelector } from 'react-redux';
 
 //components
-import NavBar from './components/nav/NavBar';
+import NavBar from './components/interface/NavBar';
 import LandingPage from './components/pages/LandingPage';
 import OBICPage from './components/pages/OBICPage';
 import TldnrPage from './components/pages/TldnrPage';
@@ -54,10 +55,10 @@ function App() {
   // const playDirection = Object.values(playDirectionObj);
   // const updateCSSTransition = (e) => {};
 
-  const scrollDirection = () => {
-    'scroll-down';
-    // `scroll-${playDirection[1] == 1 ? 'down' : 'up'}`
-  };
+  // const scrollDirection = () => {
+  //   'scroll-down';
+  //   `scroll-${playDirection[1] == 1 ? 'down' : 'up'}`
+  // };
 
   return (
     <Router>
@@ -69,7 +70,7 @@ function App() {
               <CSSTransition
                 in={match != null}
                 timeout={2000}
-                classNames={scrollDirection}
+                classNames='scroll-down'
                 unmountOnExit
               >
                 <div>

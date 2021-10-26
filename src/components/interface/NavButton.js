@@ -1,45 +1,63 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  updateDirection,
+  updatePage,
+  updatePlaybackStart,
+  updateRewindEnd,
+} from '../helper/lottieSlice';
 
-// props from NavBarData from NavBar.js;
+const NavButton = ({ uiComponent }) => {
+  const uiTextColor = 'black';
 
-const NavButton = ({ NavObj, lottieObj, passObj }) => {
-  const handleClick = (e) => {
-    let newLottieObj = {
-      pageNo: lottieObj.pageNo || 0,
-      playDirection: lottieObj.playDirection || 1,
-      lastFrame: lottieObj.lastFrame || 1,
-      firstFrame: lottieObj.firstFrame || 1,
-    };
-    newLottieObj.pageNo = NavObj.page;
-    newLottieObj.playDirection = lottieObj.pageNo <= NavObj.page ? 1 : -1;
-    if (newLottieObj.playDirection == 1) {
-      newLottieObj.lastFrame = NavObj.lastFrame;
-    } else {
-      newLottieObj.firstFrame = NavObj.firstFrame;
-    }
-    passObj(newLottieObj);
-
-    // setPageNo(props.NavBarData.page);
-  };
+  // const onClick = (e) => {
+  //   let lottiePlayback = {};
+  //   useDispatch(playLottieLogo(lottiePlayback));
+  // };
 
   return (
     <NavLink
-      key={NavObj.key}
-      to={NavObj.path}
+      key={uiComponent.id}
+      to={uiComponent.url}
       activeClassName='active'
-      onClick={handleClick}
-      // onmouseover={handleHover}
+      className={uiTextColor}
+      // onClick={onClick}
     >
-      {NavObj.name}
+      {uiComponent.name}
     </NavLink>
   );
 };
 
 export default NavButton;
 
-// console.log('%cDATA IN CLICK EVENT ===>', 'color: orange; font-size: 16px');
-// console.log('Page Number', lottieObj.pageNo);
-// console.log('Start segment', lottieObj.firstFrame);
-// console.log('End segment', lottieObj.lastFrame);
-// console.log('Direction', lottieObj.playDirection);
+// const onClick = (e) => {
+//   let lottiePlayback = {};
+//   useDispatch(playLottieLogo(lottiePlayback));
+// };
+
+// uiComponent.pageNo >= prevPageNo
+//   ? useDispatch(updateDirection(1))
+//   : useDispatch(updateDirection(-1));
+// currentDirection === 1
+//   ? useDispatch(updatePlaybackStart({ startFrame: uiComponent.firstFrame }))
+//   : useDispatch(updateRewindEnd({ endFrame: uiComponent.lastFrame }));
+// useDispatch(updatePage({ pageNo: uiComponent.pageNo }));
+
+// const setPlayDirection = () => {
+//   uiComponent.pageNo >= prevPageNo
+//     ? useDispatch(updateDirection(1))
+//     : useDispatch(updateDirection(-1));
+// };
+
+// const setPlaySegments = () => {
+//   currentDirection === 1
+//     ? useDispatch(
+//         updatePlaybackStart({ startFrame: uiComponent.firstFrame })
+//       )
+//     : useDispatch(updateRewindEnd({ endFrame: uiComponent.lastFrame }));
+// };
+
+// const updatePageHistory = () => {
+//   useDispatch(updatePage({ pageNo: uiComponent.pageNo }));
+// };

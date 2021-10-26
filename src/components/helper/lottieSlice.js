@@ -20,28 +20,38 @@ const lottieSlice = createSlice({
         state.direction = playDirection;
       },
     },
-    updatePage: {
-      reducer(state, action) {
-        const { pageNo } = action.payload;
-        state.pageNo = pageNo;
-      },
-    },
-    updatePlaybackStart: {
-      reducer(state, action) {
-        const { startFrame } = action.payload;
-        state.segments[0] = startFrame;
-      },
-    },
-    updateRewindEnd: {
-      reducer(state, action) {
-        const { endFrame } = action.payload;
-        state.segments[1] = endFrame;
-      },
-    },
+    // updatePage: {
+    //   reducer(state, action) {
+    //     const { pageNo } = action.payload;
+    //     state.pageNo = pageNo;
+    //   },
+    // },
+    // updatePlaybackStart: {
+    //   reducer(state, action) {
+    //     const { startFrame } = action.payload;
+    //     state.segments[0] = startFrame;
+    //   },
+    // },
+    // updateRewindEnd: {
+    //   reducer(state, action) {
+    //     const { endFrame } = action.payload;
+    //     state.segments[1] = endFrame;
+    //   },
+    // },
+    // mapButtons: {
+    //   reducer(state, action) {
+    //     const { }
+    //   },
+    // },
   },
 });
 
-export const { updatePage, updatePlaybackStart, updateRewindEnd } =
-  lottieSlice.actions;
+export const {
+  updateDirection,
+  updatePage,
+  updatePlaybackStart,
+  updateRewindEnd,
+  mapButtons,
+} = lottieSlice.actions;
 
 export default lottieSlice.reducer;

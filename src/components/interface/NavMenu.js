@@ -1,24 +1,33 @@
 import React from 'react';
 import NavButton from './NavButton';
 import uiComponents from '../data/uiData';
-import { mapButtons } from '../helper/lottieSlice';
-import { useSelector } from 'react-redux';
+import { updateLottieData } from '../helper/lottieSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 function NavMenu() {
   const buttons = useSelector((state) => state.lottie);
 
-  const checkDirection = (buttons) => {
-    buttons.pageNo > buttons.prevPageNo
-    return 1 : -1 ;
-  };
+  const navButtons = buttons.map((button) => {
+    const checkDirection = (button) => {
+      console.log('page Number', button.pageNo);
+      console.log('previouspage Number', button.prevPageNo);
 
-buttons(checkDirection);
+      if (button.pageNo <= button.prevPageNo) {
+        console.log('direction forward!!!!');
 
-  const navButtons = uiComponents.map((ui) => {
+        useDispatch(updateLottieData({ newDirection: 11 }));
+      } else {
+        console.log('direction backward!!!!');
+        useDispatch(updateLottieData({ newDirection: -11 }));
+      }
+    };
+
+    checkDirection(button);
+    console.log('new mapped buttons', button);
     return (
-      <li key={ui.id} className='navbar__links'>
+      <li key={button.id} className='navbar__links'>
         <h3 className={'black'}>
-          <NavButton uiComponent={ui} />
+          <NavButton buttonData={button} />
         </h3>
       </li>
     );

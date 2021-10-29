@@ -13,7 +13,7 @@ function Logo() {
   console.log('Direction', logoAnimation.playDirection);
 
   const lottie = useSelector((state) => state.lottie);
-  console.log('am I selecting the lottieSlice?', lottie);
+  // console.log('am I selecting the lottieSlice?', lottie);
 
   let newAnimationObj = {
     loop: false,
@@ -27,8 +27,8 @@ function Logo() {
   return (
     <Link
       to='/'
-      onMouseEnter={onHover}
-      onMouseLeave={onMouseLeave}
+      // onMouseEnter={onHover}
+      // onMouseLeave={onMouseLeave}
       className='navbar__logo-wrapper'
     >
       <LottiePlayer animationData={newAnimationObj} />

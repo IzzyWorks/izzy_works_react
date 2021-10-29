@@ -8,7 +8,7 @@ import {
   updateRewindEnd,
 } from '../helper/lottieSlice';
 
-const NavButton = ({ uiComponent }) => {
+const NavButton = ({ buttonData }) => {
   const uiTextColor = 'black';
 
   // const onClick = (e) => {
@@ -18,13 +18,13 @@ const NavButton = ({ uiComponent }) => {
 
   return (
     <NavLink
-      key={uiComponent.id}
-      to={uiComponent.url}
+      key={buttonData.id}
+      to={buttonData.url}
       activeClassName='active'
       className={uiTextColor}
       // onClick={onClick}
     >
-      {uiComponent.name}
+      {buttonData.lable}
     </NavLink>
   );
 };

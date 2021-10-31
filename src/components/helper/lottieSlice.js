@@ -94,7 +94,7 @@ const lottieSlice = createSlice({
   reducers: {
     updateLottieData: {
       reducer(state, action) {
-        state.map(action.payload);
+        state = action.payload;
       },
       prepare(
         id,
@@ -151,3 +151,41 @@ export default lottieSlice.reducer;
 //   direction: 1,
 //   segments: [1, 1],
 // };
+
+// updateLottieData: {
+//       reducer(state, action) {
+//         state = action.payload;
+//       },
+//       prepare(
+//         id,
+//         lable,
+//         url,
+//         prevPageNo,
+//         pageNo,
+//         textColor,
+//         page,
+//         newDirection,
+//         newFirstFrame,
+//         newLastFrame
+//       ) {
+//         return {
+//           payload: {
+//             id,
+//             lable,
+//             url,
+//             prevPageNo: prevPageNo,
+//             pageNo,
+//             textColor,
+//             page,
+//             direction: newDirection,
+//             firstFrame: newFirstFrame,
+//             lastFrame: newLastFrame,
+//             // lottieAnimation: {
+//             //   direction: newDirection,
+//             //   firstFrame: newFirstFrame,
+//             //   lastFrame: newLastFrame,
+//             // },
+//           },
+//         };
+//       },
+//     },

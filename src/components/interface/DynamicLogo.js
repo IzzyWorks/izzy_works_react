@@ -6,11 +6,11 @@ import LottiePlayer from '../helper/LottiePlayer';
 import logoAnimation from '../data/lottie/logo.json';
 
 function Logo() {
-  console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');
-  console.log('Page Number', logoAnimation.pageNo);
-  console.log('Start segment', logoAnimation.firstFrame);
-  console.log('End segment', logoAnimation.lastFrame);
-  console.log('Direction', logoAnimation.playDirection);
+  // console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');
+  // console.log('Page Number', logoAnimation.pageNo);
+  // console.log('Start segment', logoAnimation.firstFrame);
+  // console.log('End segment', logoAnimation.lastFrame);
+  // console.log('Direction', logoAnimation.playDirection);
 
   const lottie = useSelector((state) => state.lottie);
   // console.log('am I selecting the lottieSlice?', lottie);

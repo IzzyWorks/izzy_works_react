@@ -66,9 +66,13 @@ function App() {
       <section className='section__wrapper'>
         {routes.map(({ path, Component, PageContent }) => (
           <Route key={path} exact path={path}>
-            {({ match }) => (
+            {({ match }) => {
+              if (!match) {
+                return null;
+              }
+              return (
               <CSSTransition
-                in={match != null}
+                in={match !== null}
                 timeout={2000}
                 classNames='scroll-down'
                 unmountOnExit
@@ -77,7 +81,7 @@ function App() {
                   <Component whitePaper={PageContent} />
                 </div>
               </CSSTransition>
-            )}
+            )}}
           </Route>
         ))}
       </section>

@@ -4,12 +4,12 @@ import React from 'react';
 // import useLocalStorage from '../hooks/useLocalStorage';
 
 //components
-import Title from './whitePaper/Title';
-import Synopsis from './whitePaper/Synopsis';
-import Details from './whitePaper/details/DetailsCard';
+import Title from '../interface/whitePaper/Title';
+import Synopsis from '../interface/whitePaper/Synopsis';
+import Details from '../interface/whitePaper/details/DetailsCard';
 
 function HapMapPage(props) {
-  console.log('%cRendering HAPMAP Page', 'color: gray; font-size: 16px');
+  // console.log('%cRendering HAPMAP Page', 'color: gray; font-size: 16px');
   // renderHapMapPage;
   const whitePaper = props.whitePaper;
   return (

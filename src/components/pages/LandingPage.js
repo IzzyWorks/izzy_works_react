@@ -21,7 +21,7 @@ const LandingPage = () => {
   // const mouEnterHandler = (e) => {
   //   console.log("hello form mouse enter!",e.target);
   // }
-  console.log('%cRendering Landing Page', 'color: purple; font-size: 16px');
+  // console.log('%cRendering Landing Page', 'color: purple; font-size: 16px');
   return (
     <div>
       <ul className='circle--list'>

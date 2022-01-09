@@ -1,7 +1,7 @@
 import Lottie from 'react-lottie-player';
 import React, { useState, memo, useRef, useEffect } from 'react';
 
-const LottieWrapper = memo((props) => {
+const LottiePlayer = memo((props) => {
   const [log, setLog] = useState([]);
   const addLog = (v) => setLog((l) => [v, ...l]);
 
@@ -30,11 +30,12 @@ const LottieWrapper = memo((props) => {
   return (
     <Lottie
       loop={props.animationData.loop}
-      speed={props.animationData.speed}
+      // speed={props.animationData.speed}
+      speed={0.5}
       play={props.animationData.play}
       animationData={props.animation}
       segments={props.animationData.segments}
-      direction={props.animationData.direction}
+      direction={1}
       onComplete={() => addLog('complete')}
       onLoopComplete={() => addLog('loopComplete')}
       onEnterFrame={() => {
@@ -52,4 +53,4 @@ const LottieWrapper = memo((props) => {
   );
 });
 
-export default LottieWrapper;
+export default LottiePlayer;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import animationStyles from '../../../animationStylesModel';
+import animationStyles from '../TextAnimation';
 
 function Title(props) {
   let classes = props.classes;

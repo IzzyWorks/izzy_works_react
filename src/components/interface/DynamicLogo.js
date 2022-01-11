@@ -1,23 +1,23 @@
 import React from 'react';
 import LottiePlayer from '../helper/LottiePlayer';
 import logoAnimation from '../data/lottie/logo.json';
-import { UiContext } from '../context/UiContext';
-// import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
+import { CurrentContext } from '../context/CurrentContext';
+import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 import { Link } from 'react-router-dom';
 
 function Logo() {
-  const logoData = React.useContext(UiContext);
+  const logoData = React.useContext(CurrentContext);
 
   //hooks
-  // const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
-  //   pageNo: 0,
-  //   playDirection: 'down',
-  //   firstFrame: 1,
-  //   lastFrame: 1,
-  // });
+  const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+    pageNo: 0,
+    playDirection: 'down',
+    firstFrame: 1,
+    lastFrame: 1,
+  });
 
   console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');
-  console.log('%cLogo Data===>', UiContext);
+  console.log('%cLogo Data===>', logoData);
 
   let newAnimationObj = {
     loop: false,
@@ -25,9 +25,9 @@ function Logo() {
     play: true,
     animationData: logoAnimation,
     direction: 1,
-    segments: [1, 33],
+    // segments: [1, 33],
     // direction: lottieObj.playDirection,
-    // segments: [lottieObj.firstFrame, lottieObj.lastFrame],
+    segments: [lottieObj.firstFrame, lottieObj.lastFrame],
   };
 
   // const updateLocalStorage = (newLottieObj) => {

@@ -1,34 +1,34 @@
 import React, { useState, useContext } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { CurrentContext } from '../context/CurrentContext';
 // import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
-const NavButton = ({ buttonObj }) => {
-  console.log('what is passeded', buttonObj);
+const NavButton = ({ buttonObj, passObj }) => {
+  const currentLocation = React.useContext(CurrentContext);
 
   const handleClick = (e) => {
-    console.log('click is passeded', buttonObj);
+    console.log('what is the context object?', currentLocation);
+    // console.log('what is the current context?', currentLocation.pageNo);
+    let newLocationContext = {
+      pageNo: buttonObj.pageNo,
+      playDirection: currentLocation.playDirection,
+      lastFrame: currentLocation.lastFrame,
+      firstFrame: currentLocation.firstFrame,
+    };
+    newLocationContext.pageNo = buttonObj.pageNo;
+    newLocationContext.playDirection =
+      currentLocation.pageNo <= buttonObj.pageNo ? 'down' : 'up';
+    if (currentLocation.pageNo <= buttonObj.pageNo) {
+      newLocationContext.firstFrame = currentLocation.lastFrame;
+      newLocationContext.lastFrame = buttonObj.lastFrame;
+    } else {
+      newLocationContext.firstFrame = currentLocation.lastFrame;
+      newLocationContext.lastFrame = buttonObj.lastFrame - 1;
+    }
+    // setCurrentContext(newLocationContext);
+    // console.log('what is the updated context?', currentLocation.pageNo);
+    // passObj(newLottieObj);
   };
-
-  //     pageNo: buttonObj.pageNo,
-  //     playDirection: lottieObj.playDirection,
-  //     lastFrame: lottieObj.lastFrame,
-  //     firstFrame: lottieObj.firstFrame,
-  //   };
-  //   newLottieObj.pageNo = NavBarData.page;
-  //   newLottieObj.playDirection =
-  //     lottieObj.pageNo <= NavBarData.page ? 'down' : 'up';
-  //   if (lottieObj.pageNo <= NavBarData.page) {
-  //     newLottieObj.firstFrame = lottieObj.lastFrame;
-  //     newLottieObj.lastFrame = NavBarData.lastFrame;
-  //   } else {
-  //     newLottieObj.firstFrame = lottieObj.lastFrame;
-  //     newLottieObj.lastFrame = NavBarData.lastFrame - 1;
-  //   })}
-
-  //   let newGlobalState =
-
-  //   passObj(newLottieObj);
-  // };
 
   return (
     <NavLink

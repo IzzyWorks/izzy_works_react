@@ -1,7 +1,8 @@
 import React, { Component, useContext } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { UiContext, useUiContext } from './components/context/UiContext';
+import { CurrentContext } from './components/context/CurrentContext';
+import currentLocation from './components/data/CurrentLocation';
 
 //components
 import LandingPage from './components/pages/LandingPage';
@@ -51,8 +52,7 @@ const routes = [
 ];
 
 const App = () => {
-  const [uiContext, setUiContext] = React.useState(uiDATA);
-
+  // const context = React.useState(CurrentContext);
   const NavBar = () => {
     return (
       <nav className='navbar__wrapper'>
@@ -67,7 +67,7 @@ const App = () => {
   };
 
   return (
-    <UiContext.Provider value={uiContext}>
+    <CurrentContext.Provider value={currentLocation}>
       <Router>
         <NavBar />
         <section className='section__wrapper'>
@@ -90,7 +90,7 @@ const App = () => {
           ))}
         </section>
       </Router>
-    </UiContext.Provider>
+    </CurrentContext.Provider>
   );
 };
 

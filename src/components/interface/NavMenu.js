@@ -1,18 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react';
 import NavButton from './NavButton';
-import useLocalStorage from '../hooks/useLocalStorage';
-import { UiContext } from '../context/UiContext';
+// import useLocalStorage from '../hooks/useLocalStorage';
+import { CurrentContext } from '../context/CurrentContext';
+import uiDATA from '../data/uiData';
 
 // navDATA from uiData
 
 const NavMenu = () => {
   //   //hooks
-  //   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
-  //     pageNo: 0,
-  //     playDirection: 1,
-  //     lastFrame: 1,
-  //     firstFrame: 1,
-  //   });
+  // const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+  //   pageNo: 0,
+  //   playDirection: 'down',
+  //   lastFrame: 1,
+  //   firstFrame: 1,
+  // });
 
   //   const [animationObj, setAnimationObj] = useEffect({
   //     animation: { lottieLogo },
@@ -23,17 +24,21 @@ const NavMenu = () => {
   //     loop: false,
   //   });
 
-  //   const updateLocalStorage = (newLottieObj) => {
-  //     setLottieObj(newLottieObj);
-  //   };
-  const uiContext = React.useContext(UiContext);
+  // const updateLocalStorage = (newLottieObj) => {
+  //   setLottieObj(newLottieObj);
+  // };
 
-  const navButtons = uiContext.map((navButtons) => {
+  const uiContext = React.useContext(CurrentContext);
+
+  const navButtons = uiDATA.map((navButtons) => {
     return (
       <li key={navButtons.id} className='navbar__links'>
         <h3 className={'black'}>
-          <NavButton buttonObj={navButtons} />
-          {/* <NavButton buttonObj={navButtons} passObj={updateLocalStorage} /> */}
+          <NavButton
+            buttonObj={navButtons}
+            // lottieObj={lottieObj}
+            // passObj={updateLocalStorage}
+          />
         </h3>
       </li>
     );

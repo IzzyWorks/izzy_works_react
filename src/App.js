@@ -52,7 +52,7 @@ const routes = [
 ];
 
 const App = () => {
-  // const context = React.useState(CurrentContext);
+  const [location, setLocation] = React.useState(currentLocation);
   const NavBar = () => {
     return (
       <nav className='navbar__wrapper'>
@@ -67,7 +67,7 @@ const App = () => {
   };
 
   return (
-    <CurrentContext.Provider value={currentLocation}>
+    <CurrentContext.Provider value={[location, setLocation]}>
       <Router>
         <NavBar />
         <section className='section__wrapper'>

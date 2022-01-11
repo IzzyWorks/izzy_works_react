@@ -12,8 +12,11 @@ const CurrentContext = React.createContext(null);
 const useLocation = () => React.useContext(CurrentContext);
 
 const CurrentLocationProvider = ({ value, children }) => {
+  const [location, setLocation] = React.useState(currentLocation);
   return (
-    <CurrentContext.Provider value={value}>{children}</CurrentContext.Provider>
+    <CurrentContext.Provider value={[location, setLocation]}>
+      {children}
+    </CurrentContext.Provider>
   );
 };
 

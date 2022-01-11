@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import {
   CurrentLocationProvider,
   useLocation,
+  currentLocation,
 } from '../context/CurrentContext';
 // import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 

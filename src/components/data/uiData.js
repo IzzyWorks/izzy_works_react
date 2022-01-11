@@ -1,4 +1,4 @@
-const uiData = [
+const uiDATA = [
   {
     id: 'homeId',
     name: 'Home',
@@ -6,7 +6,6 @@ const uiData = [
     pageNo: 1,
     textColor: 'white',
     page: 'LandingPage',
-    direction: 1,
     firstFrame: 1,
     lastFrame: 1,
   },
@@ -17,7 +16,6 @@ const uiData = [
     pageNo: 2,
     textColor: 'white',
     page: 'OBICPage',
-    direction: 1,
     firstFrame: 1,
     lastFrame: 11,
   },
@@ -28,7 +26,6 @@ const uiData = [
     pageNo: 3,
     textColor: 'white',
     page: 'TldnrPage',
-    direction: 1,
     firstFrame: 12,
     lastFrame: 21,
   },
@@ -39,7 +36,6 @@ const uiData = [
     pageNo: 4,
     textColor: 'black',
     page: 'HapMapPage',
-    direction: 1,
     firstFrame: 22,
     lastFrame: 33,
   },
@@ -50,10 +46,9 @@ const uiData = [
     pageNo: 5,
     textColor: 'black',
     page: 'AboutPage',
-    direction: 1,
     firstFrame: 33,
     lastFrame: 33,
   },
 ];
 
-export default uiData;
+export default uiDATA;

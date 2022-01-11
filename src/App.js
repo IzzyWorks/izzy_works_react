@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { useSelector } from 'react-redux';
+import { UiContext, useUiContext } from './components/context/UiContext';
 
 //components
 import NavBar from './components/interface/NavBar';
@@ -12,77 +12,72 @@ import HapMapPage from './components/pages/HapMapPage';
 import AboutPage from './components/pages/AboutPage';
 
 //data
-import ContentData from './components/data/ContentData';
-import NavObj from './components/data/NavObj';
+import contentDATA from './components/data/ContentData';
+// import NavObj from './components/data/NavObj';
+import uiDATA from './components/data/uiData';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     Component: LandingPage,
-    PageContent: ContentData[0],
+    PageContent: contentDATA[0],
   },
   {
     path: '/obic',
     name: 'OBIC',
     Component: OBICPage,
-    PageContent: ContentData[1],
+    PageContent: contentDATA[1],
   },
   {
     path: '/tldnr',
     name: 'tldnr',
     Component: TldnrPage,
-    PageContent: ContentData[2],
+    PageContent: contentDATA[2],
   },
   {
     path: '/hapmap',
     name: 'HapMap',
     Component: HapMapPage,
-    PageContent: ContentData[3],
+    PageContent: contentDATA[3],
   },
   {
     path: '/about',
     name: 'About',
     Component: AboutPage,
-    PageContent: ContentData[4],
+    PageContent: contentDATA[4],
   },
 ];
 
-function App() {
-  // const playDirectionObj = JSON.parse(
-  //   window.localStorage.getItem('lottieData')
-  // );
-  // const playDirection = Object.values(playDirectionObj);
-  // const updateCSSTransition = (e) => {};
-
-  // const scrollDirection = () => {
-  //   'scroll-down';
-  //   `scroll-${playDirection[1] == 1 ? 'down' : 'up'}`
-  // };
+const App = () => {
+  const [uiContext, setUiContext] = React.useState(uiDATA);
 
   return (
-    <Router>
-      <NavBar NavObj={NavObj} />
-      <section className='section__wrapper'>
-        {routes.map(({ path, Component, PageContent }) => (
-          <Route key={path} exact path={path}>
-            {({ match }) => (
-              <CSSTransition
-                in={match != null}
-                timeout={2000}
-                classNames='scroll-down'
-                unmountOnExit
-              >
-                <div>
-                  <Component whitePaper={PageContent} />
-                </div>
-              </CSSTransition>
-            )}
-          </Route>
-        ))}
-      </section>
-    </Router>
+    <UiContext.Provider value={uiContext}>
+      <Router>
+        <NavBar />
+        <section className='section__wrapper'>
+          {routes.map(({ path, Component, PageContent }) => (
+            <Route key={path} exact path={path}>
+              {({ match }) => (
+                <CSSTransition
+                  in={match != null}
+                  timeout={2000}
+                  classNames='scroll-down'
+                  // classNames={`scroll-${pageState[0].playDirection}`}
+                  unmountOnExit
+                >
+                  <div>
+                    <Component whitePaper={PageContent} />
+                  </div>
+                </CSSTransition>
+              )}
+            </Route>
+          ))}
+        </section>
+      </Router>
+    </UiContext.Provider>
   );
-}
+};
 
 export default App;

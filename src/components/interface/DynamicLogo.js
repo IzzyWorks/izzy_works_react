@@ -1,28 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { onHover, onMouseLeave } from '../helper/lottieSlice';
 import LottiePlayer from '../helper/LottiePlayer';
 import logoAnimation from '../data/lottie/logo.json';
+import { UiContext } from '../context/UiContext';
+// import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
+import { Link } from 'react-router-dom';
 
 function Logo() {
-  console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');
-  console.log('Page Number', logoAnimation.pageNo);
-  console.log('Start segment', logoAnimation.firstFrame);
-  console.log('End segment', logoAnimation.lastFrame);
-  console.log('Direction', logoAnimation.playDirection);
+  const logoData = React.useContext(UiContext);
 
-  const lottie = useSelector((state) => state.lottie);
-  // console.log('am I selecting the lottieSlice?', lottie);
+  //hooks
+  // const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+  //   pageNo: 0,
+  //   playDirection: 'down',
+  //   firstFrame: 1,
+  //   lastFrame: 1,
+  // });
+
+  console.log('%cAnimating Logo ===>', 'color: darkgreen; font-size: 16px');
+  console.log('%cLogo Data===>', UiContext);
 
   let newAnimationObj = {
     loop: false,
-    speed: 1,
+    speed: 0.5,
     play: true,
     animationData: logoAnimation,
-    direction: logoAnimation.playDirection,
-    segments: [logoAnimation.firstFrame, logoAnimation.lastFrame],
+    direction: 1,
+    segments: [1, 33],
+    // direction: lottieObj.playDirection,
+    // segments: [lottieObj.firstFrame, lottieObj.lastFrame],
   };
+
+  // const updateLocalStorage = (newLottieObj) => {
+  //   setLottieObj(newLottieObj);
+  // };
 
   return (
     <Link

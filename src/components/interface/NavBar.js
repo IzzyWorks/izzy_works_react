@@ -4,8 +4,6 @@ import React from 'react';
 import Logo from './DynamicLogo';
 import NavMenu from './NavMenu';
 
-//redux
-
 function NavBar() {
   return (
     <nav className='navbar__wrapper'>

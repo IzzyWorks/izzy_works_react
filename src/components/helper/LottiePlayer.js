@@ -31,7 +31,7 @@ const LottieWrapper = memo((props) => {
   return (
     <Lottie
       loop={props.animationData.loop}
-      speed={props.animationData.speed}
+      speed={0.5}
       play={props.animationData.play}
       animationData={props.animationData.animationData}
       direction={props.animationData.direction}

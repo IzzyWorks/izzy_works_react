@@ -8,7 +8,6 @@ import Synopsis from './Synopsis';
 import Details from './detailsComps/DetailsCard';
 
 function WhitePaper(props) {
-
   const [pageNo, setPageNo] = useState(1);
 
   const pagePositionNScroll = {
@@ -27,7 +26,7 @@ function WhitePaper(props) {
     //console.log('In Use effect! =====>', pagePositionNScroll[pageNo]);
     //history.push(pagePositionNScroll[pageNo]);
     document.addEventListener('scroll', onScrollHandler);
-  },[pageNo]);
+  }, [pageNo]);
 
   const onScrollHandler = (e) => {
     let el = window;
@@ -42,9 +41,7 @@ function WhitePaper(props) {
     );
 
     //console.log("786 ===>",whichPageIamIn);
-    pageNo != whichPageIamIn
-      ? (setPageNo(whichPageIamIn))
-      : '';
+    pageNo != whichPageIamIn ? setPageNo(whichPageIamIn) : '';
   };
 
   return (

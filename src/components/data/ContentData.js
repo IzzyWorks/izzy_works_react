@@ -1,4 +1,4 @@
-const contentData = [
+const contentDATA = [
   {
     id: 'landing',
     page: 0,
@@ -291,4 +291,4 @@ const contentData = [
   },
 ];
 
-export default contentData;
+export default contentDATA;

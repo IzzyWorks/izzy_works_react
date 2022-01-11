@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import NavButton from './NavButton';
+// import uiDATA from '../data/uiData';
+import { UiContext } from '../context/UiContext';
 
-// navData from uiData
+// navDATA from uiData
 
-function NavMenu(props) {
-  const navButtons = navData.map((navButtons) => {
+const NavMenu = () => {
+  const uiContext = React.useContext(UiContext);
+
+  const navButtons = uiContext.map((navButtons) => {
     return (
       <li key={navButtons.id} className='navbar__links'>
         <h3 className={'black'}>
-          <NavButton buttonObj={navButtons} passObj={updateLocalStorage} />
+          <NavButton buttonObj={navButtons} />
+          {/* <NavButton buttonObj={navButtons} passObj={updateLocalStorage} /> */}
         </h3>
       </li>
     );
   });
 
   return <ul className='navbar__list'>{navButtons}</ul>;
-}
+};
 
 export default NavMenu;
 

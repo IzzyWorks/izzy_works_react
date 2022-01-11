@@ -226,6 +226,29 @@ svg {
   transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1);
 }
 
+.scroll-up {
+  position: absolute;
+  transform: translateY(0%);
+}
+
+.scroll-up-enter {
+  transform: translateY(0%);
+}
+
+.scroll-up-enter-active {
+  transform: translateY(100%);
+  transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+.scroll-up-exit {
+  transform: translateY(0%);
+}
+
+.scroll-up-exit-active {
+  transform: translateY(100%);
+  transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1);
+}
+
 .navbar__wrapper {
   width: 100%;
   position: fixed;

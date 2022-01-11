@@ -1,7 +1,7 @@
 import Lottie from 'react-lottie-player';
 import React, { useState, memo, useRef, useEffect } from 'react';
 
-const LottiePlayer = memo((props) => {
+const LottieWrapper = memo((props) => {
   const [log, setLog] = useState([]);
   const addLog = (v) => setLog((l) => [v, ...l]);
 
@@ -23,19 +23,19 @@ const LottiePlayer = memo((props) => {
   //props from ====>
   //<Logo animationData={...} /> from NavBar.js;
 
-  console.log('%cRunning Lottie Player ===>', 'color: red; font-size: 16px');
-  console.log('Lottie Player segments ===>', props.animationData.segments);
-  console.log('Lottie Player direction ===>', props.animationData.direction);
+  console.log('%cLottie Wrapper ===>', 'color: red; font-size: 16px');
+  console.log('Start segment', props.animationData.segments[0]);
+  console.log('End segment', props.animationData.segments[1]);
+  console.log('Direction', props.animationData.direction);
 
   return (
     <Lottie
       loop={props.animationData.loop}
-      // speed={props.animationData.speed}
       speed={0.5}
       play={props.animationData.play}
-      animationData={props.animation}
+      animationData={props.animationData.animationData}
+      direction={props.animationData.direction}
       segments={props.animationData.segments}
-      direction={1}
       onComplete={() => addLog('complete')}
       onLoopComplete={() => addLog('loopComplete')}
       onEnterFrame={() => {
@@ -53,4 +53,4 @@ const LottiePlayer = memo((props) => {
   );
 });
 
-export default LottiePlayer;
+export default LottieWrapper;

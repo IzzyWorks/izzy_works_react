@@ -1,45 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import NavButton from './NavButton';
 // import useLocalStorage from '../hooks/useLocalStorage';
-import { useLocation } from '../context/CurrentContext';
-import uiDATA from '../data/uiData';
+// import { useCurrentLocation } from '../context/CurrentContext';
+import UIDATA from '../data/uiData';
 
 // navDATA from uiData
 
 const NavMenu = () => {
-  //   //hooks
-  // const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
-  //   pageNo: 0,
-  //   playDirection: 'down',
-  //   lastFrame: 1,
-  //   firstFrame: 1,
-  // });
-
-  //   const [animationObj, setAnimationObj] = useEffect({
-  //     animation: { lottieLogo },
-  //     segments: [1, 1],
-  //     direction: 1,
-  //     speed: 1,
-  //     play: true,
-  //     loop: false,
-  //   });
-
-  // const updateLocalStorage = (newLottieObj) => {
-  //   setLottieObj(newLottieObj);
-  // };
-
-  const uiContext = useLocation();
-
-  const navButtons = uiDATA.map((navButtons) => {
+  const navButtons = UIDATA.map((navButtons) => {
     return (
       <li key={navButtons.id} className='navbar__links'>
-        <h3 className={'black'}>
-          <NavButton
-            buttonObj={navButtons}
-            // lottieObj={lottieObj}
-            // passObj={updateLocalStorage}
-          />
-        </h3>
+        <NavButton buttonObj={navButtons} />
       </li>
     );
   });
@@ -48,6 +19,27 @@ const NavMenu = () => {
 };
 
 export default NavMenu;
+
+//   //hooks
+// const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+//   pageNo: 0,
+//   playDirection: 'down',
+//   lastFrame: 1,
+//   firstFrame: 1,
+// });
+
+//   const [animationObj, setAnimationObj] = useEffect({
+//     animation: { lottieLogo },
+//     segments: [1, 1],
+//     direction: 1,
+//     speed: 1,
+//     play: true,
+//     loop: false,
+//   });
+
+// const updateLocalStorage = (newLottieObj) => {
+//   setLottieObj(newLottieObj);
+// };
 
 //         <ul className='navbar__list'>
 //           {props.NavBarData.map((NavBarData) => (

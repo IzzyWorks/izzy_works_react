@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import {
   CurrentLocationProvider,
-  useLocation,
+  useCurrentLocation,
   currentLocation,
 } from '../context/CurrentContext';
 // import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
 const NavButton = ({ buttonObj, passObj }) => {
-  const currentLocation = useLocation();
+  const currentLocation = useCurrentLocation();
 
   const handleClick = (e) => {
     console.log('what is the context object?', currentLocation);

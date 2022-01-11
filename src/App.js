@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import {
   CurrentLocationProvider,
-  currentLocation,
+  useCurrentLocation,
 } from './components/context/CurrentContext';
 
 //components
@@ -54,7 +54,6 @@ const routes = [
 ];
 
 const App = () => {
-  const [location, setLocation] = React.useState(currentLocation);
   const NavBar = () => {
     return (
       <nav className='navbar__wrapper'>
@@ -69,7 +68,7 @@ const App = () => {
   };
 
   return (
-    <CurrentLocationProvider value={[location, setLocation]}>
+    <CurrentLocationProvider>
       <Router>
         <NavBar />
         <section className='section__wrapper'>

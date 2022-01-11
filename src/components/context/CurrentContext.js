@@ -1,6 +1,6 @@
 import React from 'react';
 
-const currentLocation = {
+const CURRENTLOCATION = {
   pageNo: 0,
   playDirection: 'down',
   firstFrame: 1,
@@ -9,10 +9,18 @@ const currentLocation = {
 
 const CurrentContext = React.createContext(null);
 
-const useLocation = () => React.useContext(CurrentContext);
+const useCurrentLocation = () => {
+  const [location, setLocation] = React.useContext(CurrentContext);
 
-const CurrentLocationProvider = ({ value, children }) => {
-  const [location, setLocation] = React.useState(currentLocation);
+  const changeLocation = (value) => {
+    setLocation(value);
+  };
+
+  return { value: location, onChange: changeLocation };
+};
+
+const CurrentLocationProvider = ({ children }) => {
+  const [location, setLocation] = React.useState(CURRENTLOCATION);
   return (
     <CurrentContext.Provider value={[location, setLocation]}>
       {children}
@@ -20,4 +28,4 @@ const CurrentLocationProvider = ({ value, children }) => {
   );
 };
 
-export { CurrentLocationProvider, useLocation, currentLocation };
+export { CurrentLocationProvider, useCurrentLocation, CURRENTLOCATION };

@@ -1,11 +1,31 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import NavButton from './NavButton';
-// import uiDATA from '../data/uiData';
+import useLocalStorage from '../hooks/useLocalStorage';
 import { UiContext } from '../context/UiContext';
 
 // navDATA from uiData
 
 const NavMenu = () => {
+  //   //hooks
+  //   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+  //     pageNo: 0,
+  //     playDirection: 1,
+  //     lastFrame: 1,
+  //     firstFrame: 1,
+  //   });
+
+  //   const [animationObj, setAnimationObj] = useEffect({
+  //     animation: { lottieLogo },
+  //     segments: [1, 1],
+  //     direction: 1,
+  //     speed: 1,
+  //     play: true,
+  //     loop: false,
+  //   });
+
+  //   const updateLocalStorage = (newLottieObj) => {
+  //     setLottieObj(newLottieObj);
+  //   };
   const uiContext = React.useContext(UiContext);
 
   const navButtons = uiContext.map((navButtons) => {

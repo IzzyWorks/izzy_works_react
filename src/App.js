@@ -4,12 +4,13 @@ import { CSSTransition } from 'react-transition-group';
 import { UiContext, useUiContext } from './components/context/UiContext';
 
 //components
-import NavBar from './components/interface/NavBar';
 import LandingPage from './components/pages/LandingPage';
 import OBICPage from './components/pages/OBICPage';
 import TldnrPage from './components/pages/TldnrPage';
 import HapMapPage from './components/pages/HapMapPage';
 import AboutPage from './components/pages/AboutPage';
+import Logo from './components/interface/DynamicLogo';
+import NavMenu from './components/interface/NavMenu';
 
 //data
 import contentDATA from './components/data/ContentData';
@@ -51,6 +52,19 @@ const routes = [
 
 const App = () => {
   const [uiContext, setUiContext] = React.useState(uiDATA);
+
+  const NavBar = () => {
+    return (
+      <nav className='navbar__wrapper'>
+        <div className='navbar__left-container'>
+          <Logo />
+        </div>
+        <div className='navbar__right-container'>
+          <NavMenu />
+        </div>
+      </nav>
+    );
+  };
 
   return (
     <UiContext.Provider value={uiContext}>

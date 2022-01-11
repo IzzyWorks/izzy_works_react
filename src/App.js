@@ -1,8 +1,10 @@
 import React, { Component, useContext } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { CurrentLocationProvider } from './components/context/CurrentContext';
-import currentLocation from './components/data/CurrentLocation';
+import {
+  CurrentLocationProvider,
+  currentLocation,
+} from './components/context/CurrentContext';
 
 //components
 import LandingPage from './components/pages/LandingPage';

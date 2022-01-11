@@ -1,7 +1,7 @@
 import React, { Component, useContext } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { CurrentContext } from './components/context/CurrentContext';
+import { CurrentLocationProvider } from './components/context/CurrentContext';
 import currentLocation from './components/data/CurrentLocation';
 
 //components
@@ -67,7 +67,7 @@ const App = () => {
   };
 
   return (
-    <CurrentContext.Provider value={[location, setLocation]}>
+    <CurrentLocationProvider value={[location, setLocation]}>
       <Router>
         <NavBar />
         <section className='section__wrapper'>
@@ -90,7 +90,7 @@ const App = () => {
           ))}
         </section>
       </Router>
-    </CurrentContext.Provider>
+    </CurrentLocationProvider>
   );
 };
 

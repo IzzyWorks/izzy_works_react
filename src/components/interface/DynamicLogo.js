@@ -1,12 +1,12 @@
 import React from 'react';
 import LottiePlayer from '../helper/LottiePlayer';
 import logoAnimation from '../data/lottie/logo.json';
-import { CurrentContext } from '../context/CurrentContext';
+import { useLocation } from '../context/CurrentContext';
 import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 import { Link } from 'react-router-dom';
 
 function Logo() {
-  const logoData = React.useContext(CurrentContext);
+  const logoData = useLocation();
 
   //hooks
   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {

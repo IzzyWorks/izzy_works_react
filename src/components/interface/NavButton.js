@@ -1,6 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import { CurrentContext, useLocation } from '../context/CurrentContext';
+import {
+  CurrentLocationProvider,
+  useLocation,
+} from '../context/CurrentContext';
 // import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
 const NavButton = ({ buttonObj, passObj }) => {
@@ -25,7 +28,7 @@ const NavButton = ({ buttonObj, passObj }) => {
       newLocationContext.firstFrame = currentLocation.lastFrame;
       newLocationContext.lastFrame = buttonObj.lastFrame - 1;
     }
-    setLocation(newLocationContext);
+    // currentLocation(newLocationContext);
     // console.log('what is the updated context?', currentLocation.pageNo);
     // passObj(newLottieObj);
   };

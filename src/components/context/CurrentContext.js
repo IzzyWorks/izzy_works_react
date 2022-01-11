@@ -4,4 +4,10 @@ const CurrentContext = React.createContext(null);
 
 const useLocation = () => React.useContext(CurrentContext);
 
-export { CurrentContext, useLocation };
+const CurrentLocationProvider = ({ value, children }) => {
+  return (
+    <CurrentContext.Provider value={value}>{children}</CurrentContext.Provider>
+  );
+};
+
+export { CurrentLocationProvider, useLocation };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import NavButton from './NavButton';
 // import useLocalStorage from '../hooks/useLocalStorage';
-import { CurrentContext } from '../context/CurrentContext';
+import { useLocation } from '../context/CurrentContext';
 import uiDATA from '../data/uiData';
 
 // navDATA from uiData
@@ -28,7 +28,7 @@ const NavMenu = () => {
   //   setLottieObj(newLottieObj);
   // };
 
-  const uiContext = React.useContext(CurrentContext);
+  const uiContext = useLocation();
 
   const navButtons = uiDATA.map((navButtons) => {
     return (

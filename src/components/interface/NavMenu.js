@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import NavButton from './NavButton';
-// import useLocalStorage from '../hooks/useLocalStorage';
-// import { useCurrentLocation } from '../context/CurrentContext';
 import UIDATA from '../data/uiData';
 
 // navDATA from uiData
@@ -21,12 +19,28 @@ const NavMenu = () => {
 export default NavMenu;
 
 //   //hooks
-// const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
-//   pageNo: 0,
-//   playDirection: 'down',
-//   lastFrame: 1,
-//   firstFrame: 1,
-// });
+//   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+//     pageNo: 0,
+//     playDirection: 1,
+//     firstFrame: 1,
+//     lastFrame: 1,
+//   });
+
+//    let newAnimationObj = {
+//      loop: false,
+//      speed: 0.5,
+//      play: true,
+//      animationData: logoAnimation,
+//      direction: logoAnimation.playDirection,
+//      segments: [logoAnimation.firstFrame, logoAnimation.lastFrame],
+//    };
+
+//   // console.log('%cRendering NavBar ===>', 'color: orange; font-size: 16px');
+//   // console.log('%c----------------------', 'color: orange; font-size: 16px');
+
+//   const updateLocalStorage = (newLottieObj) => {
+//     setLottieObj(newLottieObj);
+//   };
 
 //   const [animationObj, setAnimationObj] = useEffect({
 //     animation: { lottieLogo },
@@ -36,32 +50,6 @@ export default NavMenu;
 //     play: true,
 //     loop: false,
 //   });
-
-// const updateLocalStorage = (newLottieObj) => {
-//   setLottieObj(newLottieObj);
-// };
-
-//         <ul className='navbar__list'>
-//           {props.NavBarData.map((NavBarData) => (
-//             <li key={NavBarData.key} className='navbar__links'>
-//               <h3 className={'black'}>
-
-//               </h3>
-//             </li>
-//           ))}
-//         </ul>
-
-// import React, { useState } from 'react';
-// import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
-
-// //components
-// import Logo from './DynamicLogo';
-// import NavClickWrapper from './NavClickWrapper';
-// import logoAnimation from '../data/lottie/logo.json';
-// import NavButton from './NavButton';
-// import uiComponents from '../data/uiData';
-
-// //props comes from index.js NavBarData;
 
 // function NavMenu() {
 //   return (
@@ -104,27 +92,3 @@ export default NavMenu;
 // }
 
 // export default NavMenu;
-
-//   //hooks
-//   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
-//     pageNo: 0,
-//     playDirection: 1,
-//     firstFrame: 1,
-//     lastFrame: 1,
-//   });
-
-//    let newAnimationObj = {
-//      loop: false,
-//      speed: 0.5,
-//      play: true,
-//      animationData: logoAnimation,
-//      direction: logoAnimation.playDirection,
-//      segments: [logoAnimation.firstFrame, logoAnimation.lastFrame],
-//    };
-
-//   // console.log('%cRendering NavBar ===>', 'color: orange; font-size: 16px');
-//   // console.log('%c----------------------', 'color: orange; font-size: 16px');
-
-//   const updateLocalStorage = (newLottieObj) => {
-//     setLottieObj(newLottieObj);
-//   };

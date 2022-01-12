@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CURRENTLOCATION = {
+const INITAL_LOCATION_STATE = {
   pageNo: 0,
   playDirection: 'down',
   firstFrame: 1,

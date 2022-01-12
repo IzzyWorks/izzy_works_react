@@ -3,15 +3,15 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import {
   CurrentLocationProvider,
   useCurrentLocation,
-  currentLocation,
+  CURRENTLOCATION,
 } from '../context/CurrentContext';
 // import useLocalStorage from '../hooks/useLocalStorage'; // key value pair
 
 const NavButton = ({ buttonObj, passObj }) => {
-  const currentLocation = useCurrentLocation();
+  const CURRENTLOCATION = useCurrentLocation();
 
   const handleClick = (e) => {
-    console.log('what is the context object?', currentLocation);
+    console.log('what is the context object?', CURRENTLOCATION);
     // console.log('what is the current context?', currentLocation.pageNo);
     let newLocationContext = {
       pageNo: buttonObj.pageNo,
@@ -48,3 +48,11 @@ const NavButton = ({ buttonObj, passObj }) => {
 };
 
 export default NavButton;
+
+//   //hooks
+//   const [lottieObj, setLottieObj] = useLocalStorage('lottieData', {
+//     pageNo: 0,
+//     playDirection: 1,
+//     firstFrame: 1,
+//     lastFrame: 1,
+//   });

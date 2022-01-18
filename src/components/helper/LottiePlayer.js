@@ -13,7 +13,7 @@ const LottieWrapper = memo((props) => {
     setLoop(n);
   }
 
-  useEffect(() => {});
+  useEffect(() => {}); //add []???
 
   function getLoopVal() {
     if (loop === true) return '';
